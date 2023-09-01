@@ -1,7 +1,8 @@
-'use client'
+"use client";
 import { motion } from "framer-motion";
 import missionStyle from "../styles/Mission.module.css";
-import { fadeIn, staggerContainer,planetVariants } from "../utils/motion";
+import { fadeIn, staggerContainer, planetVariants } from "../utils/motion";
+
 const Mission = () => {
   return (
     <motion.section
@@ -17,7 +18,7 @@ const Mission = () => {
       </h2>
       <div className={missionStyle.row}>
         <motion.div
-          variants={planetVariants('left')}
+          variants={planetVariants("left")}
           className={missionStyle.col50}
         >
           <motion.p
@@ -39,7 +40,7 @@ const Mission = () => {
         </motion.div>
         <motion.div
           className={missionStyle.col50}
-          variants={fadeIn('left', 'tween', 0.2, 1)}
+          variants={fadeIn("left", "tween", 0.2, 1)}
         >
           <div className={missionStyle.imgBx}>
             <img src="/assets/m2.jpg" alt="Mission Logo" />
