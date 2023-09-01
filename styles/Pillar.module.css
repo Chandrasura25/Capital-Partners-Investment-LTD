@@ -1,0 +1,55 @@
+.pillar {
+  position: relative;
+  width: 100%;
+  padding: 80px 20px;
+}
+.titleText {
+  color: #333;
+  font-size: 3em;
+  font-weight: 500;
+  text-align: center;
+}
+.titleText span {
+  color: #43a5f6;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+.top {
+  position: relative;
+  font-size: 1em;
+  font-weight: 400;
+  text-align: center;
+  padding: 0px 100px;
+}
+.subText {
+  color: #43a5f6;
+  font-size: 1.5em;
+  font-weight: 400;
+  text-align: center;
+  padding: 30px;
+}
+.container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  gap: 40px 60px;
+}
+.bottom{
+  position: relative;
+  font-size: 1em;
+  font-weight: 400;
+  text-align: center;
+  padding: 0px 100px;
+  color: #333;
+}
+@media (max-width: 991px) {
+  .pillar {
+    padding: 20px;
+  }
+  .top, .bottom {
+    padding: 0 20px;
+  }
+  }

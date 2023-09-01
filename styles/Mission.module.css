@@ -1,0 +1,61 @@
+.mission {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+}
+.row {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.titleText {
+  color: #333;
+  font-size: 3em;
+  font-weight: 700;
+}
+.titleText span {
+  color: #43a5f6;
+  font-weight: 700;
+  font-size: 1em;
+}
+.content{
+  margin-top:20px;
+  font-weight: 400;
+  font-size: 1.4em;
+  color: #333;
+}
+.row .col50 {
+  position: relative;
+  width: 48%;
+}
+.row .col50 .imgBx {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  height: 100%;
+}
+.row .col50 .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 991px) {
+  .mission {
+    padding: 20px;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .row .col50 {
+    width: 100%;
+  }
+  .row .col50 .imgBx {
+    height: 300px;
+    margin-top: 20px;
+  }
+}
