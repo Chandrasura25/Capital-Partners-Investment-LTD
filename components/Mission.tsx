@@ -1,14 +1,13 @@
 import { motion } from "framer-motion"; 
 import missionStyle from "../styles/Mission.module.css"; 
-import { textVariant, fadeIn, slideIn } from "../utils/animationVariants";
-import m_logo from "../assets/images/m2.jpg";
+import { fadeIn, slideIn } from "../utils/motion";
 const Mission = () => {
   return (
     <motion.section className={missionStyle.mission} id="mission">
       <motion.h2 className={missionStyle.titleText}>
         Our <span>Mission</span>
       </motion.h2>
-      <motion.div variants={textVariant()} className={missionStyle.row}>
+      <motion.div className={missionStyle.row}>
         <motion.div
           variants={slideIn("left", "tween")}
           className={missionStyle.col50}
@@ -35,7 +34,7 @@ const Mission = () => {
           variants={slideIn("right", "tween")}
         >
           <motion.div className={missionStyle.imgBx}>
-            <img src={m_logo} alt="Mission Logo" />
+            <img src="/assets/m2.jpg" alt="Mission Logo" />
           </motion.div>
         </motion.div>
       </motion.div>
