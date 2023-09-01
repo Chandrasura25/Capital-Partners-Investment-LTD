@@ -1,3 +1,4 @@
+"use client"
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import aboutStyle from "../styles/About.module.css";
@@ -35,7 +36,7 @@ const About = () => {
               key={index}
             >
               <div className={aboutStyle.caption}>
-                <motion.h2>{text.title}</motion.h2>
+                <h2>{text.title}</h2>
                 <p>{text.description}</p>
               </div>
             </motion.div>
