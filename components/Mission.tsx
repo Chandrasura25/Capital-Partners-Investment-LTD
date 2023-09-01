@@ -1,22 +1,30 @@
-import { motion } from "framer-motion"; 
-import missionStyle from "../styles/Mission.module.css"; 
-import { fadeIn, slideIn } from "../utils/motion";
+'use client'
+import { motion } from "framer-motion";
+import missionStyle from "../styles/Mission.module.css";
+import { fadeIn, staggerContainer,planetVariants } from "../utils/motion";
 const Mission = () => {
   return (
-    <motion.section className={missionStyle.mission} id="mission">
-      <motion.h2 className={missionStyle.titleText}>
+    <motion.section
+      className={missionStyle.mission}
+      id="mission"
+      variants={staggerContainer()}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+    >
+      <h2 className={missionStyle.titleText}>
         Our <span>Mission</span>
-      </motion.h2>
-      <motion.div className={missionStyle.row}>
+      </h2>
+      <div className={missionStyle.row}>
         <motion.div
-          variants={slideIn("left", "tween")}
+          variants={planetVariants('left')}
           className={missionStyle.col50}
         >
           <motion.p
             variants={fadeIn("", "", 0.1, 1)}
             className={missionStyle.content}
           >
-            At Capital Partners Investment PLC, our mission is to provide
+            At Capital Partners Investment LTD, our mission is to provide
             exceptional investment solutions that enable our clients to achieve
             their financial goals and secure their financial future. <br />
             <br /> We are committed to delivering superior returns while
@@ -31,13 +39,13 @@ const Mission = () => {
         </motion.div>
         <motion.div
           className={missionStyle.col50}
-          variants={slideIn("right", "tween")}
+          variants={fadeIn('left', 'tween', 0.2, 1)}
         >
-          <motion.div className={missionStyle.imgBx}>
+          <div className={missionStyle.imgBx}>
             <img src="/assets/m2.jpg" alt="Mission Logo" />
-          </motion.div>
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </motion.section>
   );
 };
