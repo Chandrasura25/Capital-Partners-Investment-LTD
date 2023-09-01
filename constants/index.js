@@ -30,6 +30,15 @@ export const sidebarLinks = [
         label: "Profile",
     },
 ];
+export const NavLinks = [
+    { href: "#about", key: "About Us", text: "About Us" },
+    { href: "#pillars", key: "Investment Sectors", text: "Investment Sectors" },
+    { href: "/sign-in", key: "Investment Portal", text: "Investment Portal" },
+    { href: "#invest", key: "Why you should invest with us", text: "Why you should invest with us" },
+    { href: "/faqs", key: "FAQS", text: "FAQS" },
+    { href: "#", key: "Success Stories", text: "Success Stories" },
+    { href: "#contact", key: "Contact", text: "Contact" },
+  ];
 export const AboutText = [
     {
         id: 1,
