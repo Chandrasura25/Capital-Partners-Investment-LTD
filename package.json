@@ -1,0 +1,37 @@
+{
+  "name": "investment",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^4.23.3",
+    "@clerk/themes": "^1.7.5",
+    "@hookform/resolvers": "^3.3.1",
+    "@types/node": "20.5.7",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "@uploadthing/react": "^5.5.0",
+    "autoprefixer": "10.4.15",
+    "font-awesome": "^4.7.0",
+    "framer-motion": "^10.16.2",
+    "mongoose": "^7.5.0",
+    "next": "13.4.19",
+    "nprogress": "^0.2.0",
+    "postcss": "8.4.29",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-horizontal-scrolling-menu": "^4.1.0",
+    "react-vertical-timeline-component": "^3.6.0",
+    "svix": "^1.10.0",
+    "tailwindcss": "3.3.3",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "5.2.2",
+    "uploadthing": "^5.5.0",
+    "zod": "^3.22.2"
+  }
+}
