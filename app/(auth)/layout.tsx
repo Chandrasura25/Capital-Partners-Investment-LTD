@@ -2,8 +2,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
 import "../globals.css";
 export const metadata = {
-  title: "Capital Partners Investment Plc",
-  description: "Capital Partners Investment Plc",
+  title: "Capital Partners Investment LTD",
+  description: "Capital Partners Investment LTD",
 };
 const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({

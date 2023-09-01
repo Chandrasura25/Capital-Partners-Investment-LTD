@@ -42,13 +42,13 @@ export const NavLinks = [
 export const AboutText = [
     {
         id: 1,
-        title: "Welcome to Capital Partners Investment Plc",
+        title: "Welcome to Capital Partners Investment LTD",
         description: "A leading investment company with a diverse portfolio covering various sectors of the economy. With a steadfast commitment to excellence and a track record of success, we aim to facilitate growth, create value, and generate sustainable returns for our investors.",
     },
     {
         id: 2,
         title: "Professionalism",
-        description: "Capital Partners Investment Plc has been duly registered by the Corporate Affairs Commission and certified by the Nigeria Investment Promotion Commission. Our esteemed reputation is built on a foundation of integrity, transparency, and professionalism, ensuring that our clients receive the highest standards of service."
+        description: "Capital Partners Investment LTD has been duly registered by the Corporate Affairs Commission and certified by the Nigeria Investment Promotion Commission. Our esteemed reputation is built on a foundation of integrity, transparency, and professionalism, ensuring that our clients receive the highest standards of service."
     },
     {
         id: 3,
@@ -58,12 +58,12 @@ export const AboutText = [
     {
         id: 4,
         title: "Expertise",
-        description: "At Capital Partners Investment Plc, we combine our extensive industry knowledge, market insights, and investment expertise to identify and execute value-driven opportunities. Our team of seasoned professionals is committed to delivering superior returns while upholding the highest standards of corporate governance and social responsibility.."
+        description: "At Capital Partners Investment LTD, we combine our extensive industry knowledge, market insights, and investment expertise to identify and execute value-driven opportunities. Our team of seasoned professionals is committed to delivering superior returns while upholding the highest standards of corporate governance and social responsibility.."
     },
     {
         id: 5,
         title: "Invest with Us",
-        description: "We invite you to explore the possibilities of partnering with Capital Partners Investment Plc, where your financial goals meet our strategic vision, creating a path to mutual success."
+        description: "We invite you to explore the possibilities of partnering with Capital Partners Investment LTD, where your financial goals meet our strategic vision, creating a path to mutual success."
     },
 ]
 export const pillarText =[
@@ -114,28 +114,28 @@ export const investText=[
     {
         id:1,
         title:'Diversification Across Key Sectors',
-        content:"Capital Partners Investment Plc understands the importance of diversification in an investment portfolio. By spanning multiple sectors, the company ensures that investors are not reliant on the performance of a single industry. This strategy mitigates risk and allows for balanced growth. Whether it's the stability of real estate, the technological innovations of the education sector, or the increasing demand for healthcare services, Capital Partners Investment has carefully curated an investment portfolio that offers a spectrum of opportunities.",
+        content:"Capital Partners Investment LTD understands the importance of diversification in an investment portfolio. By spanning multiple sectors, the company ensures that investors are not reliant on the performance of a single industry. This strategy mitigates risk and allows for balanced growth. Whether it's the stability of real estate, the technological innovations of the education sector, or the increasing demand for healthcare services, Capital Partners Investment has carefully curated an investment portfolio that offers a spectrum of opportunities.",
         icon:'fa fa-pie-chart', 
         clr:'#ff0f5b',
     },
     {
         id:2,
         title:'Expertise and Market Insight',
-        content:"One of the key distinguishing factors of Capital Partners Investment Plc is its team of seasoned investment professionals. With years of experience, these experts possess an in-depth understanding of the sectors in which they invest. Their ability to identify emerging trends, assess market dynamics, and capitalize on lucrative opportunities gives investors a distinct advantage. By leveraging their expertise, Capital Partners Investment ensures that investors' capital is placed in ventures with the highest potential for growth and profitability.",
+        content:"One of the key distinguishing factors of Capital Partners Investment LTD is its team of seasoned investment professionals. With years of experience, these experts possess an in-depth understanding of the sectors in which they invest. Their ability to identify emerging trends, assess market dynamics, and capitalize on lucrative opportunities gives investors a distinct advantage. By leveraging their expertise, Capital Partners Investment ensures that investors' capital is placed in ventures with the highest potential for growth and profitability.",
         icon:"fa fa-line-chart",
         clr:'#be01fe',
     },
     {
         id:3,
         title:'Long-Term Vision',
-        content:'Capital Partners Investment is driven by a long-term vision that seeks to create sustainable value for its stakeholders. Rather than focusing solely on short-term gains, the company carefully selects investments that align with its commitment to environmental, social, and governance (ESG) principles. By investing in sectors such as renewable energy, sustainable real estate, and technology-driven healthcare solutions, Capital Partners Investment Plc contributes to a more resilient and equitable future.',
+        content:'Capital Partners Investment is driven by a long-term vision that seeks to create sustainable value for its stakeholders. Rather than focusing solely on short-term gains, the company carefully selects investments that align with its commitment to environmental, social, and governance (ESG) principles. By investing in sectors such as renewable energy, sustainable real estate, and technology-driven healthcare solutions, Capital Partners Investment LTD contributes to a more resilient and equitable future.',
         icon:'fa fa-eye',
         clr:'#01b4ff',
     },
     {
         id:4,
         title:'Embracing Technological Disruption',
-        content:"The digital revolution has transformed industries across the globe, and Capital Partners Investment recognizes the immense potential that technology holds. By actively seeking out investments in the technology sector, the company positions itself at the forefront of innovation. Whether it's artificial intelligence, blockchain, or e-commerce, Capital Partners Investment Plc embraces disruptive technologies that are reshaping the business landscape. This proactive approach enables investors to capitalize on the transformative power of technology, unlocking new avenues for growth and profitability.",
+        content:"The digital revolution has transformed industries across the globe, and Capital Partners Investment recognizes the immense potential that technology holds. By actively seeking out investments in the technology sector, the company positions itself at the forefront of innovation. Whether it's artificial intelligence, blockchain, or e-commerce, Capital Partners Investment LTD embraces disruptive technologies that are reshaping the business landscape. This proactive approach enables investors to capitalize on the transformative power of technology, unlocking new avenues for growth and profitability.",
         icon:'fa fa-cogs',
         clr:'#ff5b0f',
     },
@@ -149,7 +149,7 @@ export const investText=[
     {
         id:6,
         title:'Simplified Investment Options',
-        content:'Capital Partners Investment PLC offers a range of simplified investment options with daily accessible returns on investment, allowing investors to withdraw their earnings on a daily basis. These investment options are designed to provide flexibility and convenience, catering to the varying needs and preferences of investors.',
+        content:'Capital Partners Investment LTD offers a range of simplified investment options with daily accessible returns on investment, allowing investors to withdraw their earnings on a daily basis. These investment options are designed to provide flexibility and convenience, catering to the varying needs and preferences of investors.',
         icon:'fa fa-handshake-o',
         clr:'#4500ff',
     },
@@ -158,31 +158,31 @@ export const optionText=[
     {
         id:1,
         title:'Daily Accessible Return on Investment',
-        description:"Capital Partners Investment PLC offers investment options that generate daily returns on investment. This means that investors can earn profits on a daily basis, allowing for steady income and the potential for compounding returns over time. The daily accessibility of these returns means that investors can withdraw their earnings whenever they choose, providing them with liquidity and financial freedom.",
+        description:"Capital Partners Investment LTD offers investment options that generate daily returns on investment. This means that investors can earn profits on a daily basis, allowing for steady income and the potential for compounding returns over time. The daily accessibility of these returns means that investors can withdraw their earnings whenever they choose, providing them with liquidity and financial freedom.",
         clr:"#ffaf00"
     },
     {
         id:2,
         title:'Withdrawal Flexibility',
-        description:"One of the key advantages of Capital Partners Investment PLC's investment options is the flexibility to withdraw funds daily. This feature allows investors to access their earnings whenever they need them, providing a convenient solution for those who require regular cash flow or have short-term financial goals. Whether you need to cover unexpected expenses or take advantage of investment opportunities elsewhere, the ability to withdraw daily offers peace of mind and financial control.",
+        description:"One of the key advantages of Capital Partners Investment LTD's investment options is the flexibility to withdraw funds daily. This feature allows investors to access their earnings whenever they need them, providing a convenient solution for those who require regular cash flow or have short-term financial goals. Whether you need to cover unexpected expenses or take advantage of investment opportunities elsewhere, the ability to withdraw daily offers peace of mind and financial control.",
         clr:"#da2268",
     },
     {
         id:3,
         title:'Convenience and Ease of Use',
-        description:"Capital Partners Investment PLC aims to make investing as convenient and user-friendly as possible. Their investment platform provides a seamless and intuitive experience, allowing investors to monitor their investment performance, track returns, and make withdrawals effortlessly. With user-friendly interfaces and dedicated customer support, investors can easily manage their investments and access their funds whenever they need them.",
+        description:"Capital Partners Investment LTD aims to make investing as convenient and user-friendly as possible. Their investment platform provides a seamless and intuitive experience, allowing investors to monitor their investment performance, track returns, and make withdrawals effortlessly. With user-friendly interfaces and dedicated customer support, investors can easily manage their investments and access their funds whenever they need them.",
         clr:"#bb02ff",
     },
     {
         id:4,
         title:'Diversified Investment Options',
-        description:"Capital Partners Investment PLC offers a diverse range of investment options to suit different risk appetites and investment goals. Whether you are seeking conservative, moderate, or aggressive investment strategies, there are options available to match your preferences. From low-risk fixed income products to higher-yield equity-based investments, the company provides a variety of choices to diversify your portfolio and potentially enhance returns.",
+        description:"Capital Partners Investment LTD offers a diverse range of investment options to suit different risk appetites and investment goals. Whether you are seeking conservative, moderate, or aggressive investment strategies, there are options available to match your preferences. From low-risk fixed income products to higher-yield equity-based investments, the company provides a variety of choices to diversify your portfolio and potentially enhance returns.",
         clr:"#01b4ff",
     },
     {
         id:5,
         title:'Transparent Reporting and Accountability',
-        description:"Capital Partners Investment PLC is committed to transparency and accountability. Investors can access detailed reports on their investments, including performance summaries, earnings statements, and transaction histories. This level of transparency enables investors to monitor their investments effectively and make informed decisions based on real-time data.",
+        description:"Capital Partners Investment LTD is committed to transparency and accountability. Investors can access detailed reports on their investments, including performance summaries, earnings statements, and transaction histories. This level of transparency enables investors to monitor their investments effectively and make informed decisions based on real-time data.",
         clr:"#0f8a1c",
     },
 ]
