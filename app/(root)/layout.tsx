@@ -19,9 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <main className="bg-[#000924] overflow-hidden">
         <Navbar />
-        <main className="">{children}</main>
+        <div className="relative">
+          {children}
+        </div>
         <Footer />
+        </main>
       </body>
     </html>
   )

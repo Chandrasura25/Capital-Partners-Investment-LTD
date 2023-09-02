@@ -6,7 +6,7 @@ import Vision from "@/components/Vision";
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       <About />
       <Mission />
        <Vision />
