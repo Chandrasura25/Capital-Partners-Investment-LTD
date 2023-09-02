@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
-import { textVariant, fadeIn } from "../utils/animationVariants";
+import { staggerContainer, fadeIn } from "../utils/motion";
 import pillarStyles from "../styles/Pillar.module.css";
 import Card from "./Card";
-import { pillarText } from "../utils/constant";
+import { pillarText } from "../constants";
+import React from 'react';
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import 'react-horizontal-scrolling-menu/dist/styles.css';
 const Pillar = () => {
   return (
     <>
-      <motion.section className={pillarStyles.pillar} id="pillars">
+      <section  className="paddings relative z-10" id="pillars">
         <div className={pillarStyles.titleText}>
           <motion.p variants={textVariant()}>
             OUR CORE <span>INVESTMENT SECTORS</span>
@@ -48,7 +51,7 @@ const Pillar = () => {
           vision, creating a path to mutual success.
           </motion.p>
         </motion.div>
-      </motion.section>
+      </section>
     </>
   );
 };

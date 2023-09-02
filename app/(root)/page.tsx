@@ -15,8 +15,11 @@ export default function Home() {
         <div className="gradient-03 z-0" />
         <Vision />
       </div>
+      <div className="relative">
       {/*<Pillar />
+      <div className="gradient-04 z-0" />
       <Invest /> */}
+      </div>
     </main>
   );
 }
