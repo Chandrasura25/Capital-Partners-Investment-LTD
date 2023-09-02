@@ -7,9 +7,14 @@ import Vision from "@/components/Vision";
 export default function Home() {
   return (
     <main>
-      <About />
-      <Mission />
-       <Vision />
+      <div>
+        <About />
+      </div>
+      <div className="relative">
+        <Mission />
+        <div className="gradient-03 z-0" />
+        <Vision />
+      </div>
       {/*<Pillar />
       <Invest /> */}
     </main>

@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import { motion } from "framer-motion";
 
 import { textContainer, textVariant2 } from "../utils/motion";
@@ -10,7 +10,7 @@ interface typingProps {
 
 export const TypingText = ({ title, textStyles }: typingProps) => (
   <motion.p
-    className={`font-normal text-[14px] text-secondary-white ${textStyles}`}
+    className={`font-bold text-[32px] text-gray-200 ${textStyles}`}
     variants={textContainer}
   >
     {Array.from(title).map((letter, index) => (
@@ -20,8 +20,8 @@ export const TypingText = ({ title, textStyles }: typingProps) => (
     ))}
   </motion.p>
 );
-interface titleProps{
-  title: html;
+interface titleProps {
+  title: React.ReactNode;
   textStyles?: string;
 }
 export const TitleText = ({ title, textStyles }: titleProps) => (
