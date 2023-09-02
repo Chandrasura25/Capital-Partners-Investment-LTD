@@ -18,11 +18,10 @@ const Mission = () => {
       </h2>
       <div className={missionStyle.row}>
         <motion.div
-          variants={planetVariants("left")}
+         variants={fadeIn("right", "tween", 0.2, 1)}
           className={missionStyle.col50}
         >
           <motion.p
-            variants={fadeIn("", "", 0.1, 1)}
             className={missionStyle.content}
           >
             At Capital Partners Investment LTD, our mission is to provide

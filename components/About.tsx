@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import aboutStyle from "../styles/About.module.css";
 import { AboutText } from "../constants";
-import { slideIn, staggerContainer } from "../utils/motion";
+import { staggerContainer } from "../utils/motion";
 
 const About = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -27,9 +27,8 @@ const About = () => {
         className={aboutStyle.slider}
       >
         <AnimatePresence>
-          {AboutText.map((text, index) => (
-            <motion.div
-              variants={slideIn("right", "tween", 0.2, 1)}
+          {AboutText.map((text, index) => (  
+            <div
               className={`${aboutStyle.slide} ${
                 index === activeSlide ? aboutStyle.active : ""
               } ${aboutStyle["slide" + text.id]} `}
@@ -39,7 +38,7 @@ const About = () => {
                 <h2>{text.title}</h2>
                 <p>{text.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </AnimatePresence>
       </motion.div>

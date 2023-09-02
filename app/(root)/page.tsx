@@ -1,6 +1,6 @@
 import About from "@/components/About";
 import Mission from "@/components/Mission";
-// import Vision from "@/components/Vision";
+import Vision from "@/components/Vision";
 // import Pillar from "@/components/Pillar";
 // import Invest from "@/components/Invest";
 
@@ -9,8 +9,8 @@ export default function Home() {
     <main className="">
       <About />
       <Mission />
-      {/* <Vision />
-      <Pillar />
+       <Vision />
+      {/*<Pillar />
       <Invest /> */}
     </main>
   );
