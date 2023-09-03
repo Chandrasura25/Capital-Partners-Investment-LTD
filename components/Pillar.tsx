@@ -22,7 +22,7 @@ const Pillar = () => {
           <TitleText title={<>| OUR CORE <span className="text-[#43a5f6]">INVESTMENT SECTORS</span> </> } textStyles="text-center" />
 
           <motion.div variants={fadeIn("up", "tween", 0.2, 1)}
-          className={pillarStyles.top}>
+          className="relative font-normal text-center px-[100px]">
           <motion.p>
             Our investment portfolio encompasses a wide range of sectors,
             providing opportunities for both domestic and international
