@@ -318,5 +318,5 @@
   filter: blur(150px);
 }
 .formBg{
-  background: linear-gradient(-30deg,#43a5f6 0%,#3a78b7 50%,#262626 50%,#607d8b 100%);
+  background: linear-gradient(-30deg,#43a5f6 0%,#3a78b7 50%,#fff 50%,#607d8b 100%); 
 }

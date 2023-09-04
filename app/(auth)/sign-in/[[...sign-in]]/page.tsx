@@ -2,6 +2,6 @@ import { SignIn } from "@clerk/nextjs";
 
 export default function Page() {
   return (
-    <div className="formBg"><SignIn /></div>
+    <div className="formBg flex w-full justify-center items-center min-h-screen"><SignIn /></div>
   );
 }
