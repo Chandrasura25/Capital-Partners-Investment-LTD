@@ -4,10 +4,8 @@ import { staggerContainer, fadeIn, textVariant2 } from "../utils/motion";
 import pillarStyles from "../styles/Pillar.module.css";
 import Card from "./Card";
 import { pillarText } from "../constants";
-import React from "react";
-// import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-// import "react-horizontal-scrolling-menu/dist/styles.css";
 import { TitleText } from "./CustomTexts";
+
 const Pillar = () => {
   return (
     <>
