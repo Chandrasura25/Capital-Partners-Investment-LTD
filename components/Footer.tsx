@@ -62,25 +62,22 @@ const Footer = () => {
               links={footerLinks[5].links}
             />
           </div>
-          <FooterColumn
-            title={footerLinks[6].title}
-            links={footerLinks[6].links}
-          />
+          <div className="flex items-start flex-col">
+        <Image src="/assets/logo1.jpg" alt="Logo" width={115} height={38} />
+        <p className="text-start text-sm font-normal mt-5 max-w-xs">
+          Flexibble is the world's leading community for creatives to share,
+          grow, and get hired.
+        </p>
+      </div>
         </div>
       </div>
-       <div className="flex items-start flex-col">
-          <Image src="/assets/logo1.jpg" alt="Logo" width={115} height={38} />
-          <p className="text-start text-sm font-normal mt-5 max-w-xs">
-            Flexibble is the world's leading community for creatives to share,
-            grow, and get hired.
-          </p>
-        </div>
+      
       <div className="flexBetween footer_copyright">
-        <p>@ 2023 Flexibble. All rights reserved.</p>
         <p className="text-gray">
           <span className="text-black font-semibold">10,214</span> projects
           submitted
         </p>
+        <p>@ 2023 Flexibble. All rights reserved.</p>
       </div>
     </motion.footer>
   );
