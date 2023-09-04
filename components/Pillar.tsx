@@ -39,7 +39,7 @@ const Pillar = () => {
             growth and have significant potential for long-term profitability.
           </motion.p>
           <div>
-            <motion.p className={pillarStyles.subText} variants={textVariant2}>
+            <motion.p className={pillarStyles.subText} variants={fadeIn("up", "tween", 0.3, 1)}>
               THE <span>7 PILLARS</span> OF OUR INVESTMENT
             </motion.p>
             <div className={pillarStyles.container}>
@@ -50,7 +50,7 @@ const Pillar = () => {
           </div>
           <motion.p
             className="relative font-normal text-center md:px-[100px] px-[20px] text-white"
-            variants={fadeIn("up", "tween", 0.3, 1)}
+            variants={fadeIn("up", "tween", 0.4, 1)}
           >
             At Capital Partners Investment LTD, we combine our extensive
             industry knowledge, market insights, and investment expertise to
