@@ -1,68 +1,85 @@
 import { motion } from "framer-motion";
 import investStyles from "../styles/Invest.module.css";
 import optionStyles from "../styles/Option.module.css";
-import { textVariant, fadeIn, slideIn } from "../utils/animationVariants";
+import { staggerContainer, fadeIn, slideIn } from "../utils/motion";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import Vertical from "./Vertical";
-import { investText, optionText } from "../utils/constant";
+import { investText, optionText } from "../utils/constants";
 import Option from "./Option";
+import { TitleText } from "./CustomTexts";
 const Invest = () => {
   return (
-    <motion.section id="invest" className={investStyles.container}>
-      <motion.div variants={textVariant()}>
-        <motion.h2  className={investStyles.titleText}>
-          WHY YOU SHOULD <span>INVEST WITH US</span>
-        </motion.h2>
-        <motion.h4 className={investStyles.subText}>
-          Capital Partners Investment Plc:{" "}
-          <span>
-            Unlocking Diverse Investment Opportunities for a Thriving Future
-          </span>
-        </motion.h4>
-        <motion.p
-          className={investStyles.top}
-          variants={fadeIn("up", "spring", 0.5, 0.75)}
-        >
-          In a rapidly evolving global economy, investors seek opportunities
-          that combine stability, growth potential, and diversification. Enter
-          Capital Partners Investment Plc, an innovative and forward-thinking
-          investment company that has carved a niche for itself by strategically
-          expanding its portfolio across multiple sectors. With a focus on
-          transportation, real estate, health, oil and gas, education,
-          technology, and food, Capital Partners Investment Plc presents an
-          enticing proposition for individuals and businesses seeking to
-          maximize their investment potential.
-          <i>
-            This is why Capital Partners Investment Plc should be at the top of
-            every investor`s list.
-          </i>
-        </motion.p>
-      </motion.div>
-      <motion.div>
-        <VerticalTimeline>
-          {investText.map((invest, index) => (
-            <Vertical key={index} {...invest} index={index} />
-          ))}
-        </VerticalTimeline>
-      </motion.div>
-      <motion.div className={investStyles.bottom} variants={textVariant()}>
-        Capital Partners Investment stands as a beacon of opportunity for
-        investors seeking a diversified and forward-thinking investment company.
-        We position ourself as a catalyst for success. Whether you are an
-        individual investor or a business seeking to maximize your investment
-        potential, Capital Partners Investment presents an enticing opportunity
-        to navigate the complexities
-      </motion.div>
-      <motion.div className={investStyles.options} variants={slideIn("right", "tween")}>
-        <div className={optionStyles.contain}>
-        {optionText.map((option, index) => (
-          <Option key={index} {...option} index={index} />
-        ))  
-        }
+    <section id="invest" className="paddings relative z-10">
+      <motion.div
+        variants={staggerContainer()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="innerWidth mx-auto flexCenter flex-col"
+      >
+        <motion.div variants={fadeIn("up", "spring", 0.5, 0.75)}>
+          <TitleText
+            title={
+              <>
+                | WHY YOU SHOULD{" "}
+                <span className="text-[#43a5f6]">INVEST WITH US</span>
+              </>
+            }
+            textStyles="text-center"
+          />
+          <h4 className={investStyles.subText}>
+            Capital Partners Investment Plc:{" "}
+            <span>
+              Unlocking Diverse Investment Opportunities for a Thriving Future
+            </span>
+          </h4>
+          <motion.p
+            className={investStyles.top}
+            variants={fadeIn("up", "spring", 0.5, 0.75)}
+          >
+            In a rapidly evolving global economy, investors seek opportunities
+            that combine stability, growth potential, and diversification. Enter
+            Capital Partners Investment Plc, an innovative and forward-thinking
+            investment company that has carved a niche for itself by
+            strategically expanding its portfolio across multiple sectors. With
+            a focus on transportation, real estate, health, oil and gas,
+            education, technology, and food, Capital Partners Investment Plc
+            presents an enticing proposition for individuals and businesses
+            seeking to maximize their investment potential.
+            <i className="font-extrabold">
+              This is why Capital Partners Investment Plc should be at the top
+              of every investor`s list.
+            </i>
+          </motion.p>
+        </motion.div>
+        <div>
+          <VerticalTimeline>
+            {investText.map((invest, index) => (
+              <Vertical key={index} {...invest} index={index} />
+            ))}
+          </VerticalTimeline>
         </div>
+        <motion.div className={investStyles.bottom} variants={textVariant()}>
+          Capital Partners Investment stands as a beacon of opportunity for
+          investors seeking a diversified and forward-thinking investment
+          company. We position ourself as a catalyst for success. Whether you
+          are an individual investor or a business seeking to maximize your
+          investment potential, Capital Partners Investment presents an enticing
+          opportunity to navigate the complexities
+        </motion.div>
+        <motion.div
+          className={investStyles.options}
+          variants={slideIn("right", "tween")}
+        >
+          <div className={optionStyles.contain}>
+            {optionText.map((option, index) => (
+              <Option key={index} {...option} index={index} />
+            ))}
+          </div>
+        </motion.div>
       </motion.div>
-    </motion.section>
+    </section>
   );
 };
 

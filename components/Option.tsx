@@ -1,9 +1,10 @@
+"use client";
 import optionStyles from "../styles/Option.module.css";
 import { useState } from "react";
-import { fadeIn } from "../utils/animationVariants";
+import { fadeIn } from "../utils/motion";
 import { motion } from "framer-motion";
-import PropTypes from "prop-types";
-const Option = ({ clr, title, index, id, description }) => {
+
+const Option = ({ clr, title, index, id, description }: optionProp) => {
     const [isDropped, setIsDropped] = useState(false);
 
     const toggleDrop = () => {
@@ -26,11 +27,11 @@ const Option = ({ clr, title, index, id, description }) => {
     </motion.div>
   );
 };
-Option.propTypes = {
-  id: PropTypes.number.isRequired,
-  index: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  clr: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+interface optionProp {
+  id: number
+  index: number
+  title: string
+  clr: string
+  description: string
 };
 export default Option;
