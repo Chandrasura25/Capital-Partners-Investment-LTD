@@ -23,7 +23,7 @@ const Navbar = () => {
     >
       <img
         src="/assets/logo1.jpg"
-        alt="search"
+        alt="Logo"
         className="w-[40px] h-[40px] rounded-full object-contain"
       />
       <div className={navbarStyle.menuToggle} onClick={toggle}></div>
