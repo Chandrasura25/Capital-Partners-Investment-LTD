@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { NavLinks } from "../constants";
+import { NavLinks } from "../constants";  
 import { navVariants } from "../utils/motion";
 import navbarStyle from "../styles/Navbar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useRouter } from "next/router";
+
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
 
@@ -14,6 +16,8 @@ const Navbar = () => {
     setNavActive(!navActive);
   }
   const pathname = usePathname();
+  const {query} = useRouter()
+  console.log(query)
   return (
     <motion.header
       variants={navVariants}
@@ -30,9 +34,10 @@ const Navbar = () => {
       <nav>
         <ul>
           {NavLinks.map((link) => {
-              const isActive =
-              (pathname.includes(link.route) && link.route.length > 1) ||
-              pathname === link.route;
+             const isActive = pathname === link.route || (link.route.length > 1 && pathname.startsWith(link.route));
+            
+              // const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
+              console.log(pathname, link.route, isActive)
             return (
               <li>
                 <Link

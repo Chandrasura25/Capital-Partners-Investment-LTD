@@ -52,32 +52,22 @@ const Footer = () => {
             title={footerLinks[3].title}
             links={footerLinks[3].links}
           />
-          <div className="flex-1 flex flex-col gap-4">
-            <FooterColumn
-              title={footerLinks[4].title}
-              links={footerLinks[4].links}
-            />
-            <FooterColumn
-              title={footerLinks[5].title}
-              links={footerLinks[5].links}
-            />
+          <FooterColumn
+            title={footerLinks[4].title}
+            links={footerLinks[4].links}
+          />
+          <div className="footer_column">
+            <Image src="/assets/logo1.jpg" alt="Logo" width={100} height={38} />
+            <p className="text-start text-sm font-normal mt-5 max-w-xs">
+              We are reputed as one of the best and fastest growing investment
+              companies in Nigeria.
+            </p>
           </div>
-          <div className="flex items-start flex-col">
-        <Image src="/assets/logo1.jpg" alt="Logo" width={115} height={38} />
-        <p className="text-start text-sm font-normal mt-5 max-w-xs">
-          Flexibble is the world's leading community for creatives to share,
-          grow, and get hired.
-        </p>
-      </div>
         </div>
       </div>
-      
-      <div className="flexBetween footer_copyright">
-        <p className="text-gray">
-          <span className="text-black font-semibold">10,214</span> projects
-          submitted
-        </p>
-        <p>@ 2023 Flexibble. All rights reserved.</p>
+      <div className="flexBetween footer_copyright text-white">
+        <p>@ 2023 Capital Partners Investment LTD.</p>
+        <p>All rights reserved.</p>
       </div>
     </motion.footer>
   );
