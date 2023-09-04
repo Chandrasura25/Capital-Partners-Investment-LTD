@@ -233,7 +233,18 @@
     #a134c7 100%
   );
 }
+/* Footer */
+.footer {
+  @apply flex-col paddings w-full gap-20;
+}
 
+.footer_copyright {
+  @apply max-sm:flex-col w-full font-normal;
+}
+
+.footer_column {
+  @apply flex-1 flex flex-col gap-3 min-w-max;
+}
 .gradient-02 {
   position: absolute;
   width: 200px;
