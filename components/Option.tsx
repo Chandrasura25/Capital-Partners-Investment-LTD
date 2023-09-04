@@ -12,8 +12,8 @@ const Option = ({ clr, title, index, id, description }: optionProp) => {
     };
   return (
     <motion.div
-      className={`${optionStyles.card} ${isDropped ? optionStyles.active : ""}`}
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className={`${optionStyles.card} ${isDropped ? optionStyles.active : ""}`}
       style={{ "--clr": clr }}
     >
       <div className={optionStyles.circle}>

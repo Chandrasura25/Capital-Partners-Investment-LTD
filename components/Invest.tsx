@@ -55,31 +55,32 @@ const Invest = () => {
             </i>
           </motion.p>
         </motion.div>
-       <div>
+        <div>
           <VerticalTimeline>
             {investText.map((invest, index) => (
               <Vertical key={index} {...invest} />
             ))}
           </VerticalTimeline>
         </div>
-          {/*<motion.div className={investStyles.bottom} variants={textVariant()}>
+        <motion.div
+          className={investStyles.bottom}
+          variants={fadeIn("up", "spring", 1, 0.75)}
+        >
           Capital Partners Investment stands as a beacon of opportunity for
           investors seeking a diversified and forward-thinking investment
           company. We position ourself as a catalyst for success. Whether you
           are an individual investor or a business seeking to maximize your
           investment potential, Capital Partners Investment presents an enticing
           opportunity to navigate the complexities
-        </motion.div>
-        <motion.div
-          className={investStyles.options}
-          variants={slideIn("right", "tween")}
-        >
-          <div className={optionStyles.contain}>
+        </motion.div>  
+        <div className="relative min-h-[300px] w-full rounded-[20px] bg-[#010f3b]">
+          <div className="feedback-gradient z-0"/>
+          <div className="relative w-full p-[20px] flex items-center justify-center flex-wrap">
             {optionText.map((option, index) => (
               <Option key={index} {...option} index={index} />
             ))}
           </div>
-        </motion.div> */}
+        </div>
       </motion.div>
     </section>
   );
