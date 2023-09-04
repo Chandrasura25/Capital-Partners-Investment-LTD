@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import investStyles from "../styles/Invest.module.css";
 import optionStyles from "../styles/Option.module.css";
@@ -5,9 +6,10 @@ import { staggerContainer, fadeIn, slideIn } from "../utils/motion";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import Vertical from "./Vertical";
-import { investText, optionText } from "../utils/constants";
+import { investText, optionText } from "../constants";
 import Option from "./Option";
 import { TitleText } from "./CustomTexts";
+
 const Invest = () => {
   return (
     <section id="invest" className="paddings relative z-10">
@@ -53,14 +55,14 @@ const Invest = () => {
             </i>
           </motion.p>
         </motion.div>
-        <div>
+       <div>
           <VerticalTimeline>
             {investText.map((invest, index) => (
-              <Vertical key={index} {...invest} index={index} />
+              <Vertical key={index} {...invest} />
             ))}
           </VerticalTimeline>
         </div>
-        <motion.div className={investStyles.bottom} variants={textVariant()}>
+          {/*<motion.div className={investStyles.bottom} variants={textVariant()}>
           Capital Partners Investment stands as a beacon of opportunity for
           investors seeking a diversified and forward-thinking investment
           company. We position ourself as a catalyst for success. Whether you
@@ -77,7 +79,7 @@ const Invest = () => {
               <Option key={index} {...option} index={index} />
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );
