@@ -1,11 +1,12 @@
+"use client"
 import { motion } from "framer-motion";
 import { staggerContainer, fadeIn } from "../utils/motion";
 import pillarStyles from "../styles/Pillar.module.css";
 import Card from "./Card";
 import { pillarText } from "../constants";
 import React from "react";
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import "react-horizontal-scrolling-menu/dist/styles.css";
+// import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
+// import "react-horizontal-scrolling-menu/dist/styles.css";
 import { TitleText } from "./CustomTexts";
 const Pillar = () => {
   return (
@@ -20,10 +21,8 @@ const Pillar = () => {
         className="innerWidth mx-auto flexCenter flex-col"
         >
           <TitleText title={<>| OUR CORE <span className="text-[#43a5f6]">INVESTMENT SECTORS</span> </> } textStyles="text-center" />
-
-          <motion.div variants={fadeIn("up", "tween", 0.2, 1)}
-          className="relative font-normal text-center px-[100px]">
-          <motion.p>
+          <motion.p variants={fadeIn("up", "tween", 0.2, 1)}
+          className="relative font-normal text-center px-[100px] text-white">
             Our investment portfolio encompasses a wide range of sectors,
             providing opportunities for both domestic and international
             investors. We believe in the power of strategic investments to drive
@@ -31,7 +30,6 @@ const Pillar = () => {
             we have carefully selected sectors that are essential to Nigeria`s
             growth and have significant potential for long-term profitability.
           </motion.p>
-        </motion.div>
         <motion.div>
           <motion.p className={pillarStyles.subText}>
             THE <span>7 PILLARS</span> OF OUR INVESTMENT
@@ -43,10 +41,10 @@ const Pillar = () => {
           </motion.div>
         </motion.div>
         <motion.div
-          variants={fadeIn("", "", 0.1, 1)}
+          variants={fadeIn("up", "tween", 0.3, 1)}
           className={pillarStyles.bottom}
         >
-          <motion.p>
+          <motion.p className="text-white font-normal">
             At Capital Partners Investment LTD, we combine our extensive
             industry knowledge, market insights, and investment expertise to
             identify and execute value-driven opportunities. Our team of

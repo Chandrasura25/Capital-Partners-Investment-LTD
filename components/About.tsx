@@ -35,7 +35,7 @@ const About = () => {
               key={index}
             >
               <div className={aboutStyle.caption}>
-                <h2>{text.title}</h2>
+                <h2 className="font-extrabold">{text.title}</h2>
                 <p>{text.description}</p>
               </div>
             </div>

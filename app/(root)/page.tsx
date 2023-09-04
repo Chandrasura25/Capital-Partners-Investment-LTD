@@ -1,7 +1,7 @@
 import About from "@/components/About";
 import Mission from "@/components/Mission";
 import Vision from "@/components/Vision";
-// import Pillar from "@/components/Pillar";
+import Pillar from "@/components/Pillar";
 // import Invest from "@/components/Invest";
 
 export default function Home() {
@@ -16,7 +16,8 @@ export default function Home() {
         <Vision />
       </div>
       <div className="relative">
-      {/*<Pillar />
+        <Pillar />
+      {/*
       <div className="gradient-04 z-0" />
       <Invest /> */}
       </div>
