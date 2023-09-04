@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import aboutStyle from "../styles/About.module.css";
 import { AboutText } from "../constants";
 import { staggerContainer } from "../utils/motion";
+import { TitleText } from "./CustomTexts";
 
 const About = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -35,7 +36,7 @@ const About = () => {
               key={index}
             >
               <div className={aboutStyle.caption}>
-                <h2 className="font-extrabold">{text.title}</h2>
+                <TitleText title={text.title}/>
                 <p>{text.description}</p>
               </div>
             </div>

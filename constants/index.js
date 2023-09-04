@@ -1,35 +1,73 @@
-export const sidebarLinks = [
+export const footerLinks = [
     {
-        imgURL: "/assets/home.svg",
-        route: "/",
-        label: "Home",
+      title: "For developers",
+      links: [
+        "Go Pro!",
+        "Explore development work",
+        "Development blog",
+        "Code podcast",
+        "Open-source projects",
+        "Refer a Friend",
+        "Code of conduct",
+      ],
     },
     {
-        imgURL: "/assets/search.svg",
-        route: "/search",
-        label: "Search",
+      title: "Hire developers",
+      links: [
+        "Post a job opening",
+        "Post a freelance project",
+        "Search for developers",
+      ],
     },
     {
-        imgURL: "/assets/heart.svg",
-        route: "/activity",
-        label: "Activity",
+      title: "Brands",
+      links: ["Advertise with us"],
     },
     {
-        imgURL: "/assets/create.svg",
-        route: "/create-thread",
-        label: "Create Thread",
+      title: "Company",
+      links: [
+        "About",
+        "Careers",
+        "Support",
+        "Media kit",
+        "Testimonials",
+        "API",
+        "Terms of service",
+        "Privacy policy",
+        "Cookie policy",
+      ],
     },
     {
-        imgURL: "/assets/community.svg",
-        route: "/communities",
-        label: "Communities",
+      title: "Directories",
+      links: [
+        "Development jobs",
+        "Developers for hire",
+        "Freelance developers for hire",
+        "Tags",
+        "Places",
+      ],
     },
     {
-        imgURL: "/assets/user.svg",
-        route: "/profile",
-        label: "Profile",
+      title: "Development assets",
+      links: [
+        "Code Marketplace",
+        "GitHub Marketplace",
+        "NPM Registry",
+        "Packagephobia",
+      ],
     },
-];
+    {
+      title: "Development Resources",
+      links: [
+        "Freelancing",
+        "Development Hiring",
+        "Development Portfolio",
+        "Development Education",
+        "Creative Process",
+        "Development Industry Trends",
+      ],
+    },
+  ];
 export const NavLinks = [
     { route: "#about", key: "About Us", text: "About Us" },
     { route: "#pillars", key: "Investment Sectors", text: "Investment Sectors" },

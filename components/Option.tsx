@@ -5,13 +5,15 @@ import { fadeIn } from "../utils/motion";
 import { motion } from "framer-motion";
 
 const Option = ({ clr, title, index, id, description }: optionProp) => {
-    const [isDropped, setIsDropped] = useState(false);
+  const [isDropped, setIsDropped] = useState(false);
 
-    const toggleDrop = () => {
-      setIsDropped((prevState) => !prevState);
-    };
+  const toggleDrop = () => {
+    setIsDropped((prevState) => !prevState);
+  };
   return (
     <motion.div
+      initial="hidden"
+      whileInView="show"
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
       className={`${optionStyles.card} ${isDropped ? optionStyles.active : ""}`}
       style={{ "--clr": clr }}
@@ -28,10 +30,10 @@ const Option = ({ clr, title, index, id, description }: optionProp) => {
   );
 };
 interface optionProp {
-  id: number
-  index: number
-  title: string
-  clr: string
-  description: string
-};
+  id: number;
+  index: number;
+  title: string;
+  clr: string;
+  description: string;
+}
 export default Option;
