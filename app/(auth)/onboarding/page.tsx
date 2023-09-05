@@ -7,7 +7,6 @@ import AccountProfile from "@/components/forms/AccountProfile";
 async function Page() {
   const user = await currentUser();
   if (!user) return null; // to avoid typescript warnings
-
   const userInfo = await fetchUser(user.id);
   if (userInfo?.onboarded) redirect("/");
 
@@ -15,8 +14,17 @@ async function Page() {
     id: user.id,
     objectId: userInfo?._id,
     username: userInfo ? userInfo?.username : user.username,
-    name: userInfo ? userInfo?.name : user.firstName ?? "",
-    bio: userInfo ? userInfo?.bio : "",
+    surname: userInfo ? userInfo?.surname : user.lastName ?? "",
+    firstName: userInfo ? userInfo?.firstName : user.firstName ?? "",
+    homeAddress: userInfo ? userInfo?.homeAddress : "",
+    officeAddress: userInfo ? userInfo?.officeAddress : "",
+    email: userInfo ? userInfo?.email : user.emailAddresses[0].emailAddress ?? "",
+    date_of_birth: userInfo ? userInfo?.date_of_birth : user.birthday ?? "",
+    gender: userInfo ? userInfo?.gender : user.gender ?? "",
+    mobile_number: userInfo ? userInfo?.mobile_number : "",
+    next_of_kin: userInfo ? userInfo?.next_of_kin : "",
+    level_of_education: userInfo ? userInfo?.level_of_education : "",
+    mother_middle_name: userInfo ? userInfo?.mother_middle_name : "",
     image: userInfo ? userInfo?.image : user.imageUrl,
   };
 
