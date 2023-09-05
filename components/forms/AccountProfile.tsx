@@ -24,8 +24,17 @@ interface Props {
     id: string;
     objectId: string;
     username: string;
-    name: string;
-    bio: string;
+    firstName: string;
+    surname: string;
+    homeAddress: string;
+    officeAddress: string;
+    email: string;
+    date_of_birth: string;
+    gender : string;
+    mobile_number: string;
+    next_of_kin: string;
+    level_of_education: string;
+    mother_middle_name: string;
     image: string;
   };
   btnTitle: string;
@@ -40,9 +49,18 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
     resolver: zodResolver(UserValidation),
     defaultValues: {
       profile_photo: user?.image || "",
-      name: user?.name || "",
+      surname: user?.surname || "",
       username: user?.username || "",
-      bio: user?.bio || "",
+      email: user?.email || "",
+      firstName: user?.firstName || "",
+      homeAddress: user?.homeAddress || "",
+      officeAddress: user?.officeAddress || "",
+      date_of_birth: user?.date_of_birth || "",
+      gender: user?.gender || "",
+      mother_middle_name: user?.mother_middle_name || "",
+      next_of_kin: user?.next_of_kin || "",
+      level_of_education: user?.level_of_education || "",
+      mobile_number: user?.mobile_number || "",
     },
   });
   const handleImage = (
