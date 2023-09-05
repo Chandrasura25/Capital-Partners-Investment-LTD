@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -178,11 +177,11 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                 Bio
               </FormLabel>
               <FormControl>
-                <Textarea
+              <Input
                   {...field}
-                  rows={10}
+                  type="text"
                   className="account-form_input no-focus"
-                ></Textarea>
+                />
               </FormControl>
               <FormMessage/>
             </FormItem>
