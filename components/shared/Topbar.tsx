@@ -1,12 +1,14 @@
 import { SignedIn, SignOutButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-
-function Topbar() {
+interface userProp{
+  
+}
+function Topbar({userInfo}:userProp) {
   return (
     <nav className="topbar">
       <Link href="/" className="flex items-center gap-4">
-        <Image  src="/assets/logo1.jpg" alt="logo" width={28} height={28} />
+        <Image  src="/assets/logo1.jpg" alt="logo" width={30} height={30} className="rounded-full" />
         <p className="text-heading3-bold text-light-1 max-xs:hidden">Capital Partners Investment LTD</p>
       </Link>
 
@@ -24,6 +26,16 @@ function Topbar() {
               </div>
             </SignOutButton>
           </SignedIn>
+        </div>
+         <div className="hidden md:block">
+              <div className="flex cursor-pointer">
+                <Image
+                  src="/assets/logout.svg"
+                  alt="logout"
+                  width={24}
+                  height={24}
+                />
+              </div>
         </div>
       </div>
     </nav>
