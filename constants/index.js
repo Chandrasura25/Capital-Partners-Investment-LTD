@@ -56,8 +56,8 @@ export const NavLinks = [
 export const sidebarLinks = [
     {
         imgURL: "/assets/home.svg",
-        route: "/",
-        label: "Home",
+        route: "/dashboard",
+        label: "Dashboard",
     },
     {
         imgURL: "/assets/search.svg",
