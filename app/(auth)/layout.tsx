@@ -1,6 +1,8 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
 import "../globals.css";
+import { Toaster } from "@/components/ui/toaster"
+
 export const metadata = {
   title: "Capital Partners Investment LTD",
   description: "Capital Partners Investment LTD",
@@ -16,6 +18,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${inter.className}`}>
           <div className="">{children}</div>
+          <Toaster />
           </body>
       </html>
     </ClerkProvider>
