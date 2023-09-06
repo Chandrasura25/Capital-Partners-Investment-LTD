@@ -66,7 +66,7 @@
   }
 
   .topbar {
-    @apply fixed top-0 z-30 flex w-full items-center justify-between bg-[#43a5f6] px-6 py-3 shadow-sm;
+    @apply fixed top-0 z-30 flex w-full items-center justify-between bg-[#150B62] px-6 py-3 shadow-sm;
   }
 
   .bottombar {
@@ -82,7 +82,7 @@
   }
 
   .leftsidebar {
-    @apply sticky left-0 top-0 z-20 flex h-screen w-fit flex-col justify-between overflow-auto border-r border-r-dark-4 bg-gray-200 pb-5 pt-28 max-md:hidden;
+    @apply sticky left-0 top-0 z-20 flex h-screen w-fit flex-col justify-between overflow-auto border-r border-r-dark-4 bg-[#150B62] pb-5 pt-28 max-md:hidden;
   }
 
   .leftsidebar_link {
@@ -152,7 +152,7 @@
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
-    background: #09090a;
+    background: #150B62;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
