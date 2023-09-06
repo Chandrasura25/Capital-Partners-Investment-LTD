@@ -22,18 +22,35 @@ export async function fetchUser(userId: string) {
 interface Params {
   userId: string;
   username: string;
-  name: string;
-  bio: string;
+  firstName: string;
+  surname: string;
+  homeAddress: string;
+  officeAddress: string;
+  email: string;
+  date_of_birth: string;
+  gender: string;
+  mobile_number: string;
+  next_of_kin: string;
+  level_of_education: string;
+  mother_middle_name: string;
   image: string;
   path: string;
 }
-
 export async function updateUser({
   userId,
-  bio,
-  name,
-  path,
   username,
+  firstName,
+  surname,
+  homeAddress,
+  officeAddress,
+  email,
+  date_of_birth,
+  gender,
+  mobile_number,
+  next_of_kin,
+  level_of_education,
+  mother_middle_name,
+  path,
   image,
 }: Params): Promise<void> {
   try {
@@ -43,8 +60,17 @@ export async function updateUser({
       { id: userId },
       {
         username: username.toLowerCase(),
-        name,
-        bio,
+        firstName,
+        surname,
+        homeAddress,
+        officeAddress,
+        email,
+        date_of_birth,
+        gender,
+        mobile_number,
+        next_of_kin,
+        level_of_education,
+        mother_middle_name,
         image,
         onboarded: true,
       },

@@ -103,19 +103,27 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
         values.profile_photo = imgRes[0].fileUrl;
       }
     }
-    // await updateUser({
-    //   username: values.username,
-    //   name: values.name,
-    //   name: values.name,
-    //   bio: values.bio,
-    //   image: values.profile_photo,
-    //   userId: user.id,
-    //   path: pathname,
-    // });
+    await updateUser({
+      username: values.username,
+      firstName: values.firstName,
+      surname: values.surname,
+      homeAddress: values.homeAddress,
+      officeAddress: values.officeAddress,
+      email: values.email,
+      date_of_birth: values.date_of_birth,
+      gender: values.gender,
+      mobile_number: values.mobile_number,
+      next_of_kin: values.next_of_kin,
+      level_of_education: values.level_of_education,
+      mother_middle_name: values.mother_middle_name,
+      image: values.profile_photo,
+      userId: user.id,
+      path: pathname,
+    });
     if (pathname === "/profile/edit") {
       router.back();
     } else {
-      router.push("/");
+      router.push("/dashboard");
     }
   };
   return (
@@ -223,7 +231,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
           )}
         />
         <Button type="submit" className="bg-blue">
-          Submit
+          {btnTitle}
         </Button>
       </form>
     </Form>
