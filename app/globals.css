@@ -200,7 +200,7 @@
 }
 
 .account-form_input {
-  @apply border border-primary-500 bg-white text-gray-700 !important;
+  @apply border border-[#43a5f6] bg-white text-gray-700 !important;
 }
 
 /* Comment Form */
