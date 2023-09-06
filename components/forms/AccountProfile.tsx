@@ -7,6 +7,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -46,16 +53,15 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
   const router = useRouter();
 
   const fieldMappings = {
-    surname: 'Surname',
-    firstName: 'First Name',
-    username:"Username",
-    gender:"Gender",
+    surname: "Surname",
+    firstName: "First Name",
+    username: "Username",
     homeAddress: "Home Address",
     officeAddress: "Office Address",
-    mother_middle_name:"Mother Middle Name",
-    next_of_kin: 'Next of Kin', 
-    mobile_number:"Mobile Number",
-    level_of_education:"Level of Education"
+    mother_middle_name: "Mother Middle Name",
+    next_of_kin: "Next of Kin",
+    mobile_number: "Mobile Number",
+    level_of_education: "Level of Education",
   };
 
   const form = useForm({
@@ -189,7 +195,17 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
             </FormItem>
           )}
         />
-        {["surname", "firstName","username","gender","homeAddress","officeAddress","mother_middle_name","next_of_kin","mobile_number","level_of_education"].map((child) => (
+        {[
+          "surname",
+          "firstName",
+          "username",
+          "homeAddress",
+          "officeAddress",
+          "mother_middle_name",
+          "next_of_kin",
+          "mobile_number",
+          "level_of_education",
+        ].map((child) => (
           <FormField
             control={form.control}
             name={child}
@@ -211,6 +227,30 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
             )}
           />
         ))}
+        <FormField
+          control={form.control}
+          name="gender"
+          render={({ field }) => (
+            <FormItem className="flex flex-col gap-3 w-full">
+              <FormLabel className="text-base-semibold text-dark-2">
+                Gender
+              </FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger className="account-form_input no-focus">
+                    <SelectValue placeholder="Select a gender" className="text-dark-2" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value="Male">Male</SelectItem>
+                  <SelectItem value="Female">Female</SelectItem>
+                  <SelectItem value="None">None</SelectItem>
+                </SelectContent>
+              </Select>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="date_of_birth"
