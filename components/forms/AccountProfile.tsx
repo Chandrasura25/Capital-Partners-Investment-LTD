@@ -30,7 +30,7 @@ interface Props {
     officeAddress: string;
     email: string;
     date_of_birth: string;
-    gender : string;
+    gender: string;
     mobile_number: string;
     next_of_kin: string;
     level_of_education: string;
@@ -45,14 +45,27 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
   const pathname = usePathname();
   const router = useRouter();
 
+  const fieldMappings = {
+    surname: 'Surname',
+    firstName: 'First Name',
+    username:"Username",
+    gender:"Gender",
+    homeAddress: "Home Address",
+    officeAddress: "Office Address",
+    mother_middle_name:"Mother Middle Name",
+    next_of_kin: 'Next of Kin', 
+    mobile_number:"Mobile Number",
+    level_of_education:"Level of Education"
+  };
+
   const form = useForm({
     resolver: zodResolver(UserValidation),
     defaultValues: {
       profile_photo: user?.image || "",
       surname: user?.surname || "",
       username: user?.username || "",
-      email: user?.email || "",
       firstName: user?.firstName || "",
+      email: user?.email || "",
       homeAddress: user?.homeAddress || "",
       officeAddress: user?.officeAddress || "",
       date_of_birth: user?.date_of_birth || "",
@@ -90,14 +103,15 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
         values.profile_photo = imgRes[0].fileUrl;
       }
     }
-    await updateUser({
-      username: values.username,
-      name: values.name,
-      bio: values.bio,
-      image: values.profile_photo,
-      userId: user.id,
-      path: pathname,
-    });
+    // await updateUser({
+    //   username: values.username,
+    //   name: values.name,
+    //   name: values.name,
+    //   bio: values.bio,
+    //   image: values.profile_photo,
+    //   userId: user.id,
+    //   path: pathname,
+    // });
     if (pathname === "/profile/edit") {
       router.back();
     } else {
@@ -144,68 +158,71 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                   onChange={(e) => handleImage(e, field.onChange)}
                 />
               </FormControl>
-              <FormMessage/>
+              <FormMessage />
             </FormItem>
           )}
         />
         <FormField
           control={form.control}
-          name="name"
+          name="email"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-3 w-full">
-              <FormLabel className="text-base-semibold text-light-2">
-                Name
+              <FormLabel className="text-base-semibold text-dark-2">
+                Email Address
               </FormLabel>
               <FormControl>
                 <Input
                   {...field}
-                  type="text"
+                  type="email"
                   className="account-form_input no-focus"
                 />
               </FormControl>
-              <FormMessage/>
+              <FormMessage />
             </FormItem>
           )}
         />
+        {["surname", "firstName","username","gender","homeAddress","officeAddress","mother_middle_name","next_of_kin","mobile_number","level_of_education"].map((child) => (
+          <FormField
+            control={form.control}
+            name={child}
+            key={child}
+            render={({ field }) => (
+              <FormItem className="flex flex-col gap-3 w-full">
+                <FormLabel className="text-base-semibold text-dark-2">
+                  {fieldMappings[child]}
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="text"
+                    className="account-form_input no-focus"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        ))}
         <FormField
           control={form.control}
-          name="username"
+          name="date_of_birth"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-3 w-full">
-              <FormLabel className="text-base-semibold text-light-2">
-                Username
+              <FormLabel className="text-base-semibold text-dark-2">
+                Date of Birth
               </FormLabel>
               <FormControl>
                 <Input
                   {...field}
-                  type="text"
+                  type="date"
                   className="account-form_input no-focus"
                 />
               </FormControl>
-              <FormMessage/>
+              <FormMessage />
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="bio"
-          render={({ field }) => (
-            <FormItem className="flex flex-col gap-3 w-full">
-              <FormLabel className="text-base-semibold text-light-2">
-                Bio
-              </FormLabel>
-              <FormControl>
-              <Input
-                  {...field}
-                  type="text"
-                  className="account-form_input no-focus"
-                />
-              </FormControl>
-              <FormMessage/>
-            </FormItem>
-          )}
-        />
-        <Button type="submit" className="bg-primary-500">
+        <Button type="submit" className="bg-blue">
           Submit
         </Button>
       </form>
