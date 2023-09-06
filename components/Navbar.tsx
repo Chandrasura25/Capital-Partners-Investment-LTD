@@ -34,7 +34,6 @@ const Navbar = () => {
         <ul>
           {NavLinks.map((link) => {
              const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
-              console.log(pathname, link.route, isActive)
             return (
               <li>
                 <Link
