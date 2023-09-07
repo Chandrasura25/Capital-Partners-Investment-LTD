@@ -80,7 +80,7 @@ export const sidebarLinks = [
         label: "Withdrawal",
     },
      {
-        imgURL: "/assets/menu.png",
+        imgURL: "/assets/menu.svg",
         route: "#",
         label: "More",
     },
