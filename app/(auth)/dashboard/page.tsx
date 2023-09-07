@@ -14,13 +14,12 @@ async function Page() {
   return (
     <>
       <Topbar userInfo={userInfo} />
-      <main className="flex flex-row">
+      <main className="flex flex-row bg-[#000924]">
         <LeftSidebar />
-        <section className="main-container">
+        <section className="main-container gradient-03">
           <div className="w-full max-w-4xl"></div>
         </section>
       </main>
-
       <Bottombar />
     </>
   );
