@@ -4,6 +4,7 @@ import Image from "next/image";
 import { sidebarLinks } from "@/constants";
 import { usePathname, useRouter } from "next/navigation";
 import { SignedIn, SignOutButton, useAuth } from "@clerk/nextjs";
+
 function LeftSidebar() {
   const router = useRouter();
   const pathname = usePathname();
