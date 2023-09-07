@@ -275,4 +275,3 @@ export const optionText = [
         clr: "#0f8a1c",
     },
 ]
-const dashboardMenu =[]
