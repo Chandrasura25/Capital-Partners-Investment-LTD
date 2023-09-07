@@ -62,29 +62,66 @@ export const sidebarLinks = [
     {
         imgURL: "/assets/search.svg",
         route: "/search",
-        label: "Search",
+        label: "Investment History",
     },
     {
         imgURL: "/assets/heart.svg",
         route: "/activity",
-        label: "Activity",
+        label: "Statement of Account",
     },
     {
         imgURL: "/assets/create.svg",
         route: "/create-thread",
-        label: "Create Thread",
+        label: "Withdrawal",
     },
     {
         imgURL: "/assets/community.svg",
         route: "/communities",
-        label: "Communities",
+        label: "Customer Care",
+    },
+    // {
+    //     imgURL: "/assets/user.svg",
+    //     route: "/profile",
+    //     label: "Profile",
+    // },
+     {
+        imgURL: "/assets/user.svg",
+        route: "/profile",
+        label: "Share Testimony",
+    },
+];
+export const dashboardMenu=[
+    {
+        imgURL: "/assets/home.svg",
+        route: "/dashboard",
+        label: "Days of Investment",
+    },
+    {
+        imgURL: "/assets/search.svg",
+        route: "/search",
+        label:"Weeks of Investment",
+    },
+    {
+        imgURL: "/assets/heart.svg",
+        route: "/activity",
+        label:"Months of Investment",
+    },
+    {
+        imgURL: "/assets/create.svg",
+        route: "/create-thread",
+        label: "Number of Unit",
+    },
+    {
+        imgURL: "/assets/community.svg",
+        route: "/communities",
+        label: "Additional Unit",
     },
     {
         imgURL: "/assets/user.svg",
         route: "/profile",
-        label: "Profile",
+        label: "Investment Growth",
     },
-];
+]
 export const AboutText = [
     {
         id: 1,

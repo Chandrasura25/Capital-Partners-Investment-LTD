@@ -12,6 +12,11 @@
 .card.active {
   height: 530px;
 }
+@media (max-width:400px){
+  .card.active {
+    height: 600px;
+  }
+}
 .card .circle {
   position: relative;
   width: 100%;
