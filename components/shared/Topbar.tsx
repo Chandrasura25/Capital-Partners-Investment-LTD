@@ -47,7 +47,7 @@ function Topbar({ userInfo }: userProp) {
               height={24}
               className="rounded-full"
             />
-            <p className="text-[14px] text-normal text-light">
+            <p className="text-[14px] text-normal text-light-1">
               {userInfo.username}
             </p>
           </div>
