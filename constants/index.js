@@ -60,6 +60,11 @@ export const sidebarLinks = [
         label: "Dashboard",
     },
     {
+        imgURL: "/assets/user.svg",
+        route: "/profile",
+        label: "Profile",
+    },
+    {
         imgURL: "/assets/search.svg",
         route: "/search",
         label: "Investment History",
@@ -74,21 +79,22 @@ export const sidebarLinks = [
         route: "/create-thread",
         label: "Withdrawal",
     },
-    {
-        imgURL: "/assets/community.svg",
-        route: "/communities",
-        label: "Customer Care",
+     {
+        imgURL: "/assets/menu.png",
+        route: "#",
+        label: "More",
     },
     // {
+    //     imgURL: "/assets/community.svg",
+    //     route: "/communities",
+    //     label: "Customer Care",
+    // },
+
+    //  {
     //     imgURL: "/assets/user.svg",
     //     route: "/profile",
-    //     label: "Profile",
+    //     label: "Share Testimony",
     // },
-     {
-        imgURL: "/assets/user.svg",
-        route: "/profile",
-        label: "Share Testimony",
-    },
 ];
 export const dashboardMenu=[
     {
