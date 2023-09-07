@@ -75,7 +75,7 @@ const Invest = () => {
         </motion.div>  
         <div className="relative min-h-[300px] w-full rounded-[20px] bg-[#010f3b]">
           <div className="feedback-gradient z-0"/>
-          <div className="relative w-full p-[20px] flex items-center justify-center flex-wrap">
+          <div className="relative w-full flex items-center justify-center flex-wrap sm:p-[20px]">
             {optionText.map((option, index) => (
               <Option key={index} {...option} index={index} />
             ))}
