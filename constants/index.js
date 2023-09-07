@@ -50,7 +50,7 @@ export const NavLinks = [
     { route: "/sign-in", key: "Investment Portal", text: "Investment Portal" },
     { route: "#invest", key: "Why you should invest with us", text: "Why you should invest with us" },
     { route: "/faqs", key: "FAQS", text: "FAQS" },
-    { route: "#", key: "Success Stories", text: "Success Stories" },
+    { route: "/stories", key: "Success Stories", text: "Success Stories" },
     { route: "#contact", key: "Contact", text: "Contact" },
 ];
 export const sidebarLinks = [

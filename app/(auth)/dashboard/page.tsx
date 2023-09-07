@@ -9,14 +9,11 @@ async function Page() {
   const user = await currentUser();
   if (!user) return null;
   const userInfo = await fetchUser(user.id);
-  console.log(userInfo);
-  // if (userInfo?.onboarded) redirect("/");
+  if (!userInfo?.onboarded) redirect("/onboarding");
 
   return (
     <>
-      {/* <Topbar userInfo={userInfo} /> */}
       <Topbar userInfo={userInfo} />
-
       <main className="flex flex-row">
         <LeftSidebar />
         <section className="main-container">
