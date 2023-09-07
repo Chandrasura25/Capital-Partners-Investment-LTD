@@ -16,7 +16,7 @@ async function Page() {
       <Topbar userInfo={userInfo} />
       <main className="flex flex-row bg-[#000924]">
         <LeftSidebar />
-        <section className="main-container gradient-03">
+        <section className="main-container gradient-07">
           <div className="w-full max-w-4xl"></div>
         </section>
       </main>
