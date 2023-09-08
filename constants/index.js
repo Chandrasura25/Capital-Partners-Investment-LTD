@@ -79,7 +79,7 @@ export const sidebarLinks = [
         route: "/withdrawal",
         label: "Withdrawal",
     },
-     {
+    {
         imgURL: "/assets/menu.svg",
         route: "#",
         label: "More",
@@ -96,36 +96,42 @@ export const sidebarLinks = [
     //     label: "Share Testimony",
     // },
 ];
-export const dashboardMenu=[
+export const dashboardMenu = [
     {
         imgURL: "/assets/alarm.svg",
         route: "/days",
         label: "Days of Investment",
+        clr: "#ff0f5b",
     },
     {
         imgURL: "/assets/hourglass.svg",
         route: "/weeks",
-        label:"Weeks of Investment",
+        label: "Weeks of Investment",
+        clr: "#be01fe",
     },
     {
         imgURL: "/assets/calendar-check.svg",
         route: "/months",
-        label:"Months of Investment",
+        label: "Months of Investment",
+        clr: "#01b4ff",
     },
     {
         imgURL: "/assets/dollar-circle.svg",
         route: "/unit",
         label: "Number of Unit",
+        clr: "#ff5b0f",
     },
     {
         imgURL: "/assets/comments-dollar-solid.svg",
         route: "/add-unit",
         label: "Additional Unit",
+        clr: "#0f8a1c",
     },
     {
         imgURL: "/assets/chart-646.svg",
         route: "/growth",
         label: "Investment Growth",
+        clr: "#4500ff",
     },
 ]
 export const AboutText = [
