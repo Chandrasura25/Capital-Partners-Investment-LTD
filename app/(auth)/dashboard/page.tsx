@@ -1,4 +1,4 @@
-"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import Bottombar from "@/components/shared/Bottombar";
