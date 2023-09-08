@@ -65,8 +65,8 @@ export const sidebarLinks = [
         label: "Profile",
     },
     {
-        imgURL: "/assets/search.svg",
-        route: "/search",
+        imgURL: "/assets/coin-dollar.svg",
+        route: "/history",
         label: "Investment History",
     },
     {
@@ -75,8 +75,8 @@ export const sidebarLinks = [
         label: "Statement of Account",
     },
     {
-        imgURL: "/assets/create.svg",
-        route: "/create-thread",
+        imgURL: "/assets/money-withdraw.svg",
+        route: "/withdrawal",
         label: "Withdrawal",
     },
      {
@@ -98,33 +98,33 @@ export const sidebarLinks = [
 ];
 export const dashboardMenu=[
     {
-        imgURL: "/assets/home.svg",
-        route: "/dashboard",
+        imgURL: "/assets/alarm.svg",
+        route: "/days",
         label: "Days of Investment",
     },
     {
-        imgURL: "/assets/search.svg",
-        route: "/search",
+        imgURL: "/assets/hourglass.svg",
+        route: "/weeks",
         label:"Weeks of Investment",
     },
     {
-        imgURL: "/assets/heart.svg",
-        route: "/activity",
+        imgURL: "/assets/calendar-check.svg",
+        route: "/months",
         label:"Months of Investment",
     },
     {
-        imgURL: "/assets/create.svg",
-        route: "/create-thread",
+        imgURL: "/assets/dollar-circle.svg",
+        route: "/unit",
         label: "Number of Unit",
     },
     {
-        imgURL: "/assets/community.svg",
-        route: "/communities",
+        imgURL: "/assets/comments-dollar-solid.svg",
+        route: "/add-unit",
         label: "Additional Unit",
     },
     {
-        imgURL: "/assets/user.svg",
-        route: "/profile",
+        imgURL: "/assets/chart-646.svg",
+        route: "/growth",
         label: "Investment Growth",
     },
 ]
