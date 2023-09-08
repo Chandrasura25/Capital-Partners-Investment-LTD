@@ -24,21 +24,7 @@ function Topbar({ userInfo }: userProp) {
       </Link>
 
       <div className="flex items-center gap-1">
-        <div className="block md:hidden">
-          <SignedIn>
-            <SignOutButton>
-              <div className="flex cursor-pointer">
-                <Image
-                  src="/assets/logout.svg"
-                  alt="logout"
-                  width={24}
-                  height={24}
-                />
-              </div>
-            </SignOutButton>
-          </SignedIn>
-        </div>
-        <div className="hidden md:block">
+        <div className="block">
           <div className="flex cursor-pointer gap-3">
             <UserButton afterSignOutUrl="/sign-in" />
           </div>
