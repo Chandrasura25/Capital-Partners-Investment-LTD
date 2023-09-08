@@ -1,4 +1,4 @@
-import { SignedIn, SignOutButton } from "@clerk/nextjs";
+import { SignedIn, SignOutButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 interface userProp {
@@ -40,16 +40,7 @@ function Topbar({ userInfo }: userProp) {
         </div>
         <div className="hidden md:block">
           <div className="flex cursor-pointer gap-3">
-            <Image
-              src={userInfo.image}
-              alt="User Logo"
-              width={24}
-              height={24}
-              className="rounded-full"
-            />
-            <p className="text-[14px] text-normal text-light-1">
-              {userInfo.username}
-            </p>
+            <UserButton afterSignOutUrl="/sign-in" />
           </div>
         </div>
       </div>
