@@ -5,6 +5,7 @@ import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { AddUnit } from "@/constants";
+import { Button } from "@/components/ui/button";
 async function Page() {
   const user = await currentUser();
   if (!user) return null;
@@ -16,8 +17,8 @@ async function Page() {
       <main className="flex flex-row bg-[#000924]">
         <LeftSidebar />
         <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
-          <div className="">
-            <div className="max-w-md p-5 glassmorphism rounded-[20px]">
+          <div className="max-w-md">
+            <div className="p-5 glassmorphism rounded-[20px]">
               <h4 className="head-text uppercase mb-3">Note the following</h4>
               {AddUnit.map((text) => (
                 <p className="text-white mb-3 text-[20px]" key={text.id}>
@@ -25,6 +26,9 @@ async function Page() {
                 </p>
               ))}
             </div>
+            <Button type="submit" className="bg-[#43a5f6] uppercase">
+              Invest Here
+            </Button>
           </div>
         </section>
       </main>
