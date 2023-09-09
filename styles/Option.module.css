@@ -7,15 +7,12 @@
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   transition: 0.5s;
 }
-.card.active{
+.card.active {
   height: 500px;
 }
 .card .content {
@@ -24,28 +21,21 @@
   transition: 0.5s;
 }
 .card .content h2 {
-  position: absolute;
-  right: 30px;
-  font-size: 6em;
+  transform: translateX(100px);
+  font-size: 4em;
   color: rgba(255, 255, 255, 0.5);
   pointer-events: none;
 }
 .card .content h3 {
   margin-top: 20px;
-  font-size: 1.8em;
+  font-size: 1.3em;
   color: var(--clr);
   z-index: 1;
 }
-.card .content {
-  position: absolute;
-  bottom: 10px;
-  page-break-after: 20px;
-  text-align: center;
-  padding: 0 20px;
-}
 .card .content p {
-  height: 130px;
+  height: 120px;
   overflow: hidden;
+  color: #fff;
 }
 .card.active .content p {
   height: auto;
@@ -54,9 +44,6 @@
   filter: blur(0px);
   transform: scale(1.05);
   opacity: 1;
-}
-.card .content p {
-  color: #666;
 }
 .card.active .content p {
   font-size: 0.9em;
