@@ -70,7 +70,7 @@ export const sidebarLinks = [
         label: "Investment History",
     },
     {
-        imgURL: "/assets/heart.svg",
+        imgURL: "/assets/address-book-1109.svg",
         route: "/activity",
         label: "Statement of Account",
     },
