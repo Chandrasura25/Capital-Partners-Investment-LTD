@@ -134,6 +134,24 @@ export const dashboardMenu = [
         clr: "#4500ff",
     },
 ]
+export const AddUnit = [
+    {
+        id:1,
+        title: 'A unit of Investment is #50,000.',
+    },
+    {
+        id:2,
+        title: 'You can invest as many units as possible.',
+    },
+    {
+        id:3,
+        title: 'We give 300% profit (Return on Investment on each unit) in 500 days.',
+    },
+    {
+        id: 4,
+        title: 'You can withdraw daily as you deem fit.',
+    },
+];
 export const AboutText = [
     {
         id: 1,
