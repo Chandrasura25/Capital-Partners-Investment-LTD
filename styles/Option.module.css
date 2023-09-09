@@ -38,6 +38,7 @@
 }
 .card .content h3 {
   margin-top: 10px;
+  margin-bottom: 5px;
   font-size: 1.3em;
   color: var(--clr);
   z-index: 1;
