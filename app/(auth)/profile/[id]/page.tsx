@@ -17,9 +17,9 @@ async function Page({ params }: { params: { id: string } }) {
       <Topbar userInfo={userInfo} />
       <main className="flex flex-row bg-[#000924]">
         <LeftSidebar />
-        <section className="main-container gradient-07">
+        <section className="main-container relative bg-[rgba(31, 38, 135, 0.37)]">
           <div className="w-full max-w-4xl">
-            <p className="text-xl text-light-1">Profile</p>
+            Profile Page
           </div>
         </section>
       </main>
