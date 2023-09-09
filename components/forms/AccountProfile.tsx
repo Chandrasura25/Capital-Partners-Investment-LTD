@@ -45,8 +45,9 @@ interface Props {
     image: string;
   };
   btnTitle: string;
+  textStyle?: string;
 }
-const AccountProfile = ({ user, btnTitle }: Props) => {
+const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
   const [files, setFiles] = useState<File[]>([]);
   const { startUpload } = useUploadThing("media");
   const pathname = usePathname();
@@ -213,7 +214,11 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
             key={child}
             render={({ field }) => (
               <FormItem className="flex flex-col gap-3 w-full">
-                <FormLabel className="text-base-semibold text-dark-2">
+                <FormLabel
+                  className={`text-base-semibold ${
+                    textStyle === "" ? "text-dark-2" : textStyle
+                  } `}
+                >
                   {fieldMappings[child]}
                 </FormLabel>
                 <FormControl>
@@ -239,7 +244,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className="account-form_input no-focus">
-                    <SelectValue placeholder="Select a gender" className="text-dark-2" />
+                    <SelectValue
+                      placeholder="Select a gender"
+                      className="text-dark-2"
+                    />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
