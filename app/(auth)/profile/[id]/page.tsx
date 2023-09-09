@@ -13,7 +13,7 @@ async function Page({ params }: { params: { id: string } }) {
 
   const userInfo = await fetchUser(params.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
-    const userData = {
+  const userData = {
     id: user.id,
     objectId: userInfo?._id,
     username: userInfo ? userInfo?.username : user.username,
@@ -21,7 +21,9 @@ async function Page({ params }: { params: { id: string } }) {
     firstName: userInfo ? userInfo?.firstName : user.firstName ?? "",
     homeAddress: userInfo ? userInfo?.homeAddress : "",
     officeAddress: userInfo ? userInfo?.officeAddress : "",
-    email: userInfo ? userInfo?.email : user.emailAddresses[0].emailAddress ?? "",
+    email: userInfo
+      ? userInfo?.email
+      : user.emailAddresses[0].emailAddress ?? "",
     date_of_birth: userInfo ? userInfo?.date_of_birth : user.birthday ?? "",
     gender: userInfo ? userInfo?.gender : user.gender ?? "",
     mobile_number: userInfo ? userInfo?.mobile_number : "",
@@ -37,9 +39,11 @@ async function Page({ params }: { params: { id: string } }) {
         <LeftSidebar />
         <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
           <div className="w-full max-w-4xl">
-            <div className="bg-white p-5 rounded-[20px] relative">
-              <h3 className="head-text">Review Your Profile</h3>
-            <AccountProfile user={userData} btnTitle="Save" />
+            <div className="bg-sky-600 p-5 rounded-[20px] relative">
+              <h3 className="head-text mb-3">Review Your Profile</h3>
+              <div className="p-4 flex justify-center">
+                <AccountProfile user={userData} btnTitle="Save" />
+              </div>
             </div>
           </div>
         </section>
