@@ -5,6 +5,7 @@ import Image from "next/image";
 import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Topbar from "@/components/shared/Topbar";
+import AccountProfile from "@/components/forms/AccountProfile";
 
 async function Page({ params }: { params: { id: string } }) {
   const user = await currentUser();
@@ -36,8 +37,8 @@ async function Page({ params }: { params: { id: string } }) {
         <LeftSidebar />
         <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
           <div className="w-full max-w-4xl">
-            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-between flex-wrap gap-4 md:gap-6">
-             
+            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-center">
+            <AccountProfile user={userData} btnTitle="Save" />
             </div>
           </div>
         </section>
