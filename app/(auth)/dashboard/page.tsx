@@ -27,7 +27,7 @@ async function Page() {
                   <Link
                     href={link.route}
                     key={link.label}
-                    className="bg-gray-900 rounded-[20px] p-2 w-[250px] shadow h-[200px] flex justify-center items-center flex-col gap-3"
+                    className="rounded-[20px] p-2 w-[250px] shadow h-[200px] flex justify-center items-center flex-col gap-3"
                     style={{background:link.clr}}
                   >
                     <Image
