@@ -4,7 +4,7 @@ import Topbar from "@/components/shared/Topbar";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-
+import { AddUnit } from "@/constants";
 async function Page() {
   const user = await currentUser();
   if (!user) return null;
@@ -16,7 +16,16 @@ async function Page() {
       <main className="flex flex-row bg-[#000924]">
         <LeftSidebar />
         <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
-          <div className="h-[400px]max-w-3xl glassmorphism">Add Units</div>
+          <div className="h-[400px]max-w-3xl p-3 glassmorphism rounded-[20px]">
+            <h4 className="text-3xl text-white uppercase mb-3">
+              Note the following
+            </h4>
+            {AddUnit.map((text) => (
+              <p className="text-white mb-3" key={text.id}>
+                {text.title}
+              </p>
+            ))}
+          </div>
         </section>
       </main>
       <Bottombar />
