@@ -22,12 +22,13 @@ async function Page() {
         <LeftSidebar />
         <section className="main-container relative bg-[rgba(31, 38, 135, 0.37)]">
           <div className="w-full max-w-4xl">
-            <div className="glassmorphism p-5 rounded-[20px] relative flex flex-wrap gap-4 md:gap-6">
+            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-between flex-wrap gap-4 md:gap-6">
               {dashboardMenu.map((link) =>  (
                   <Link
                     href={link.route}
                     key={link.label}
-                    className={`bg-[${link.clr}] rounded-[20px] p-2 w-[200px] shadow h-[200px]`}
+                    className="bg-gray-900 rounded-[20px] p-2 w-[250px] shadow h-[200px] flex justify-center items-center flex-col"
+                    style={{background:link.clr}}
                   >
                     <Image
                       src={link.imgURL}
