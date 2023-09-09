@@ -183,7 +183,11 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
           name="email"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-3 w-full">
-              <FormLabel className="text-base-semibold text-dark-2">
+              <FormLabel
+                className={`text-base-semibold ${
+                  textStyle === "" ? "text-dark-2" : textStyle
+                } `}
+              >
                 Email Address
               </FormLabel>
               <FormControl>
@@ -238,7 +242,11 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
           name="gender"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-3 w-full">
-              <FormLabel className="text-base-semibold text-dark-2">
+              <FormLabel
+                className={`text-base-semibold ${
+                  textStyle === "" ? "text-dark-2" : textStyle
+                } `}
+              >
                 Gender
               </FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -265,7 +273,11 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
           name="date_of_birth"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-3 w-full">
-              <FormLabel className="text-base-semibold text-dark-2">
+              <FormLabel
+                className={`text-base-semibold ${
+                  textStyle === "" ? "text-dark-2" : textStyle
+                } `}
+              >
                 Date of Birth
               </FormLabel>
               <FormControl>
