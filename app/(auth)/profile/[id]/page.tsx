@@ -12,6 +12,23 @@ async function Page({ params }: { params: { id: string } }) {
 
   const userInfo = await fetchUser(params.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
+    const userData = {
+    id: user.id,
+    objectId: userInfo?._id,
+    username: userInfo ? userInfo?.username : user.username,
+    surname: userInfo ? userInfo?.surname : user.lastName ?? "",
+    firstName: userInfo ? userInfo?.firstName : user.firstName ?? "",
+    homeAddress: userInfo ? userInfo?.homeAddress : "",
+    officeAddress: userInfo ? userInfo?.officeAddress : "",
+    email: userInfo ? userInfo?.email : user.emailAddresses[0].emailAddress ?? "",
+    date_of_birth: userInfo ? userInfo?.date_of_birth : user.birthday ?? "",
+    gender: userInfo ? userInfo?.gender : user.gender ?? "",
+    mobile_number: userInfo ? userInfo?.mobile_number : "",
+    next_of_kin: userInfo ? userInfo?.next_of_kin : "",
+    level_of_education: userInfo ? userInfo?.level_of_education : "",
+    mother_middle_name: userInfo ? userInfo?.mother_middle_name : "",
+    image: userInfo ? userInfo?.image : user.imageUrl,
+  };
   return (
     <>
       <Topbar userInfo={userInfo} />
