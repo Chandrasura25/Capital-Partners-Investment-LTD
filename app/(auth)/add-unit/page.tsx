@@ -16,7 +16,7 @@ async function Page() {
       <main className="flex flex-row bg-[#000924]">
         <LeftSidebar />
         <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
-          <div className="max-w-3xl p-5 glassmorphism rounded-[20px]">
+          <div className="max-w-md p-5 glassmorphism rounded-[20px]">
             <h4 className="text-4xl text-white uppercase mb-3">
               Note the following
             </h4>
