@@ -22,7 +22,7 @@ async function Page() {
         <LeftSidebar />
         <section className="main-container relative bg-[rgba(31, 38, 135, 0.37)]">
           <div className="w-full max-w-4xl">
-            <div className="relative flex flex-wrap gap-4 md:gap-6">
+            <div className="glassmorphism p-5 relative flex flex-wrap gap-4 md:gap-6">
               {dashboardMenu.map((link) =>  (
                   <Link
                     href={link.route}
