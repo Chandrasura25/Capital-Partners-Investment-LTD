@@ -18,9 +18,9 @@ const Option = ({ clr, title, index, id, description }: optionProp) => {
       className={`${optionStyles.card} ${isDropped ? optionStyles.active : ""}`}
       style={{ "--clr": clr }}
     >
-      <div className={optionStyles.circle}>
+      <div className={optionStyles.content}>
         <h2>0{id}</h2>
-        <h4>{title}</h4>
+        <h3>{title}</h3>
       </div>
       <div className={optionStyles.content}>
         <p>{description}</p>
