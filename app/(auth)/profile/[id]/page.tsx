@@ -38,8 +38,8 @@ async function Page({ params }: { params: { id: string } }) {
       <main className="flex flex-row bg-[#000924]">
         <LeftSidebar />
         <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
-          <div className="w-full max-w-4xl">
-            <div className="bg-blue-900 p-5 rounded-[20px] relative">
+          <div className="w-full max-w-3xl">
+            <div className="bg-blue-800 p-5 rounded-[20px] relative">
               <h3 className="head-text mb-3 text-center">Review Your Profile</h3>
               <div className="p-4 flex justify-center">
                 <AccountProfile user={userData} btnTitle="Save" />
