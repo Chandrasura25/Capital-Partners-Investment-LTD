@@ -22,7 +22,7 @@ const Option = ({ clr, title, index, id, description }: optionProp) => {
         <h2>0{id}</h2>
         <h3>{title}</h3>
       </div>
-      <div className={optionStyles.content}>
+      <div>
         <p>{description}</p>
         <button className={optionStyles.more} onClick={toggleDrop}></button>
       </div>
