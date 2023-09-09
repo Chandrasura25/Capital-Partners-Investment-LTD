@@ -37,7 +37,8 @@ async function Page({ params }: { params: { id: string } }) {
         <LeftSidebar />
         <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
           <div className="w-full max-w-4xl">
-            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-center">
+            <div className="bg-white p-5 rounded-[20px] relative">
+              <h3 className="head-text">Review Your Profile</h3>
             <AccountProfile user={userData} btnTitle="Save" />
             </div>
           </div>
