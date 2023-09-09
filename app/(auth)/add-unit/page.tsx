@@ -27,7 +27,7 @@ async function Page() {
               ))}
             </div>
             <div className="flex items-end">
-              <Button type="submit" className="bg-[#43a5f6] uppercase">
+              <Button type="submit" className="bg-[#150B62] uppercase">
                 Invest Here
               </Button>
             </div>
