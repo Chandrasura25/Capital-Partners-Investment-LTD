@@ -27,7 +27,7 @@ async function Page() {
                   <Link
                     href={link.route}
                     key={link.label}
-                    className="rounded-[20px] p-2 w-[250px] h-[200px] flex justify-center items-center flex-col gap-3 shadow-md"
+                    className="rounded-[20px] p-2 w-[250px] h-[200px] flex justify-center items-center flex-col gap-3 shadow-md hover:animate-in transition-all hover:scale-105"
                     style={{background:link.clr}}
                   >
                     <Image
