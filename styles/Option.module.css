@@ -27,7 +27,7 @@
   pointer-events: none;
 }
 .card .content h3 {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 1.3em;
   color: var(--clr);
   z-index: 1;
