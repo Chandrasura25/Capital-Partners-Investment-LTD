@@ -16,7 +16,7 @@ async function Page() {
       <main className="flex flex-row bg-[#000924]">
         <LeftSidebar />
         <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
-          <div className="w-full max-w-3xl">Add Units</div>
+          <div className="h-[400px]max-w-3xl glassmorphism">Add Units</div>
         </section>
       </main>
       <Bottombar />
