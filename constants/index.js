@@ -125,7 +125,7 @@ export const dashboardMenu = [
         imgURL: "/assets/comments-dollar-solid.svg",
         route: "/add-unit",
         label: "Additional Unit",
-        clr: "#0f8a1c",
+        clr: "#cd31fe",
     },
     {
         imgURL: "/assets/chart-646.svg",
