@@ -36,7 +36,7 @@ async function Page() {
                       height={40}
                       className={`${link.route === "/growth" && "invert"}` }
                     />
-                    <p className="text-light-1 text-[20px]">{link.label}</p>
+                    <p className="text-light-1 text-[14px] md:text-[20px]">{link.label}</p>
                   </Link>
               ))}
             </div>
