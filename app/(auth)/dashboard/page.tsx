@@ -22,21 +22,21 @@ async function Page() {
         <LeftSidebar />
         <section className="main-container relative bg-[rgba(31, 38, 135, 0.37)]">
           <div className="w-full max-w-4xl">
-            <div className="glassmorphism p-5 relative flex flex-wrap gap-4 md:gap-6">
+            <div className="glassmorphism p-5 rounded-[20px] relative flex flex-wrap gap-4 md:gap-6">
               {dashboardMenu.map((link) =>  (
                   <Link
                     href={link.route}
                     key={link.label}
-                    className={`bg-white p-10 shadow hover:bg-[${link.clr}] hover:text-light-1`}
+                    className={`bg-[${link.clr}] rounded-[20px] p-2 w-[200px] shadow h-[200px]`}
                   >
                     <Image
                       src={link.imgURL}
                       alt={link.label}
                       width={40}
                       height={40}
-                      className={`${link.route === "/growth" && "invert"}` }
+                      className={`invert ${link.route === "/growth" && "invert-0"}` }
                     />
-                    <p className="text-light-1 text-[14px] md:text-[20px]">{link.label}</p>
+                    <p className="text-gray-700 text-[14px] md:text-[20px]">{link.label}</p>
                   </Link>
               ))}
             </div>
