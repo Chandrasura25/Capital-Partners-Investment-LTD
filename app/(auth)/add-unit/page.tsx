@@ -1,15 +1,27 @@
+import Bottombar from "@/components/shared/Bottombar";
+import LeftSidebar from "@/components/shared/LeftSidebar";
+import Topbar from "@/components/shared/Topbar";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 async function Page() {
-    const user = await currentUser();
-    if (!user) return null;
-    const userInfo = await fetchUser(user.id);
-    if (!userInfo?.onboarded) redirect("/onboarding");
+  const user = await currentUser();
+  if (!user) return null;
+  const userInfo = await fetchUser(user.id);
+  if (!userInfo?.onboarded) redirect("/onboarding");
   return (
-    <div>Page</div>
-  )
+    <>
+      <Topbar userInfo={userInfo} />
+      <main className="flex flex-row bg-[#000924]">
+        <LeftSidebar />
+        <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
+          <div className="w-full max-w-3xl">Add Units</div>
+        </section>
+      </main>
+      <Bottombar />
+    </>
+  );
 }
 
-export default Page
+export default Page;
