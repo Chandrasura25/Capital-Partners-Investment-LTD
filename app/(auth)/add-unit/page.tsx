@@ -27,7 +27,7 @@ async function Page() {
               ))}
             </div>
             <div className="flex items-end justify-end">
-              <Button type="submit" className="bg-[#150B62] uppercase p-5 hover:border hover:border-[#150B62]">
+              <Button type="submit" className="bg-[#150B62] uppercase p-5 transition hover:bg-white hover:text-[#150B62]">
                 Invest Here
               </Button>
             </div>
