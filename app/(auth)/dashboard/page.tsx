@@ -22,19 +22,19 @@ async function Page() {
         <LeftSidebar />
         <section className="main-container relative bg-[rgba(31, 38, 135, 0.37)]">
           <div className="w-full max-w-4xl">
-            <div className="relative flex flex-wrap">
+            <div className="relative flex flex-wrap gap-4 md:gap-6">
               {dashboardMenu.map((link) =>  (
                   <Link
                     href={link.route}
                     key={link.label}
-                    className={`bg-white p-4 shadow-sm hover:bg-[${link.clr}] hover:text-light-1 w-[100px] h-[100px] `}
+                    className={`bg-white p-10 shadow hover:bg-[${link.clr}] hover:text-light-1`}
                   >
                     <Image
                       src={link.imgURL}
                       alt={link.label}
                       width={40}
                       height={40}
-                      className=""
+                      className={`${link.route === "/growth" && "invert"}` }
                     />
                     <p className="text-light-1 text-[20px]">{link.label}</p>
                   </Link>
