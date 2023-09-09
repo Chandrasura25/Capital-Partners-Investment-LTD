@@ -27,17 +27,17 @@ async function Page() {
                   <Link
                     href={link.route}
                     key={link.label}
-                    className="bg-gray-900 rounded-[20px] p-2 w-[250px] shadow h-[200px] flex justify-center items-center flex-col"
+                    className="bg-gray-900 rounded-[20px] p-2 w-[250px] shadow h-[200px] flex justify-center items-center flex-col gap-3"
                     style={{background:link.clr}}
                   >
                     <Image
                       src={link.imgURL}
                       alt={link.label}
-                      width={40}
-                      height={40}
+                      width={80}
+                      height={80}
                       className={`invert ${link.route === "/growth" && "invert-0"}` }
                     />
-                    <p className="text-gray-700 text-[14px] md:text-[20px]">{link.label}</p>
+                    <p className=" mt-4 text-light-1 text-[20px] md:text-3xl">{link.label}</p>
                   </Link>
               ))}
             </div>
