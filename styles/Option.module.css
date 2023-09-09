@@ -13,7 +13,7 @@
   transition: 0.5s;
 }
 .card.active {
-  height: 530px;
+  height: 535px;
 }
 @media (max-width: 470px) {
   .card:nth-child(4).active{
@@ -37,7 +37,7 @@
   pointer-events: none;
 }
 .card .content h3 {
-  margin-top: 10px;
+  margin-top: 7px;
   margin-bottom: 5px;
   font-size: 1.3em;
   color: var(--clr);
