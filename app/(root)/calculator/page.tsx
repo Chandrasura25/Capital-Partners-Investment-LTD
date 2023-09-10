@@ -24,7 +24,7 @@ const Page = () => {
               {text.text}
             </h1>
             {text.id === 4 ? (
-              <h1 className="text-3xl font-bold text-center text-[#43a5f6]">
+              <h1 className="text-[30px] font-extrabold text-center text-[#43a5f6]">
                 {text.return}
               </h1>
             ) : (
