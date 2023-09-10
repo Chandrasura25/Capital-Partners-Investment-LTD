@@ -25,8 +25,8 @@ interface Props {
   textStyle?: string;
 }
 const SelectUnit = ({ user, textStyle }: Props) => {
-  const [unit, setUnit] = useState(1); // Default to 1 unit
-  const [amount, setAmount] = useState(50000); // Default to 50000
+  const [unit, setUnit] = useState<number>(1); // Default to 1 unit
+  const [amount, setAmount] = useState<number>(50000); // Default to 50000
   const pathname = usePathname();
   const router = useRouter();
   const form = useForm({
@@ -43,14 +43,14 @@ const SelectUnit = ({ user, textStyle }: Props) => {
   };
   const handleUnit = (
     e: ChangeEvent<HTMLInputElement>,
-    fieldChange: (value: string) => void
+    fieldChange: (value: number) => void
   ) => {
     e.preventDefault();
-    const newUnit = e.target.value; 
+    const newUnit = e.target.valueAsNumber;
     setUnit(newUnit);
     const newAmount = newUnit * 50000;
-    setAmount(newAmount); 
-    fieldChange(newUnit.toString());
+    setAmount(newAmount);
+    fieldChange(newUnit);
   };
   return (
     <Form {...form}>
