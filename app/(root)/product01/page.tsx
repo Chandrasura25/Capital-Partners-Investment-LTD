@@ -33,13 +33,13 @@ const Page = () => {
           </h1>
           <Link
             href="/sign-up"
-            className="uppercase py-4 px-7 text-light-1 rounded-[16px] bg-[#43a5f6]"
+            className="uppercase py-4 px-7 text-light-1 rounded-[16px] bg-[#43a5f6] hover:bg-white hover:text-[#43a5f6] transition-all"
           >
             Open Account
           </Link>
           <Link
             href="/calculator"
-            className="uppercase py-4 px-7 text-light-1 rounded-[16px] bg-[#150B62]"
+            className="uppercase py-4 px-7 text-light-1 rounded-[16px] bg-[#150B62] transition-all hover:bg-white hover:text-[#150B62]"
           >
             Investment calculator
           </Link>
