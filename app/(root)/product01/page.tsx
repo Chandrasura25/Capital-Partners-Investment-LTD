@@ -1,7 +1,8 @@
 "use client";
-import { slideIn, staggerContainer } from "@/utils/motion";
+import { fadeIn, staggerContainer } from "@/utils/motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const Page = () => {
   return (
@@ -13,7 +14,7 @@ const Page = () => {
         viewport={{ once: false, amount: 0.25 }}
         className="innerWidth mx-auto flexCenter flex-col min-h-[50vh]"
       >
-        <motion.div variants={slideIn("left")}>
+        <motion.div variants={fadeIn("up", "spring", 0.5, 0.75)}>
           <Image
             src="/assets/logo1.jpg"
             height={200}
@@ -22,10 +23,12 @@ const Page = () => {
             className="rounded-full"
           />
         </motion.div>
-        <motion.div variants={slideIn("right")} className="flex flex-col mt-5">
+        <motion.div variants={fadeIn("up", "spring",1, 0.9)} className="flex flex-col mt-5">
           <h1 className="text-2xl font-bold text-center text-white uppercase">
             Invest with the best
           </h1>
+          <Link href="/sign-up" className="uppercase py-4 px-7 text-light-1 rounded-[16px]">Open Account</Link>
+          <Link href="/calculator" className="uppercase py-4 px-7 text-light-1 rounded-[16px]">Investment calculator</Link>
         </motion.div>
       </motion.div>
     </section>
