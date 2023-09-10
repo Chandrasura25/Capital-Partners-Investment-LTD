@@ -77,7 +77,6 @@ const SelectUnit = ({ user, textStyle }: Props) => {
                   type="number"
                   className="account-form_input no-focus"
                   onChange={(e) => handleUnit(e, field.onChange)}
-                  value={unit.toString()}
                 />
               </FormControl>
               <FormMessage />
@@ -102,7 +101,6 @@ const SelectUnit = ({ user, textStyle }: Props) => {
                   type="number"
                   className="account-form_input no-focus"
                   readOnly
-                  value={amount.toString()}
                 />
               </FormControl>
               <FormMessage />
