@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { NavLinks } from "../constants";
+import { NavLinks, subNavLinks } from "../constants";
 import { navVariants } from "../utils/motion";
 import navbarStyle from "../styles/Navbar.module.css";
 import Link from "next/link";
@@ -49,12 +49,25 @@ const Navbar = () => {
                 </Link>
                 {link.route === "#portal" && (
                   <ul>
-                    <li>
-                      <Link href="/register">Register</Link>
-                    </li>
-                    <li>
-                      <Link href="/forgot-password">Forgot Password</Link>
-                    </li>
+                    {subNavLinks.map((subLink) => {
+                      const isActive =
+                        pathname.includes(subLink.route) ||
+                        pathname === subLink.route;
+                      return (
+                        <li>
+                          <Link
+                            href={subLink.route}
+                            key={subLink.key}
+                            className={`hover:bg-white hover:text-[#43a5f6] p-2 ${
+                              isActive && "bg-white text-[#43a5f6]"
+                            }`}
+                          >
+                            {subLink.text}
+                          </Link>
+                        </li>
+                      );
+                    }
+                    )}
                   </ul>
                 )}
               </li>
