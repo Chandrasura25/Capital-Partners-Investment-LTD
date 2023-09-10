@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { NavLinks } from "../constants";  
+import { NavLinks } from "../constants";
 import { navVariants } from "../utils/motion";
 import navbarStyle from "../styles/Navbar.module.css";
 import Link from "next/link";
@@ -15,8 +15,8 @@ const Navbar = () => {
     setNavActive(!navActive);
   }
   const pathname = usePathname();
-  const router= useRouter()
-  console.log(router, pathname)
+  const router = useRouter();
+  console.log(router, pathname);
   return (
     <motion.header
       variants={navVariants}
@@ -33,21 +33,33 @@ const Navbar = () => {
       <nav>
         <ul>
           {NavLinks.map((link) => {
-             const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
+            const isActive =
+              (pathname.includes(link.route) && link.route.length > 1) ||
+              pathname === link.route;
             return (
               <li>
                 <Link
                   href={link.route}
                   key={link.key}
                   className={`hover:bg-white hover:text-[#43a5f6] p-2 ${
-                    isActive && "bg-white text-[#43a5f6]" 
+                    isActive && "bg-white text-[#43a5f6]"
                   }`}
                 >
                   {link.text}
                 </Link>
+                {link.route === "#portal" && (
+                  <ul>
+                    <li>
+                      <Link href="/register">Register</Link>
+                    </li>
+                    <li>
+                      <Link href="/forgot-password">Forgot Password</Link>
+                    </li>
+                  </ul>
+                )}
               </li>
             );
-          })}  
+          })}
         </ul>
       </nav>
     </motion.header>
