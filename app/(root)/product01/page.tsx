@@ -1,8 +1,19 @@
-import React from 'react'
+import { staggerContainer } from '@/utils/motion'
+import {motion} from 'framer-motion'
 
 const Page = () => {
   return (
-    <div className='head-text bg-gray-400'>Welcome</div>
+    <section className="paddings relative z-10">
+      <motion.div
+        variants={staggerContainer()}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className="innerWidth mx-auto flexCenter flex-col"
+      >
+       <h4 className="text-3xl">Welcome</h4> 
+      </motion.div>
+    </section>
   )
 }
 
