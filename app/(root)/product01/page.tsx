@@ -1,9 +1,10 @@
+"use client";
 import { staggerContainer } from '@/utils/motion'
 import {motion} from 'framer-motion'
 
 const Page = () => {
   return (
-    <section className="paddings relative z-10">
+    <section className="paddings relative z-10 pt-[60px]">
       <motion.div
         variants={staggerContainer()}
         initial="hidden"
