@@ -51,7 +51,6 @@ const SelectUnit = ({ user, textStyle }: Props) => {
     const newAmount = newUnit * 50000;
     setAmount(newAmount); 
     fieldChange(newUnit.toString());
-    console.log(newUnit.toString());
   };
   return (
     <Form {...form}>
@@ -101,6 +100,7 @@ const SelectUnit = ({ user, textStyle }: Props) => {
                   type="number"
                   className="account-form_input no-focus"
                   readOnly
+                  value={amount}
                 />
               </FormControl>
               <FormMessage />
