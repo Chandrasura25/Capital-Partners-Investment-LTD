@@ -46,7 +46,7 @@ const SelectUnit = ({ user, textStyle }: Props) => {
     fieldChange: (value: string) => void
   ) => {
     e.preventDefault();
-    const newUnit = parseInt(e.target.value, 10); 
+    const newUnit = e.target.value; 
     setUnit(newUnit);
     const newAmount = newUnit * 50000;
     setAmount(newAmount); 
