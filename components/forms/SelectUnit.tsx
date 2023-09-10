@@ -36,10 +36,7 @@ const SelectUnit = ({ user, textStyle }: Props) => {
       amount: 50000,
     },
   });
-   const { setValue } = form;
-  const onSubmit = async (values: z.infer<typeof UnitValidation>) => {
-    console.log(values);
-  };
+  const { setValue } = form;
   const handleUnit = (
     e: ChangeEvent<HTMLInputElement>,
     fieldChange: (value: number) => void
@@ -47,7 +44,10 @@ const SelectUnit = ({ user, textStyle }: Props) => {
     e.preventDefault();
     const newUnit = e.target.valueAsNumber;
     fieldChange(newUnit);
-    setValue('amount', newUnit * 50000);
+    setValue("amount", newUnit * 50000);
+  };
+  const onSubmit = async (values: z.infer<typeof UnitValidation>) => {
+    console.log(values);
   };
   return (
     <Form {...form}>
