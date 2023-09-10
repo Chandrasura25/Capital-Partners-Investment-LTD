@@ -46,13 +46,11 @@ const SelectUnit = ({ user, textStyle }: Props) => {
     fieldChange: (value: string) => void
   ) => {
     e.preventDefault();
-    const newUnit = parseInt(e.target.value, 10); // Parse the new unit value
-    console.log(newUnit);
-    setUnit(newUnit); // Update the unit state
-    const newAmount = newUnit * 50000; // Calculate the new amount
-    console.log(newAmount);
-    setAmount(newAmount); // Update the amount state
-    fieldChange(newUnit.toString()); // Call field.onChange with the new unit value
+    const newUnit = parseInt(e.target.value, 10); 
+    setUnit(newUnit);
+    const newAmount = newUnit * 50000;
+    setAmount(newAmount); 
+    fieldChange(newUnit.toString());
     console.log(newUnit.toString());
   };
   return (
@@ -79,6 +77,7 @@ const SelectUnit = ({ user, textStyle }: Props) => {
                   type="number"
                   className="account-form_input no-focus"
                   onChange={(e) => handleUnit(e, field.onChange)}
+                  value={unit.toString()}
                 />
               </FormControl>
               <FormMessage />
