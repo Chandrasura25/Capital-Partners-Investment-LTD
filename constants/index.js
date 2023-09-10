@@ -1,3 +1,5 @@
+import { fadeIn } from "@/utils/motion";
+
 export const footerLinks = [
     {
         title: "Explore",
