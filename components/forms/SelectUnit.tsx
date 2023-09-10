@@ -26,7 +26,7 @@ interface Props {
 }
 const SelectUnit = ({ user, textStyle }: Props) => {
   const [unit, setUnit] = useState<number>(1); // Default to 1 unit
-  const [amount, setAmount] = useState<number>(50000); // Default to 50000
+//   const [amount, setAmount] = useState<number>(50000); // Default to 50000
   const pathname = usePathname();
   const router = useRouter();
   const form = useForm({
@@ -38,6 +38,7 @@ const SelectUnit = ({ user, textStyle }: Props) => {
       amount: 50000,
     },
   });
+   const { setValue } = form;
   const onSubmit = async (values: z.infer<typeof UnitValidation>) => {
     console.log(values, values.amount);
   };
@@ -48,8 +49,9 @@ const SelectUnit = ({ user, textStyle }: Props) => {
     e.preventDefault();
     const newUnit = e.target.valueAsNumber;
     setUnit(newUnit);
-    setAmount(newUnit * 50000);
+    // setAmount(newUnit * 50000);
     fieldChange(newUnit);
+    setValue('amount', newUnit * 50000);
   };
   return (
     <Form {...form}>
@@ -99,7 +101,7 @@ const SelectUnit = ({ user, textStyle }: Props) => {
                   type="number"
                   className="account-form_input no-focus"
                   readOnly
-                  value={amount}
+                //   value={amount}
                 />
               </FormControl>
               <FormMessage />
