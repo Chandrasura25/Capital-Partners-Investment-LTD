@@ -5,7 +5,6 @@ import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { AddUnit } from "@/constants";
-import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -23,9 +22,9 @@ async function Page() {
   return (
     <>
       <Topbar userInfo={userInfo} />
-      <main className="flex flex-row bg-[#000924]">
+      <main className="flex flex-row sm:bg-[#000924]">
         <LeftSidebar />
-        <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
+        <section className="main-container relative">
           <div className="max-w-md">
             <div className="p-5 glassmorphism rounded-[20px] mb-8">
               <h4 className="head-text uppercase mb-3">Note the following</h4>
@@ -41,8 +40,8 @@ async function Page() {
                   Invest Here
                 </DialogTrigger>
                 <DialogContent>
-                  <DialogHeader className="mb-2">
-                    <DialogTitle>Invest in a unit</DialogTitle>
+                  <DialogHeader className="mb-2 text-center">
+                    <DialogTitle className="text-[24px]">Invest in a unit</DialogTitle>
                     <DialogDescription>
                       Select a unit to invest in
                     </DialogDescription>
