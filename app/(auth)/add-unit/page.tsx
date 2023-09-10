@@ -6,6 +6,14 @@ import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { AddUnit } from "@/constants";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 async function Page() {
   const user = await currentUser();
   if (!user) return null;
@@ -27,9 +35,24 @@ async function Page() {
               ))}
             </div>
             <div className="flex items-end justify-end">
-              <Button type="submit" className="bg-[#150B62] uppercase p-5 transition hover:bg-white hover:text-[#150B62]">
-                Invest Here
-              </Button>
+              {/* <Button
+                type="submit"
+                className="bg-[#150B62] uppercase p-5 transition hover:bg-white hover:text-[#150B62]"
+              >
+                Invest Here 
+              </Button>*/}
+              <Dialog>
+                <DialogTrigger className="bg-[#150B62] uppercase p-5 transition hover:bg-white hover:text-[#150B62]">Invest Here</DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+                    <DialogDescription>
+                      This action cannot be undone. This will permanently delete
+                      your account and remove your data from our servers.
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         </section>
