@@ -22,8 +22,8 @@ const Page = () => {
             className="rounded-full"
           />
         </motion.div>
-        <motion.div variants={slideIn("right")} className="flex flex-col">
-          <h1 className="text-3xl font-bold text-center text-white uppercase">
+        <motion.div variants={slideIn("right")} className="flex flex-col mt-5">
+          <h1 className="text-2xl font-bold text-center text-white uppercase">
             Invest with the best
           </h1>
         </motion.div>
