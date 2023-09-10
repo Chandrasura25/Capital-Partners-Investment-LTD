@@ -14,6 +14,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import SelectUnit from "@/components/forms/SelectUnit";
 async function Page() {
   const user = await currentUser();
   if (!user) return null;
@@ -35,33 +36,10 @@ async function Page() {
               ))}
             </div>
             <div className="flex items-end justify-end">
-              {/* <Button
-                type="submit"
-                className="bg-[#150B62] uppercase p-5 transition hover:bg-white hover:text-[#150B62]"
-              >
-                Invest Here 
-              </Button>*/}
               <Dialog>
                 <DialogTrigger className="bg-[#150B62] uppercase text-light-1 transition hover:bg-white hover:text-[#150B62] p-[10px] rounded-lg">Invest Here</DialogTrigger>
                 <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle className="uppercase text-center">Unit of Investment</DialogTitle>
-                    <DialogDescription>
-                      This action cannot be undone.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <DialogHeader>
-                    <DialogTitle className="uppercase text-center">Amount to pay</DialogTitle>
-                    <DialogDescription>
-                      Test
-                    </DialogDescription>
-                  </DialogHeader>
-                  <Button
-                type="submit"
-                className="bg-[#150B62] uppercase transition hover:bg-white hover:text-[#150B62]"
-              >
-                Invest Here 
-              </Button>
+                  <SelectUnit user={userInfo} />
                 </DialogContent>
               </Dialog>
             </div>
