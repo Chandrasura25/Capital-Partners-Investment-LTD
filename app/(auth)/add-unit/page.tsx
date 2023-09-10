@@ -57,6 +57,12 @@ async function Page() {
                       Test
                     </DialogDescription>
                   </DialogHeader>
+                  <Button
+                type="submit"
+                className="bg-[#150B62] uppercase transition hover:bg-white hover:text-[#150B62]"
+              >
+                Invest Here 
+              </Button>
                 </DialogContent>
               </Dialog>
             </div>
