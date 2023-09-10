@@ -42,7 +42,7 @@ async function Page() {
                 Invest Here 
               </Button>*/}
               <Dialog>
-                <DialogTrigger className="bg-[#150B62] uppercase p-5 transition hover:bg-white hover:text-[#150B62]">Invest Here</DialogTrigger>
+                <DialogTrigger className="bg-[#150B62] uppercase text-light-1 transition hover:bg-white hover:text-[#150B62]">Invest Here</DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle>Are you sure absolutely sure?</DialogTitle>
