@@ -22,7 +22,7 @@ interface Props {
     username: string;
     email: string;
   };
-    textStyle?: string;
+  textStyle?: string;
 }
 const SelectUnit = ({ user, textStyle }: Props) => {
   const pathname = usePathname();
@@ -45,7 +45,7 @@ const SelectUnit = ({ user, textStyle }: Props) => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="flex flex-col justify-start gap-10"
       >
-         <FormField
+        <FormField
           control={form.control}
           name="unit"
           render={({ field }) => (
@@ -68,6 +68,35 @@ const SelectUnit = ({ user, textStyle }: Props) => {
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name="amount"
+          render={({ field }) => (
+            <FormItem className="flex flex-col gap-3 w-full">
+              <FormLabel
+                className={`text-base-semibold ${
+                  textStyle === "" ? "text-dark-2" : textStyle
+                } `}
+              >
+                Amount to pay
+              </FormLabel>
+              <FormControl>
+                <Input
+                  {...field}
+                  type="number"
+                  className="account-form_input no-focus"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button
+          type="submit"
+          className="bg-[#150B62] uppercase transition hover:bg-white hover:text-[#150B62]"
+        >
+          Pay Now
+        </Button>
       </form>
     </Form>
   );
