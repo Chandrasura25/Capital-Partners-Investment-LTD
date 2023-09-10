@@ -10,7 +10,7 @@ const Page = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="innerWidth mx-auto flexCenter flex-col min-h-screen"
+        className="innerWidth mx-auto flexCenter flex-col min-h-screen bg-white"
       >
         <h4 className="text-3xl">Welcome</h4>
       </motion.div>
