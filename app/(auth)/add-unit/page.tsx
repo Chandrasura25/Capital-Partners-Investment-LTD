@@ -42,13 +42,19 @@ async function Page() {
                 Invest Here 
               </Button>*/}
               <Dialog>
-                <DialogTrigger className="bg-[#150B62] uppercase text-light-1 transition hover:bg-white hover:text-[#150B62]">Invest Here</DialogTrigger>
+                <DialogTrigger className="bg-[#150B62] uppercase text-light-1 transition hover:bg-white hover:text-[#150B62] p-[10px] rounded-lg">Invest Here</DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle>Are you sure absolutely sure?</DialogTitle>
                     <DialogDescription>
                       This action cannot be undone. This will permanently delete
                       your account and remove your data from our servers.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <DialogHeader>
+                    <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+                    <DialogDescription>
+                      Test
                     </DialogDescription>
                   </DialogHeader>
                 </DialogContent>
