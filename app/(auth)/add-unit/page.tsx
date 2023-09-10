@@ -37,8 +37,16 @@ async function Page() {
             </div>
             <div className="flex items-end justify-end">
               <Dialog>
-                <DialogTrigger className="bg-[#150B62] uppercase text-light-1 transition hover:bg-white hover:text-[#150B62] p-[10px] rounded-lg">Invest Here</DialogTrigger>
+                <DialogTrigger className="bg-[#150B62] uppercase text-light-1 transition hover:bg-white hover:text-[#150B62] p-[10px] rounded-lg">
+                  Invest Here
+                </DialogTrigger>
                 <DialogContent>
+                  <DialogHeader className="mb-2">
+                    <DialogTitle>Invest in a unit</DialogTitle>
+                    <DialogDescription>
+                      Select a unit to invest in
+                    </DialogDescription>
+                  </DialogHeader>
                   <SelectUnit user={userInfo} textStyle="uppercase" />
                 </DialogContent>
               </Dialog>
