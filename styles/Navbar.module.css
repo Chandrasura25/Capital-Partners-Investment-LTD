@@ -34,8 +34,8 @@
 .header ul li ul {
   position: absolute;
   left: 0;
-  width: 180px;
-  background: #445964;
+  width: 190px;
+  background: #43a5f6;
   display: none;
 }
 .header ul li:hover > ul {
@@ -70,7 +70,7 @@
     left: 0;
   }
   .header nav ul li:hover ul li {
-    background: #546e7b;
+    background: #43a5f6;
   }
   .menuToggle {
     position: relative;
