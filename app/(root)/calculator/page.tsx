@@ -15,7 +15,7 @@ const Page = () => {
         className="innerWidth mx-auto flexCenter flex-col gap-5 min-h-[50vh]"
       >
         {calText.map((text) => (
-            <motion.div
+          <motion.div
             key={text.id}
             variants={text.variants}
             className="flex flex-col"
@@ -23,9 +23,15 @@ const Page = () => {
             <h1 className="text-2xl font-bold text-center text-light-1 uppercase mb-2">
               {text.text}
             </h1>
-            <Button className="px-10 bg-[#43a5f6] hover:bg-white hover:text-[#43a5f6] transition-all mb-4">
-              {text.return}
-            </Button>
+            {text.id === 4 ? (
+              <h1 className="text-3xl font-bold text-center text-[#43a5f6]">
+                {text.return}
+              </h1>
+            ) : (
+              <Button className="px-10 bg-[#43a5f6] hover:bg-white hover:text-[#43a5f6] transition-all mb-4">
+                {text.return}
+              </Button>
+            )}
           </motion.div>
         ))}
       </motion.div>
