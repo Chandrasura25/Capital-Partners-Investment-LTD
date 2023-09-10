@@ -26,20 +26,20 @@ const Page = () => {
         </motion.div>
         <motion.div
           variants={fadeIn("up", "spring", 1, 0.9)}
-          className="flex flex-col mt-5"
+          className="flex flex-col mt-[5rem] gap-4"
         >
-          <h1 className="text-2xl font-bold text-center text-white uppercase">
+          <h1 className="text-2xl font-bold text-center text-white uppercase mb-3">
             Invest with the best
           </h1>
           <Link
             href="/sign-up"
-            className="uppercase py-4 px-7 text-light-1 rounded-[16px] bg-[#43a5f6] hover:bg-white hover:text-[#43a5f6] transition-all"
+            className="uppercase py-2 text-center px-7 text-light-1 rounded-[16px] bg-[#43a5f6] hover:bg-white hover:text-[#43a5f6] transition-all mb-5"
           >
             Open Account
           </Link>
           <Link
             href="/calculator"
-            className="uppercase py-4 px-7 text-light-1 rounded-[16px] bg-[#150B62] transition-all hover:bg-white hover:text-[#150B62]"
+            className="uppercase py-2 text-center px-7 text-light-1 rounded-[16px] bg-[#150B62] transition-all hover:bg-white hover:text-[#150B62]"
           >
             Investment calculator
           </Link>
