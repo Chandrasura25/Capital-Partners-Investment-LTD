@@ -39,7 +39,7 @@ async function Page() {
               <Dialog>
                 <DialogTrigger className="bg-[#150B62] uppercase text-light-1 transition hover:bg-white hover:text-[#150B62] p-[10px] rounded-lg">Invest Here</DialogTrigger>
                 <DialogContent>
-                  <SelectUnit user={userInfo} />
+                  <SelectUnit user={userInfo} textStyle="uppercase" />
                 </DialogContent>
               </Dialog>
             </div>
