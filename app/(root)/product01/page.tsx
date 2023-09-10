@@ -14,7 +14,7 @@ const Page = () => {
         className="innerWidth mx-auto flexCenter flex-col min-h-[50vh]"
       >
         <motion.div variants={planetVariants("left")}>
-            <Image src="/assets/logo1.jpg" height={200} width={200} alt="Logo" />
+            <Image src="/assets/logo1.jpg" height={200} width={200} alt="Logo" className="rounded-full" />
         </motion.div>
       </motion.div>
     </section>
