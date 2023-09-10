@@ -7,6 +7,7 @@ import Link from "next/link";
 const Page = () => {
   return (
     <section className="paddings relative z-10 mt-[60px]">
+      <div className="gradient-04 z-0" />
       <motion.div
         variants={staggerContainer()}
         initial="hidden"
@@ -23,12 +24,25 @@ const Page = () => {
             className="rounded-full"
           />
         </motion.div>
-        <motion.div variants={fadeIn("up", "spring",1, 0.9)} className="flex flex-col mt-5">
+        <motion.div
+          variants={fadeIn("up", "spring", 1, 0.9)}
+          className="flex flex-col mt-5"
+        >
           <h1 className="text-2xl font-bold text-center text-white uppercase">
             Invest with the best
           </h1>
-          <Link href="/sign-up" className="uppercase py-4 px-7 text-light-1 rounded-[16px]">Open Account</Link>
-          <Link href="/calculator" className="uppercase py-4 px-7 text-light-1 rounded-[16px]">Investment calculator</Link>
+          <Link
+            href="/sign-up"
+            className="uppercase py-4 px-7 text-light-1 rounded-[16px] bg-[#43a5f6]"
+          >
+            Open Account
+          </Link>
+          <Link
+            href="/calculator"
+            className="uppercase py-4 px-7 text-light-1 rounded-[16px] bg-[#150B62]"
+          >
+            Investment calculator
+          </Link>
         </motion.div>
       </motion.div>
     </section>
