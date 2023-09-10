@@ -1,6 +1,7 @@
 "use client";
 import { staggerContainer } from "@/utils/motion";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Page = () => {
   return (
@@ -10,9 +11,11 @@ const Page = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="innerWidth mx-auto flexCenter flex-col min-h-screen bg-white"
+        className="innerWidth mx-auto flexCenter flex-col min-h-[50vh]"
       >
-        <h4 className="text-3xl">Welcome</h4>
+        <div className="">
+            <Image src="/assets/logo1.jpg" height={200} width={200} alt="Logo" />
+        </div>
       </motion.div>
     </section>
   );
