@@ -45,13 +45,17 @@ export const footerLinks = [
     },
 ];
 export const NavLinks = [
-    { route: "#about", key: "About Us", text: "About Us" },
+    { route: "/", key: "About Us", text: "About Us" },
     { route: "#pillars", key: "Investment Sectors", text: "Investment Sectors" },
     { route: "#portal", key: "Investment Portal", text: "Investment Portal ▼" },
     { route: "#invest", key: "Why you should invest with us", text: "Why you should invest with us" },
     { route: "/faqs", key: "FAQS", text: "FAQS" },
     { route: "/stories", key: "Success Stories", text: "Success Stories" },
     { route: "#contact", key: "Contact", text: "Contact" },
+];
+export const subNavLinks=[
+    { route: "/product01", key: "Product 01", text: "Product 01" },
+    { route: "#", key: "Product 02", text: "Product 02" },
 ];
 export const sidebarLinks = [
     {
