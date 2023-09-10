@@ -45,7 +45,7 @@ export const footerLinks = [
     },
 ];
 export const NavLinks = [
-    { route: "/", key: "About Us", text: "About Us" },
+    { route: "#about", key: "About Us", text: "About Us" },
     { route: "#pillars", key: "Investment Sectors", text: "Investment Sectors" },
     { route: "#portal", key: "Investment Portal", text: "Investment Portal ▼" },
     { route: "#invest", key: "Why you should invest with us", text: "Why you should invest with us" },
