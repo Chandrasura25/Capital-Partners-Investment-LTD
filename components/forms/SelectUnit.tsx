@@ -25,6 +25,8 @@ interface Props {
   textStyle?: string;
 }
 const SelectUnit = ({ user, textStyle }: Props) => {
+  const [unit, setUnit] = useState(1); // Default to 1 unit
+  const [amount, setAmount] = useState(50000); // Default to 50000
   const pathname = usePathname();
   const router = useRouter();
   const form = useForm({
@@ -38,6 +40,20 @@ const SelectUnit = ({ user, textStyle }: Props) => {
   });
   const onSubmit = async (values: z.infer<typeof UnitValidation>) => {
     console.log(values);
+  };
+  const handleUnit = (
+    e: ChangeEvent<HTMLInputElement>,
+    fieldChange: (value: string) => void
+  ) => {
+    e.preventDefault();
+    const newUnit = parseInt(e.target.value, 10); // Parse the new unit value
+    console.log(newUnit);
+    setUnit(newUnit); // Update the unit state
+    const newAmount = newUnit * 50000; // Calculate the new amount
+    console.log(newAmount);
+    setAmount(newAmount); // Update the amount state
+    fieldChange(newUnit.toString()); // Call field.onChange with the new unit value
+    console.log(newUnit.toString());
   };
   return (
     <Form {...form}>
@@ -62,6 +78,7 @@ const SelectUnit = ({ user, textStyle }: Props) => {
                   {...field}
                   type="number"
                   className="account-form_input no-focus"
+                  onChange={(e) => handleUnit(e, field.onChange)}
                 />
               </FormControl>
               <FormMessage />
@@ -85,6 +102,8 @@ const SelectUnit = ({ user, textStyle }: Props) => {
                   {...field}
                   type="number"
                   className="account-form_input no-focus"
+                  readOnly
+                  value={amount.toString()}
                 />
               </FormControl>
               <FormMessage />
