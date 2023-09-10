@@ -54,8 +54,34 @@ export const NavLinks = [
     { route: "#contact", key: "Contact", text: "Contact" },
 ];
 export const subNavLinks=[
-    { route: "/product01", key: "Product 01", text: "Product 01" },
+    { route: "/product01", key: "Club500", text: "Club500" },
     { route: "#", key: "Product 02", text: "Product 02" },
+];
+export const calText=[
+    {
+        id:1,
+        text:"Invest",
+        return:"N50,000.00",
+        variants:fadeIn("up", "spring", 0.5, 0.75),
+    },
+    {
+        id:2,
+        text:"Daily Return",
+        return:"N150.00",
+        variants:fadeIn("up", "spring", 0.8, 1),
+    },
+    {
+        id:3,
+        text:"500 Days Return",
+        return:"N25,000.00",
+        variants:fadeIn("up", "spring", 1.1, 1.25),
+    },
+    {
+        id:4,
+        text:"Total Withdrawal",
+        return:"N75,000.00",
+        variants:fadeIn("up", "spring", 1.3, 1.5),
+    },
 ];
 export const sidebarLinks = [
     {
