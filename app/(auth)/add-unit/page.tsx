@@ -40,9 +40,9 @@ async function Page() {
                   Invest Here
                 </DialogTrigger>
                 <DialogContent>
-                  <DialogHeader className="mb-2 text-center">
-                    <DialogTitle className="text-[24px]">Invest in a unit</DialogTitle>
-                    <DialogDescription>
+                  <DialogHeader className="mb-2">
+                    <DialogTitle className="text-[24px] text-center">Invest in a unit</DialogTitle>
+                    <DialogDescription className="text-center">
                       Select a unit to invest in
                     </DialogDescription>
                   </DialogHeader>
