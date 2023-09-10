@@ -31,10 +31,21 @@
   background: #fff;
   color: #43a5f6;
 }
+.header ul li ul {
+  position: absolute;
+  left: 0;
+  width: 180px;
+  background: #445964;
+  display: none;
+}
 .header ul li:hover > ul {
   display: block;
 }
-
+.header ul li ul li {
+  position: relative;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
 @media (max-width: 991px) {
   .header {
     padding: 10px 20px;
@@ -53,7 +64,14 @@
   .header nav ul li {
     width: 100%;
   }
-
+  .header nav ul li ul {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+  .header nav ul li:hover ul li {
+    background: #546e7b;
+  }
   .menuToggle {
     position: relative;
     width: 40px;
