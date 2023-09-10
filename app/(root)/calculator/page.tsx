@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { calText } from "@/constants";
-import { fadeIn, staggerContainer } from "@/utils/motion";
+import { staggerContainer } from "@/utils/motion";
 import { motion } from "framer-motion";
 
 const Page = () => {
@@ -20,7 +20,7 @@ const Page = () => {
             variants={text.variants}
             className="flex flex-col"
           >
-            <h1 className="text-2xl font-bold text-center text-light-1 uppercase mb-2">
+            <h1 className="font-bold text-center text-light-1 uppercase mb-2">
               {text.text}
             </h1>
             {text.id === 4 ? (
