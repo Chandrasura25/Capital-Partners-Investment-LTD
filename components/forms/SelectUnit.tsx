@@ -39,7 +39,7 @@ const SelectUnit = ({ user, textStyle }: Props) => {
     },
   });
   const onSubmit = async (values: z.infer<typeof UnitValidation>) => {
-    console.log(values, values.unit);
+    console.log(values, values.amount);
   };
   const handleUnit = (
     e: ChangeEvent<HTMLInputElement>,
