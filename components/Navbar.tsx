@@ -58,7 +58,7 @@ const Navbar = () => {
                           <Link
                             href={subLink.route}
                             key={subLink.key}
-                            className={`hover:bg-white hover:text-[#43a5f6] p-2 ${
+                            className={`text-gray-300 hover:bg-white hover:text-[#43a5f6] p-2 ${
                               isActive && "bg-white text-[#43a5f6]"
                             }`}
                           >
