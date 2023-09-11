@@ -24,11 +24,13 @@ const Navbar = () => {
       whileInView="show"
       className={`${navbarStyle.header} ${navActive ? navbarStyle.active : ""}`}
     >
-      <img
-        src="/assets/logo1.jpg"
-        alt="Logo"
-        className="w-[40px] h-[40px] rounded-full object-contain"
-      />
+      <Link href="/">
+        <img
+          src="/assets/logo1.jpg"
+          alt="Logo"
+          className="w-[40px] h-[40px] rounded-full object-contain"
+        />
+      </Link>
       <div className={navbarStyle.menuToggle} onClick={toggle}></div>
       <nav>
         <ul>
@@ -42,7 +44,7 @@ const Navbar = () => {
                   href={link.route}
                   key={link.key}
                   className={`hover:bg-white hover:text-[#43a5f6] p-2 ${
-                    isActive? "bg-white text-[#43a5f6]" : "text-light-1"
+                    isActive ? "bg-white text-[#43a5f6]" : "text-light-1"
                   }`}
                 >
                   {link.text}
@@ -66,8 +68,7 @@ const Navbar = () => {
                           </Link>
                         </li>
                       );
-                    }
-                    )}
+                    })}
                   </ul>
                 )}
               </li>
