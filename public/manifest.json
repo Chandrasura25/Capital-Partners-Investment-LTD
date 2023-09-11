@@ -2,7 +2,7 @@
     "theme_color": "#43a5f6",
     "background_color": "#000924",
     "display": "standalone",
-    "scope": "*",
+    "scope": "/",
     "start_url": "/",
     "name": "Capital Partners Investment LTD",
     "description": "A leading investment company with a diverse portfolio covering various sectors of the economy. With a steadfast commitment to excellence and a track record of success, we aim to facilitate growth, create value, and generate sustainable returns for our investors.",
