@@ -1,11 +1,14 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
 import "../globals.css";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "Capital Partners Investment LTD",
   description: "Capital Partners Investment LTD",
+  manifest: "/manifest.json",
+  icons: { apple: "/assets/logo1.jpg", android: "/assets/logo1.jpg" },
+  themeColor: "#ffffff",
 };
 const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({
@@ -19,7 +22,7 @@ export default function RootLayout({
         <body className={`${inter.className}`}>
           <div className="">{children}</div>
           <Toaster />
-          </body>
+        </body>
       </html>
     </ClerkProvider>
   );
