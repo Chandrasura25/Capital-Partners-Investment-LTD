@@ -1,0 +1,32 @@
+{
+    "theme_color": "#43a5f6",
+    "background_color": "#000924",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Capital Partners Investment LTD",
+    "description": "A leading investment company with a diverse portfolio covering various sectors of the economy. With a steadfast commitment to excellence and a track record of success, we aim to facilitate growth, create value, and generate sustainable returns for our investors.",
+    "short_name": "Capital Partners Investment LTD",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
