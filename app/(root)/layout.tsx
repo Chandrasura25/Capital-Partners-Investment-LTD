@@ -7,10 +7,12 @@ import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Capital Partners Investment LTD",
   description: "Capital Partners Investment LTD",
-
+  manifest: "/manifest.json",
+  icons: { apple: "/assets/logo1.jpg", android: "/assets/logo1.jpg" },
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
