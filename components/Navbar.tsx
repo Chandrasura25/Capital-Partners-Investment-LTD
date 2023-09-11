@@ -5,7 +5,7 @@ import { NavLinks, subNavLinks } from "../constants";
 import { navVariants } from "../utils/motion";
 import navbarStyle from "../styles/Navbar.module.css";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -15,8 +15,6 @@ const Navbar = () => {
     setNavActive(!navActive);
   }
   const pathname = usePathname();
-  const router = useRouter();
-  console.log(router, pathname);
   return (
     <motion.header
       variants={navVariants}
