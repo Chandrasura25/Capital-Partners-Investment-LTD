@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "Capital Partners Investment LTD",
-  description: "Capital Partners Investment LTD",
+  description: "A leading investment company with a diverse portfolio covering various sectors of the economy.",
   manifest: "/manifest.json",
   icons: { apple: "/assets/logo1.jpg", android: "/assets/logo1.jpg" },
   themeColor: "#ffffff",
