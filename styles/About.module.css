@@ -117,3 +117,11 @@
     margin-left: 20px;
   }
 }
+@media (max-width: 768px) {
+  .container .slider .slide .caption {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+  }
+}
