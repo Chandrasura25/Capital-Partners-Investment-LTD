@@ -128,4 +128,7 @@
     margin: 0 0 10px;
     font-size: 20px;
   }
+  .container .slider .slide .caption p {
+    font-size: 14px;
+  }
 }
