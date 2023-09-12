@@ -131,4 +131,7 @@
   .container .slider .slide .caption p {
     font-size: 14px;
   }
+  .container .slider .slide.slide2 .caption {
+    margin-left: 8px;
+  }
 }
