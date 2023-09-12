@@ -117,11 +117,15 @@
     margin-left: 20px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 450px) {
   .container .slider .slide .caption {
     bottom: 0;
     left: 0;
     right: 0;
     padding: 0;
+  }
+  .container .slider .slide .caption h2 {
+    margin: 0 0 10px;
+    font-size: 30px;
   }
 }
