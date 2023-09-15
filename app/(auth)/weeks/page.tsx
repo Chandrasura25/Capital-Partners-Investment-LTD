@@ -4,7 +4,7 @@ import Topbar from "@/components/shared/Topbar";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import * as React from "react";
+import { useState } from "react";
 
 import { Calendar } from "@/components/ui/calendar";
 
@@ -13,7 +13,7 @@ async function Page() {
   if (!user) return null;
   const userInfo = await fetchUser(user.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
-  const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const [date, setDate] = useState<Date | undefined>(new Date());
   return (
     <>
       <Topbar userInfo={userInfo} />
