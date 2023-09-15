@@ -10,9 +10,9 @@ async function Page() {
         <SignIn />
       </div>
     );
-  }else{
-      const userInfo = await fetchUser(user.id);
-      if (userInfo?.onboarded) redirect("/dashboard");
+  } else {
+    const userInfo = await fetchUser(user.id);
+    if (userInfo?.onboarded) redirect("/dashboard");
   }
 }
 export default Page;
