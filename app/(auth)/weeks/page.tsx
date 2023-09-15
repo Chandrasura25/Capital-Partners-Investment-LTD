@@ -1,8 +1,18 @@
-import React from 'react'
+"use client"
+ 
+import * as React from "react"
+ 
+import { Calendar } from "@/components/ui/calendar"
 
-const Page = () => {
+async function Page() {
+  const [date, setDate] = React.useState<Date | undefined>(new Date())
   return (
-    <div>Page</div>
+    <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      className="rounded-md border shadow"
+    />
   )
 }
 
