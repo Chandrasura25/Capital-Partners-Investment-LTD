@@ -1,27 +1,29 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { CalendarIcon } from "@radix-ui/react-icons"
-import { addDays, format } from "date-fns"
-import { DateRange } from "react-day-picker"
+import * as React from "react";
+import { CalendarIcon } from "@radix-ui/react-icons";
+import { addDays, format } from "date-fns";
+import { DateRange } from "react-day-picker";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 const today = new Date();
-const formattedDate = new Date(today.getFullYear(), today.getMonth(),today.getDate());
-const DaysCal=({
-  className,
-}: React.HTMLAttributes<HTMLDivElement>) => {
-    const [date, setDate] = React.useState<DateRange | undefined>({
-        from: formattedDate,
-        to: addDays(formattedDate, 500),
-      })
+const formattedDate = new Date(
+  today.getFullYear(),
+  today.getMonth(),
+  today.getDate()
+);
+const DaysCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
+  const [date, setDate] = React.useState<DateRange | undefined>({
+    from: formattedDate,
+    to: addDays(formattedDate, 500),
+  });
 
   return (
     <div className={cn("grid gap-2", className)}>
@@ -62,6 +64,6 @@ const DaysCal=({
         </PopoverContent>
       </Popover>
     </div>
-  )
-}
-export default DaysCal
+  );
+};
+export default DaysCal;
