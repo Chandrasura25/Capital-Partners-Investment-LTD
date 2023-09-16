@@ -27,8 +27,9 @@ const DaysCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
 
   return (
     <div className={cn("grid gap-2", className)}>
-         <div className="">
-         <Button
+      <div className="flex justify-center items-center">
+        <div className="">
+          <Button
             id="date"
             variant={"outline"}
             className={cn(
@@ -58,7 +59,8 @@ const DaysCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
             onSelect={setDate}
             numberOfMonths={2}
           />
-         </div>
+        </div>
+      </div>
       {/* <Popover>
         <PopoverTrigger asChild>
         </PopoverTrigger>
