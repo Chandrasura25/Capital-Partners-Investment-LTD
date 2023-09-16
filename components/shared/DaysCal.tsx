@@ -27,9 +27,8 @@ const DaysCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
 
   return (
     <div className={cn("grid gap-2", className)}>
-      <Popover>
-        <PopoverTrigger asChild>
-          <Button
+         <div className="">
+         <Button
             id="date"
             variant={"outline"}
             className={cn(
@@ -51,8 +50,6 @@ const DaysCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
               <span>Pick a date</span>
             )}
           </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
           <Calendar
             initialFocus
             mode="range"
@@ -61,8 +58,13 @@ const DaysCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
             onSelect={setDate}
             numberOfMonths={2}
           />
+         </div>
+      {/* <Popover>
+        <PopoverTrigger asChild>
+        </PopoverTrigger>
+        <PopoverContent className="w-auto p-0" align="start">
         </PopoverContent>
-      </Popover>
+      </Popover> */}
     </div>
   );
 };
