@@ -1,13 +1,9 @@
-// "use client";
 import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Topbar from "@/components/shared/Topbar";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-// import { useState } from "react";
-
-// import { Calendar } from "@/components/ui/calendar";
 
 async function Page() {
   const user = await currentUser();
@@ -23,12 +19,12 @@ async function Page() {
         <section className="main-container relative">
           <div className="max-w-md">
             <div className="p-5 glassmorphism rounded-[20px] mb-8">
-              // <Calendar  
-              //   mode="single"
-              //   selected={date}
-              //   onSelect={setDate}
-              //   className="rounded-md border shadow"
-              // />
+               <Calendar  
+                 mode="single"
+                 selected={date}
+                 onSelect={setDate}
+                 className="rounded-md border shadow"
+               />
             </div>
           </div>
         </section>
