@@ -5,7 +5,12 @@ import { Calendar } from "@/components/ui/calendar";
 const DaysCal = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   return (
-    <div>DaysCal</div>
+    <Calendar  
+    mode="single"
+    selected={date}
+    onSelect={setDate}
+    className="rounded-md border shadow"
+  />
   )
 }
 
