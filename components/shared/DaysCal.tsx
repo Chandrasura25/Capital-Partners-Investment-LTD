@@ -22,8 +22,8 @@ const DaysCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
 
   return (
     <div className={cn("grid gap-2", className)}>
-      <div className="flex justify-center items-center">
-        <div className="">
+      <div className="">
+        <div className="flex justify-center items-center">
           <Button
             id="date"
             variant={"outline"}
@@ -46,15 +46,15 @@ const DaysCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
               <span>Pick a date</span>
             )}
           </Button>
-          <Calendar
-            initialFocus
-            mode="range"
-            defaultMonth={date?.from}
-            selected={date}
-            onSelect={setDate}
-            numberOfMonths={2}
-          />
         </div>
+        <Calendar
+          initialFocus
+          mode="range"
+          defaultMonth={date?.from}
+          selected={date}
+          onSelect={setDate}
+          numberOfMonths={2}
+        />
       </div>
     </div>
   );
