@@ -17,7 +17,7 @@ async function Page() {
       <main className="flex flex-row sm:bg-[#000924]">
         <LeftSidebar />
         <section className="main-container relative">
-          <div className="max-w-md">
+          <div className="max-w-fit">
             <div className="p-5 glassmorphism rounded-[20px] mb-8">
                <DaysCal/>
             </div>
