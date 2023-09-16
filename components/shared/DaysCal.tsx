@@ -13,13 +13,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-
+const today = new Date();
+const formattedDate = new Date(today.getFullYear(), today.getMonth(),today.getDate());
 const DaysCal=({
   className,
 }: React.HTMLAttributes<HTMLDivElement>) => {
     const [date, setDate] = React.useState<DateRange | undefined>({
-        from: new Date(2022, 0, 20),
-        to: addDays(new Date(2022, 0, 20), 500),
+        from: formattedDate,
+        to: addDays(formattedDate, 500),
       })
 
   return (
