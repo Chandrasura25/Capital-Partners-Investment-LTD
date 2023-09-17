@@ -19,7 +19,14 @@ const WeeksCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
     from: formattedDate,
     to: addDays(formattedDate, 500),
   });
-
+  const filterDays = (dates: Date[]): Date[] => {
+    const startDate = formattedDate;
+    const endDate = addDays(formattedDate, 500);
+    return dates.filter((date) => {
+      return date >= startDate && date <= endDate;
+    });
+  };
+  console.log(filterDays);
   return (
     <div className={cn("grid gap-2", className)}>
       <div className="">
@@ -52,7 +59,6 @@ const WeeksCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
           mode="range"
           defaultMonth={date?.from}
           selected={date}
-          onSelect={setDate}
           numberOfMonths={2}
         />
       </div>
