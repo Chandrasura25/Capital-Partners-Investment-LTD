@@ -43,7 +43,7 @@ const DaysCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
                 format(date.from, "LLL dd, y")
               )
             ) : (
-              <span>Pick a date</span>
+              <span>Your Investment Dates</span>
             )}
           </Button>
         </div>
