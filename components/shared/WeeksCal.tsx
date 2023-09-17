@@ -50,7 +50,7 @@ const WeeksCal = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
                 format(date.from, "LLL dd, y")
               )
             ) : (
-              <span>Pick a date</span>
+              <span>Your Investment Weeks</span>
             )}
           </Button>
         </div>
