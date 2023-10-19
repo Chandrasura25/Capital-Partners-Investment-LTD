@@ -41,7 +41,7 @@ export async function addBankDetail({
 }) {
   try {
     const url3 = "/add_bank_details/";
-    const response = await fetch(url + url3, {
+    const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/add_bank_details/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
