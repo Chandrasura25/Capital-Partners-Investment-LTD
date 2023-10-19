@@ -33,7 +33,7 @@ const BankDetails = ({ user, textStyle }: Props) => {
       email: user?.email || "",
       username: user?.username || "",
       accountname: "",
-      accountnumber: 0,
+      accountnumber: "",
       bankname: "",
     },
   });
@@ -108,7 +108,7 @@ const BankDetails = ({ user, textStyle }: Props) => {
               <FormControl>
                 <Input
                   {...field}
-                  type="number"
+                  type="text"
                   className="account-form_input no-focus"
                 />
               </FormControl>
