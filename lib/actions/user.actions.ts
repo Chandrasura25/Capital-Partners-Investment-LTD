@@ -40,7 +40,6 @@ export async function addBankDetail({
   username: string;
 }) {
   try {
-    const url3 = "/add_bank_details/";
     const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/add_bank_details/", {
       method: "POST",
       headers: {
@@ -60,7 +59,6 @@ export async function addBankDetail({
     }
 
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error: any) {
     throw new Error(`Failed to add Bank Details: ${error.message}`);

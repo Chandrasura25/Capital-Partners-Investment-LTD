@@ -49,8 +49,16 @@ const BankDetails = ({ user, textStyle }: Props) => {
       accountNumber: values.accountNumber,
       bankName: values.bankName,
     })
-    console.log(res)
-    // router.push("/dashboard");
+    if(res.status){
+      toast({
+        description: "Bank Details is saved successfully.",
+      })
+      router.push("/dashboard");
+    }else{
+      toast({
+        description: "Error occcured.",
+      })
+    }
   };
   return (
     <Form {...form}>
