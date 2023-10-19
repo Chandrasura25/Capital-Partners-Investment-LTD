@@ -3,16 +3,11 @@
 import { FilterQuery, SortOrder } from "mongoose";
 import { revalidatePath } from "next/cache";
 
-// import Community from "../models/community.model";
-// import Thread from "../models/thread.model";
-import User from "../models/user.model";
-
-import { connectToDB } from "../mongoose";
-
+const url ="https://cap-partners-investment.cyclic.app/api/v0/investors"; 
 export async function fetchUser(userId: string) {
   try {
-    const url = "https://cap-partners-investment.cyclic.app/api/v0/investors/get_profile/";
-    const response  = await fetch(url, {
+    const url1 = "/get_profile/";
+    const response  = await fetch(url + url1, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,32 +60,40 @@ export async function updateUser({
   path,
 }: Params): Promise<void> {
   try {
-    connectToDB();
-
-    await User.findOneAndUpdate(
-      { clerk_id: userId },
-      {
-        username: username.toLowerCase(),
-        firstname,
-        surname,
-        home_address,
-        office_address,
-        email,
-        dob,
-        gender,
-        phone,
-        next_of_kin,
-        education,
-        mother_middle_name,
-        imageURL,
-        onboarded: true,
+    const url2 ="/create_profile/" ;
+    const response  = await fetch(url + url2, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-      { upsert: true }
-    );
+      body: JSON.stringify(
+        {
+          clerk_id: userId,
+          username: username.toLowerCase(),
+          firstname,
+          surname,
+          home_address,
+          office_address,
+          email,
+          dob,
+          gender,
+          phone,
+          next_of_kin,
+          education,
+          mother_middle_name,
+          imageURL,
+        }),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
+    const result = await response.json();
     if (path === "/profile/edit") {
       revalidatePath(path);
     }
+    return result;
+
   } catch (error: any) {
     throw new Error(`Failed to create/update user: ${error.message}`);
   }
