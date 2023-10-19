@@ -11,8 +11,7 @@ import { connectToDB } from "../mongoose";
 
 export async function fetchUser(userId: string) {
   try {
-    const url =
-      "https://cap-partners-investment.cyclic.app/api/v0/investors/get_profile/";
+    const url = "https://cap-partners-investment.cyclic.app/api/v0/investors/get_profile/";
     const response  = await fetch(url, {
       method: "POST",
       headers: {
