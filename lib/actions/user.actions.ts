@@ -61,7 +61,7 @@ export async function addBankDetail({
 
     const result = await response.json();
     console.log(result);
-    // return result.payload;
+    return result;
   } catch (error: any) {
     throw new Error(`Failed to add Bank Details: ${error.message}`);
   }

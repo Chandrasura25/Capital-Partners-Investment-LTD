@@ -41,7 +41,7 @@ const BankDetails = ({ user, textStyle }: Props) => {
     },
   });
   const onSubmit = async (values: z.infer<typeof BankValidation>) => {
-    await addBankDetail({
+   const res = await addBankDetail({
       userID: values.userID,
       email: values.email,
       username: values.username,
@@ -49,6 +49,7 @@ const BankDetails = ({ user, textStyle }: Props) => {
       accountNumber: values.accountNumber,
       bankName: values.bankName,
     })
+    console.log(res)
     // router.push("/dashboard");
   };
   return (
