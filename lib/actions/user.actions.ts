@@ -19,7 +19,7 @@ export async function fetchUser(userId: string) {
     }
 
     const result = await response.json();
-    return result;
+    return result.payload;
   } catch (error: any) {
     throw new Error(`Failed to fetch user: ${error.message}`);
   }
@@ -92,7 +92,7 @@ export async function updateUser({
     if (path === "/profile/edit") {
       revalidatePath(path);
     }
-    return result;
+    return result.payload;
 
   } catch (error: any) {
     throw new Error(`Failed to create/update user: ${error.message}`);

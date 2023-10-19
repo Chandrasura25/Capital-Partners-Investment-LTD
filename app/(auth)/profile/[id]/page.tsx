@@ -11,9 +11,8 @@ async function Page({ params }: { params: { id: string } }) {
   const user = await currentUser();
   if (!user) return null;
 
-  const response = await fetchUser(params.id);
-    const userInfo = response?.payload;
-  if (!userInfo.onboarded) redirect("/onboarding");
+  const userInfo = await fetchUser(params.id);
+  if (!userInfo?.onboarded) redirect("/onboarding");
   const userData = {
     id: user.id,
     username: userInfo ? userInfo?.username : user.username,

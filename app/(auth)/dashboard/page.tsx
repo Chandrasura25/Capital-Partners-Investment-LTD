@@ -12,9 +12,8 @@ import { dashboardMenu } from "@/constants";
 async function Page() {
   const user = await currentUser();
   if (!user) return null;
-  const response = await fetchUser(user.id);
-  const userInfo = response?.payload;
-  if (!userInfo.onboarded) redirect("/onboarding");
+  const userInfo = await fetchUser(user.id);
+  if (!userInfo?.onboarded) redirect("/onboarding");
 
   return (
     <>
