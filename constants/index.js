@@ -112,15 +112,15 @@ export const sidebarLinks = [
         label: "Withdrawal",
     },
     {
+        imgURL: "/assets/bank_account.svg",
+        route: "/add-account",
+        label: "Account Details",
+    },
+    {
         imgURL: "/assets/menu.svg",
         route: "#",
         label: "More",
     },
-    // {
-    //     imgURL: "/assets/community.svg",
-    //     route: "/communities",
-    //     label: "Customer Care",
-    // },
 
     //  {
     //     imgURL: "/assets/user.svg",
