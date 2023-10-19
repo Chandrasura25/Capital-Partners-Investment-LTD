@@ -5,7 +5,7 @@ import { authMiddleware } from "@clerk/nextjs";
 // See https://clerk.com/docs/nextjs/middleware for more information about configuring your middleware
 export default authMiddleware({
     publicRoutes: ['/','/api/webhook/clerk','/calculator','/faqs','/product01','/stories'],
-    ignoredRoutes: ['/api/webhook/clerk'],
+    ignoredRoutes: ['/api/webhook/clerk','/api/uploadthing'],
 });
 
 export const config = {
