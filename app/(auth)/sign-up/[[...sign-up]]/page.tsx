@@ -11,8 +11,9 @@ async function Page() {
       </div>
     );
   } else {
-    const userInfo = await fetchUser(user.id);
-    if (userInfo?.onboarded) redirect("/dashboard");
+    const response = await fetchUser(user.id);
+    const userInfo = response?.payload;
+    if (userInfo.onboarded) redirect("/dashboard");
   }
 }
 export default Page;
