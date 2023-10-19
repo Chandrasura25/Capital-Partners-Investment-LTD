@@ -11,26 +11,24 @@ async function Page({ params }: { params: { id: string } }) {
   const user = await currentUser();
   if (!user) return null;
 
-  const userInfo = await fetchUser(params.id);
-  if (!userInfo?.onboarded) redirect("/onboarding");
+  const response = await fetchUser(params.id);
+    const userInfo = response?.payload;
+  if (!userInfo.onboarded) redirect("/onboarding");
   const userData = {
     id: user.id,
-    objectId: userInfo?._id,
     username: userInfo ? userInfo?.username : user.username,
     surname: userInfo ? userInfo?.surname : user.lastName ?? "",
-    firstName: userInfo ? userInfo?.firstName : user.firstName ?? "",
-    homeAddress: userInfo ? userInfo?.homeAddress : "",
-    officeAddress: userInfo ? userInfo?.officeAddress : "",
-    email: userInfo
-      ? userInfo?.email
-      : user.emailAddresses[0].emailAddress ?? "",
-    date_of_birth: userInfo ? userInfo?.date_of_birth : user.birthday ?? "",
+    firstname: userInfo ? userInfo?.firstname : user.firstName ?? "",
+    email: userInfo ? userInfo?.email : user.emailAddresses[0].emailAddress ?? "",
+    dob: userInfo ? userInfo?.dob : user.birthday ?? "",
+    phone: userInfo ? userInfo?.phone : "",
+    imageURL: userInfo ? userInfo?.imageURL : user.imageUrl,
+    home_address: userInfo ? userInfo?.home_address : "",
+    office_address: userInfo ? userInfo?.office_address : "",
     gender: userInfo ? userInfo?.gender : user.gender ?? "",
-    mobile_number: userInfo ? userInfo?.mobile_number : "",
     next_of_kin: userInfo ? userInfo?.next_of_kin : "",
-    level_of_education: userInfo ? userInfo?.level_of_education : "",
+    education: userInfo ? userInfo?.education : "",
     mother_middle_name: userInfo ? userInfo?.mother_middle_name : "",
-    image: userInfo ? userInfo?.image : user.imageUrl,
   };
   return (
     <>
