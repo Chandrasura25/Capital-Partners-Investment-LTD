@@ -29,20 +29,19 @@ import { useRouter, usePathname } from "next/navigation";
 interface Props {
   user: {
     id: string;
-    objectId: string;
     username: string;
-    firstName: string;
+    firstname: string;
     surname: string;
-    homeAddress: string;
-    officeAddress: string;
+    home_address: string;
+    office_address: string;
     email: string;
-    date_of_birth: string;
+    dob: string;
     gender: string;
-    mobile_number: string;
+    phone: string;
     next_of_kin: string;
-    level_of_education: string;
+    education: string;
     mother_middle_name: string;
-    image: string;
+    imageURL: string;
   };
   btnTitle: string;
   textStyle?: string;
@@ -55,32 +54,32 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
 
   const fieldMappings = {
     surname: "Surname",
-    firstName: "First Name",
+    firstname: "First Name",
     username: "Username",
-    homeAddress: "Home Address",
-    officeAddress: "Office Address",
+    home_address: "Home Address",
+    office_address: "Office Address",
     mother_middle_name: "Mother Middle Name",
     next_of_kin: "Next of Kin",
-    mobile_number: "Mobile Number",
-    level_of_education: "Level of Education",
+    phone: "Mobile Number",
+    education: "Level of Education",
   };
 
   const form = useForm({
     resolver: zodResolver(UserValidation),
     defaultValues: {
-      profile_photo: user?.image || "",
+      profile_photo: user?.imageURL || "",
       surname: user?.surname || "",
       username: user?.username || "",
-      firstName: user?.firstName || "",
+      firstname: user?.firstname || "",
       email: user?.email || "",
-      homeAddress: user?.homeAddress || "",
-      officeAddress: user?.officeAddress || "",
-      date_of_birth: user?.date_of_birth || "",
+      home_address: user?.home_address || "",
+      office_address: user?.office_address || "",
+      dob: user?.dob || "",
       gender: user?.gender || "",
       mother_middle_name: user?.mother_middle_name || "",
       next_of_kin: user?.next_of_kin || "",
-      level_of_education: user?.level_of_education || "",
-      mobile_number: user?.mobile_number || "",
+      education: user?.education || "",
+      phone: user?.phone || "",
     },
   });
   const handleImage = (
@@ -111,18 +110,18 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
     }
     await updateUser({
       username: values.username,
-      firstName: values.firstName,
+      firstname: values.firstname,
       surname: values.surname,
-      homeAddress: values.homeAddress,
-      officeAddress: values.officeAddress,
+      home_address: values.home_address,
+      office_address: values.office_address,
       email: values.email,
-      date_of_birth: values.date_of_birth,
+      dob: values.dob,
       gender: values.gender,
-      mobile_number: values.mobile_number,
+      phone: values.phone,
       next_of_kin: values.next_of_kin,
-      level_of_education: values.level_of_education,
+      education: values.education,
       mother_middle_name: values.mother_middle_name,
-      image: values.profile_photo,
+      imageURL: values.profile_photo,
       userId: user.id,
       path: pathname,
     });
@@ -201,14 +200,14 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
         />
         {[
           "surname",
-          "firstName",
+          "firstname",
           "username",
-          "homeAddress",
-          "officeAddress",
+          "home_address",
+          "office_address",
           "mother_middle_name",
           "next_of_kin",
-          "mobile_number",
-          "level_of_education",
+          "phone",
+          "education",
         ].map((child) => (
           <FormField
             control={form.control}
@@ -268,7 +267,7 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
         />
         <FormField
           control={form.control}
-          name="date_of_birth"
+          name="dob"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-3 w-full">
               <FormLabel
