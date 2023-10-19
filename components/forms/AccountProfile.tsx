@@ -67,7 +67,7 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
   const form = useForm({
     resolver: zodResolver(UserValidation),
     defaultValues: {
-      profile_photo: user?.imageURL || "",
+      imageURL: user?.imageURL || "",
       surname: user?.surname || "",
       username: user?.username || "",
       firstname: user?.firstname || "",
@@ -100,12 +100,12 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
     }
   };
   const onSubmit = async (values: z.infer<typeof UserValidation>) => {
-    const blob = values.profile_photo;
+    const blob = values.imageURL;
     const hasImageChanged = isBase64Image(blob);
     if (hasImageChanged) {
       const imgRes = await startUpload(files);
       if (imgRes && imgRes[0].fileUrl) {
-        values.profile_photo = imgRes[0].fileUrl;
+        values.imageURL = imgRes[0].fileUrl;
       }
     }
     await updateUser({
@@ -121,7 +121,7 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
       next_of_kin: values.next_of_kin,
       education: values.education,
       mother_middle_name: values.mother_middle_name,
-      imageURL: values.profile_photo,
+      imageURL: values.imageURL,
       userId: user.id,
       path: pathname,
     });
@@ -139,7 +139,7 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
       >
         <FormField
           control={form.control}
-          name="profile_photo"
+          name="imageURL"
           render={({ field }) => (
             <FormItem className="flex items-center gap-4">
               <FormLabel className="account-form_image-label">
