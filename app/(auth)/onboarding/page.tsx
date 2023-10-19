@@ -7,13 +7,12 @@ import AccountProfile from "@/components/forms/AccountProfile";
 async function Page() {
   const user = await currentUser();
   if (!user) return null; // to avoid typescript warnings
-  const userInfo = await fetchUser(user.id);
-  console.log(userInfo);
-  // if (userInfo?.onboarded) redirect("/dashboard");
+  const response = await fetchUser(user.id);
+  const userInfo = response?.payload;
+  if (userInfo.onboarded) redirect("/dashboard");
 
   const userData = {
     id: user.id,
-    // objectId: userInfo?._id,
     username: userInfo ? userInfo?.username : user.username,
     surname: userInfo ? userInfo?.surname : user.lastName ?? "",
     firstname: userInfo ? userInfo?.firstname : user.firstName ?? "",
