@@ -158,7 +158,7 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
                     alt="profile_photo"
                     width={24}
                     height={24}
-                    className="object-contain"
+                    className="rounded-full object-contain"
                   />
                 )}
               </FormLabel>
