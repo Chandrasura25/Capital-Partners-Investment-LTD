@@ -13,8 +13,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BankValidation } from "@/lib/validations/bank";
 import * as z from "zod";
-import { ChangeEvent, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import { addBankDetail } from "@/lib/actions/user.actions";
+import { useToast } from "@/components/ui/use-toast"
+
 interface Props {
   user: {
     id: number;
@@ -24,6 +26,7 @@ interface Props {
   textStyle?: string;
 }
 const BankDetails = ({ user, textStyle }: Props) => {
+   const { toast } = useToast()
   const pathname = usePathname();
   const router = useRouter();
   const form = useForm({
@@ -38,7 +41,14 @@ const BankDetails = ({ user, textStyle }: Props) => {
     },
   });
   const onSubmit = async (values: z.infer<typeof BankValidation>) => {
-    console.log(values);
+    await addBankDetail({
+      userID: values.userID,
+      email: values.email,
+      username: values.username,
+      accountname: values.accountname,
+      accountnumber: values.accountnumber,
+      bankname: values.bankname,
+    })
     // router.push("/dashboard");
   };
   return (

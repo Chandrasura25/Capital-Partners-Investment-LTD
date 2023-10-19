@@ -3,11 +3,11 @@
 import { FilterQuery, SortOrder } from "mongoose";
 import { revalidatePath } from "next/cache";
 
-const url ="https://cap-partners-investment.cyclic.app/api/v0/investors"; 
+const url = "https://cap-partners-investment.cyclic.app/api/v0/investors";
 export async function fetchUser(userId: string) {
   try {
     const url1 = "/get_profile/";
-    const response  = await fetch(url + url1, {
+    const response = await fetch(url + url1, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +24,48 @@ export async function fetchUser(userId: string) {
     throw new Error(`Failed to fetch user: ${error.message}`);
   }
 }
+export async function addBankDetail({
+  userID,
+  bankname,
+  accountnumber,
+  accountname,
+  email,
+  username,
+}: {
+  userID: number;
+  bankname: string;
+  accountnumber: string;
+  accountname: string;
+  email: string;
+  username: string;
+}) {
+  try {
+    const url3 = "/add_bank_details/";
+    const response = await fetch(url + url3, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userID,
+        bankname,
+        accountnumber,
+        accountname,
+        email,
+        username,
+      }),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
+    const result = await response.json();
+    console.log(result);
+    // return result.payload;
+  } catch (error: any) {
+    throw new Error(`Failed to add Bank Details: ${error.message}`);
+  }
+}
 interface Params {
   userId: string;
   username: string;
@@ -60,29 +101,28 @@ export async function updateUser({
   path,
 }: Params): Promise<void> {
   try {
-    const url2 ="/create_profile/" ;
-    const response  = await fetch(url + url2, {
+    const url2 = "/create_profile/";
+    const response = await fetch(url + url2, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(
-        {
-          clerk_id: userId,
-          username: username.toLowerCase(),
-          firstname,
-          surname,
-          home_address,
-          office_address,
-          email,
-          dob,
-          gender,
-          phone,
-          next_of_kin,
-          education,
-          mother_middle_name,
-          imageURL,
-        }),
+      body: JSON.stringify({
+        clerk_id: userId,
+        username: username.toLowerCase(),
+        firstname,
+        surname,
+        home_address,
+        office_address,
+        email,
+        dob,
+        gender,
+        phone,
+        next_of_kin,
+        education,
+        mother_middle_name,
+        imageURL,
+      }),
     });
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -93,7 +133,6 @@ export async function updateUser({
       revalidatePath(path);
     }
     return result.payload;
-
   } catch (error: any) {
     throw new Error(`Failed to create/update user: ${error.message}`);
   }
