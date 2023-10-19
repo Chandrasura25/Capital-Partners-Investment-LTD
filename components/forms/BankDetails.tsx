@@ -35,9 +35,9 @@ const BankDetails = ({ user, textStyle }: Props) => {
       userID: user?.id || 0,
       email: user?.email || "",
       username: user?.username || "",
-      accountname: "",
-      accountnumber: "",
-      bankname: "",
+      accountName: "",
+      accountNumber: "",
+      bankName: "",
     },
   });
   const onSubmit = async (values: z.infer<typeof BankValidation>) => {
@@ -45,9 +45,9 @@ const BankDetails = ({ user, textStyle }: Props) => {
       userID: values.userID,
       email: values.email,
       username: values.username,
-      accountname: values.accountname,
-      accountnumber: values.accountnumber,
-      bankname: values.bankname,
+      accountName: values.accountName,
+      accountNumber: values.accountNumber,
+      bankName: values.bankName,
     })
     // router.push("/dashboard");
   };
@@ -59,7 +59,7 @@ const BankDetails = ({ user, textStyle }: Props) => {
       >
         <FormField
           control={form.control}
-          name="bankname"
+          name="bankName"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-3 w-full">
               <FormLabel
@@ -82,7 +82,7 @@ const BankDetails = ({ user, textStyle }: Props) => {
         />
         <FormField
           control={form.control}
-          name="accountname"
+          name="accountName"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-3 w-full">
               <FormLabel
@@ -105,7 +105,7 @@ const BankDetails = ({ user, textStyle }: Props) => {
         />
         <FormField
           control={form.control}
-          name="accountnumber"
+          name="accountNumber"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-3 w-full">
               <FormLabel

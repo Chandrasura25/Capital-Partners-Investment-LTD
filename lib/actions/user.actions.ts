@@ -26,16 +26,16 @@ export async function fetchUser(userId: string) {
 }
 export async function addBankDetail({
   userID,
-  bankname,
-  accountnumber,
-  accountname,
+  bankName,
+  accountNumber,
+  accountName,
   email,
   username,
 }: {
   userID: number;
-  bankname: string;
-  accountnumber: string;
-  accountname: string;
+  bankName: string;
+  accountNumber: string;
+  accountName: string;
   email: string;
   username: string;
 }) {
@@ -48,9 +48,9 @@ export async function addBankDetail({
       },
       body: JSON.stringify({
         userID,
-        bankname,
-        accountnumber,
-        accountname,
+        bankName,
+        accountNumber,
+        accountName,
         email,
         username,
       }),
