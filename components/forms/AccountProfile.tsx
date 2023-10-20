@@ -108,28 +108,29 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
         values.profile_photo = imgRes[0].fileUrl;
       }
     }
-    await updateUser({
-      username: values.username,
-      firstname: values.firstname,
-      surname: values.surname,
-      home_address: values.home_address,
-      office_address: values.office_address,
-      email: values.email,
-      dob: values.dob,
-      gender: values.gender,
-      phone: values.phone,
-      next_of_kin: values.next_of_kin,
-      education: values.education,
-      mother_middle_name: values.mother_middle_name,
-      imageURL: values.profile_photo,
-      userId: user.id,
-      path: pathname,
-    });
-    if (pathname === "/profile/edit") {
-      router.back();
-    } else {
-      router.push("/dashboard");
-    }
+    console.log(values.profile_photo, user.image)
+    // await updateUser({
+    //   username: values.username,
+    //   firstname: values.firstname,
+    //   surname: values.surname,
+    //   home_address: values.home_address,
+    //   office_address: values.office_address,
+    //   email: values.email,
+    //   dob: values.dob,
+    //   gender: values.gender,
+    //   phone: values.phone,
+    //   next_of_kin: values.next_of_kin,
+    //   education: values.education,
+    //   mother_middle_name: values.mother_middle_name,
+    //   imageURL: values.profile_photo,
+    //   userId: user.id,
+    //   path: pathname,
+    // });
+    // if (pathname === "/profile/edit") {
+    //   router.back();
+    // } else {
+    //   router.push("/dashboard");
+    // }
   };
   return (
     <Form {...form}>
