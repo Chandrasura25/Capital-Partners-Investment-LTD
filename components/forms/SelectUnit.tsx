@@ -48,8 +48,7 @@ const SelectUnit = ({ user, textStyle }: Props) => {
   };
   const onSubmit = async (values: z.infer<typeof UnitValidation>) => {
     localStorage.unitDetails = JSON.stringify(values)
-    // console.log(values);
-    // router.push("/success");
+    router.push("/card-details");
   };
   return (
     <Form {...form}>
