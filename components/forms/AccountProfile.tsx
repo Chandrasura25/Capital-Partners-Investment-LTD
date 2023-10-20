@@ -41,7 +41,7 @@ interface Props {
     next_of_kin: string;
     education: string;
     mother_middle_name: string;
-    imageURL: string;
+    image: string;
   };
   btnTitle: string;
   textStyle?: string;
@@ -67,7 +67,7 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
   const form = useForm({
     resolver: zodResolver(UserValidation),
     defaultValues: {
-      imageURL: user?.imageURL || "",
+      profile_photo: user?.image || "",
       surname: user?.surname || "",
       username: user?.username || "",
       firstname: user?.firstname || "",
@@ -100,12 +100,12 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
     }
   };
   const onSubmit = async (values: z.infer<typeof UserValidation>) => {
-    const blob = values.imageURL;
+    const blob = values.profile_photo;
     const hasImageChanged = isBase64Image(blob);
     if (hasImageChanged) {
       const imgRes = await startUpload(files);
       if (imgRes && imgRes[0].fileUrl) {
-        values.imageURL = imgRes[0].fileUrl;
+        values.profile_photo = imgRes[0].fileUrl;
       }
     }
     await updateUser({
@@ -121,7 +121,7 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
       next_of_kin: values.next_of_kin,
       education: values.education,
       mother_middle_name: values.mother_middle_name,
-      imageURL: values.imageURL,
+      imageURL: values.profile_photo,
       userId: user.id,
       path: pathname,
     });
@@ -139,7 +139,7 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
       >
         <FormField
           control={form.control}
-          name="imageURL"
+          name="profile_photo"
           render={({ field }) => (
             <FormItem className="flex items-center gap-4">
               <FormLabel className="account-form_image-label">
@@ -158,7 +158,7 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
                     alt="profile_photo"
                     width={24}
                     height={24}
-                    className="rounded-full object-contain"
+                    className="object-contain"
                   />
                 )}
               </FormLabel>
@@ -171,7 +171,7 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
                   onChange={(e) => handleImage(e, field.onChange)}
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage/>
             </FormItem>
           )}
         />
