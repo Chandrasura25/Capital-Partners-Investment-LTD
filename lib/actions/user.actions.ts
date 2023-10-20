@@ -19,7 +19,7 @@ export async function fetchUser(userId: string) {
     }
 
     const result = await response.json();
-    return result.payload;
+    return result;
   } catch (error: any) {
     throw new Error(`Failed to fetch user: ${error.message}`);
   }

@@ -12,7 +12,7 @@ async function Page() {
     );
   } else {
     const userInfo = await fetchUser(user.id);
-    if (userInfo?.onboarded) redirect("/dashboard");
+    if (userInfo?.payload.onboarded) redirect("/dashboard");
   }
 }
 export default Page;
