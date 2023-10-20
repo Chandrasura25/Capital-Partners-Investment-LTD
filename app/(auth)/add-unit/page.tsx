@@ -17,8 +17,9 @@ import SelectUnit from "@/components/forms/SelectUnit";
 async function Page() {
   const user = await currentUser();
   if (!user) return null;
-  const userInfo = await fetchUser(user.id);
-  if (!userInfo?.onboarded) redirect("/onboarding");
+  const userDatum = await fetchUser(user.id);
+  const userInfo = userDatum?.payload;
+  if (!userInfo.onboarded) redirect("/onboarding");
   return (
     <>
       <Topbar userInfo={userInfo} />

@@ -10,24 +10,27 @@ import AccountProfile from "@/components/forms/AccountProfile";
 async function Page({ params }: { params: { id: string } }) {
   const user = await currentUser();
   if (!user) return null;
+  const useDatum = await fetchUser(params.id);
+  const userInfo = useDatum?.payload;
+  const userStatus = useDatum?.status;
 
-  const userInfo = await fetchUser(user.id);
-  if (!userInfo?.onboarded) redirect("/onboarding");
+  if (!userInfo.onboarded) redirect("/onboarding");
+
   const userData = {
     id: user.id,
-    username: userInfo ? userInfo?.username : user.username,
-    surname: userInfo ? userInfo?.surname : user.lastName ?? "",
-    firstname: userInfo ? userInfo?.firstname : user.firstName ?? "",
-    email: userInfo ? userInfo?.email : user.emailAddresses[0].emailAddress ?? "",
-    dob: userInfo ? userInfo?.dob : user.birthday ?? "",
-    phone: userInfo ? userInfo?.phone : "",
-    image: userInfo ? userInfo?.imageURL : user.imageUrl,
-    home_address: userInfo ? userInfo?.home_address : "",
-    office_address: userInfo ? userInfo?.office_address : "",
-    gender: userInfo ? userInfo?.gender : user.gender ?? "",
-    next_of_kin: userInfo ? userInfo?.next_of_kin : "",
-    education: userInfo ? userInfo?.education : "",
-    mother_middle_name: userInfo ? userInfo?.mother_middle_name : "",
+    username: userStatus ? userInfo?.username : user.username,
+    surname: userStatus ? userInfo?.surname : user.lastName ?? "",
+    firstname: userStatus ? userInfo?.firstname : user.firstName ?? "",
+    email: userStatus ? userInfo?.email : user.emailAddresses[0].emailAddress ?? "",
+    dob: userStatus ? userInfo?.dob : user.birthday ?? "",
+    phone: userStatus ? userInfo?.phone : "",
+    image: userStatus ? userInfo?.imageURL : user.imageUrl,
+    home_address: userStatus ? userInfo?.home_address : "",
+    office_address: userStatus ? userInfo?.office_address : "",
+    gender: userStatus ? userInfo?.gender : user.gender ?? "",
+    next_of_kin: userStatus ? userInfo?.next_of_kin : "",
+    education: userStatus ? userInfo?.education : "",
+    mother_middle_name: userStatus ? userInfo?.mother_middle_name : "",
   };
   return (
     <>
