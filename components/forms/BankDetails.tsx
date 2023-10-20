@@ -16,6 +16,7 @@ import * as z from "zod";
 import { useRouter, usePathname } from "next/navigation";
 import { addBankDetail } from "@/lib/actions/user.actions";
 import { useToast } from "@/components/ui/use-toast"
+import { ToastAction } from "@/components/ui/toast"
 
 interface Props {
   user: {
@@ -56,7 +57,10 @@ const BankDetails = ({ user, textStyle }: Props) => {
       router.push("/dashboard");
     }else{
       toast({
-        description: "Error occcured.",
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
       })
     }
   };
