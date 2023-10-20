@@ -32,7 +32,7 @@ export async function fetchBankDetails(email: string) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email}),
+      body: JSON.stringify({ email }),
     });
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -60,20 +60,23 @@ export async function addBankDetail({
   username: string;
 }) {
   try {
-    const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/add_bank_details/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userID,
-        bankName,
-        accountNumber,
-        accountName,
-        email,
-        username,
-      }),
-    });
+    const response = await fetch(
+      "https://cap-partners-investment.cyclic.app/api/v0/investors/add_bank_details/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userID,
+          bankName,
+          accountNumber,
+          accountName,
+          email,
+          username,
+        }),
+      }
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -146,12 +149,66 @@ export async function updateUser({
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    const result = await response.json();
     if (path === "/profile/edit") {
       revalidatePath(path);
     }
+    const result = await response.json();
     return result.payload;
   } catch (error: any) {
     throw new Error(`Failed to create/update user: ${error.message}`);
+  }
+}
+interface cardParams {
+  userID: number;
+  email: string;
+  fullname: string;
+  amount: string;
+  phone_number: string;
+  cvv: string;
+  pin: string;
+  expiry_month: string;
+  expiry_year: string;
+  card_number: string;
+}
+export async function purchaseInvestment({
+  userID,
+  email,
+  fullname,
+  amount,
+  phone_number,
+  cvv,
+  pin,
+  expiry_month,
+  expiry_year,
+  card_number,
+}: cardParams) {
+  try {
+    const url5 =
+      "https://cap-partners-investment.cyclic.app/api/v0/investors/invest/purchase_investment";
+    const response = await fetch(url5, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userID,
+        email,
+        fullname,
+        amount,
+        phone_number,
+        cvv,
+        pin,
+        expiry_month,
+        expiry_year,
+        card_number,
+      }),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const result = await response.json();
+    return result.payload;
+  } catch (error: any) {
+    throw new Error(`Failed to purchase investment: ${error.message}`);
   }
 }
