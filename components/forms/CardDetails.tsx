@@ -9,5 +9,9 @@ interface Props {
   textStyle?: string;
   btnTitle?: string;
 }
-const CardDetails = ({ user, textStyle, btnTitle }: Props) => {};
+const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
+    return(
+        <></>
+    )
+};
 export default CardDetails;
