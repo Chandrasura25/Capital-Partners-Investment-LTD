@@ -47,8 +47,9 @@ const SelectUnit = ({ user, textStyle }: Props) => {
     setValue("amount", newUnit * 50000);
   };
   const onSubmit = async (values: z.infer<typeof UnitValidation>) => {
-    console.log(values);
-    router.push("/success");
+    localStorage.unitDetails = JSON.stringify(values)
+    // console.log(values);
+    // router.push("/success");
   };
   return (
     <Form {...form}>
