@@ -21,7 +21,7 @@ async function Page({ params }: { params: { id: string } }) {
     email: userInfo ? userInfo?.email : user.emailAddresses[0].emailAddress ?? "",
     dob: userInfo ? userInfo?.dob : user.birthday ?? "",
     phone: userInfo ? userInfo?.phone : "",
-    imageURL: userInfo ? userInfo?.imageURL : user.imageUrl,
+    image: userInfo ? userInfo?.imageURL : user.imageUrl,
     home_address: userInfo ? userInfo?.home_address : "",
     office_address: userInfo ? userInfo?.office_address : "",
     gender: userInfo ? userInfo?.gender : user.gender ?? "",
