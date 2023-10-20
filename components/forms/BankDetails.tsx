@@ -53,6 +53,7 @@ const BankDetails = ({ user, textStyle }: Props) => {
     if(res.status){
       toast({
         description: "Bank Details is saved successfully.",
+        action: <ToastAction altText="Ok">Ok</ToastAction>,
       })
       router.push("/dashboard");
     }else{
