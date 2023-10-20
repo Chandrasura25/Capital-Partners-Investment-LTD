@@ -6,7 +6,7 @@ import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Topbar from "@/components/shared/Topbar";
 
-async function Page({ params }: { params: { id: string } }) {
+async function Page() {
   const user = await currentUser();
   if (!user) return null;
   const userDatum = await fetchUser(user.id);
