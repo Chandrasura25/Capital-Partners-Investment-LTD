@@ -73,6 +73,8 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
     //         description: "Bank Details is saved successfully.",
     //         action: <ToastAction altText="Ok">Ok</ToastAction>,
     //       });
+    // localStorage.removeItem("unitDetails");
+
     //       router.push("/dashboard");
     //     } else {
     //       toast({
