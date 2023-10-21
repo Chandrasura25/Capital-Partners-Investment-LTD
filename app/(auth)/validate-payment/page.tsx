@@ -14,8 +14,7 @@ async function Page() {
   const userInfo = userDatum?.payload;
   const userStatus = userDatum?.status;
   if (!userInfo.onboarded) redirect("/onboarding");
-  const stringUserID = userInfo.id.toString();
-  
+  const stringUserID = userInfo?.id?.toString() ?? '';
   const userData = {
     userID: stringUserID,
     username: userStatus ? userInfo?.username : user.username,

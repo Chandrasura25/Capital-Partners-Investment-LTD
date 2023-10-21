@@ -12,7 +12,7 @@ async function Page() {
   const userDatum = await fetchUser(user.id);
   const userInfo = userDatum?.payload;
   if (!userInfo.onboarded) redirect("/onboarding");
-  const stringUserID = userInfo.id.toString();
+ const stringUserID = userInfo?.id?.toString() ?? '';
   const userData = {
     userID: stringUserID,
     fullname: userInfo.surname + " " + userInfo.firstname,
