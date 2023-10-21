@@ -14,7 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { PaymentValidation } from "@/lib/validations/bank";
 import * as z from "zod";
 import { useRouter, usePathname } from "next/navigation";
-import { purchaseInvestment } from "@/lib/actions/user.actions";
+import { ValidatePurchase } from "@/lib/actions/user.actions";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 import { parseLocalStorageItem, getFormattedDate } from "@/lib/utils";
@@ -48,7 +48,30 @@ const ValidatePayment = ({ user, textStyle, btnTitle }: Props) => {
     },
   });
    const onSubmit = async (values: z.infer<typeof PaymentValidation>) => {
-    console.log(values);
+    const res = await ValidatePurchase({
+      userID: values.userID,
+      email: values.email,
+      username: values.username,
+      amount: values.amount,
+      date: values.date,
+      otp: values.otp,
+      flw_ref: values.flw_ref,
+    });
+    if (res.status) {
+      toast({
+        description: "Payment Validation is successful.",
+        action: <ToastAction altText="Ok">Ok</ToastAction>,
+      });
+      localStorage.removeItem("cardDetails");
+      router.push("/dashboard");
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+    }
    }
   return (
     <>
