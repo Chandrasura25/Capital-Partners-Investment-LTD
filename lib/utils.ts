@@ -57,6 +57,6 @@ export function getFormattedDate() {
   const formattedDay = (day < 10) ? `0${day}` : day;
   const formattedMonth = (month < 10) ? `0${month}` : month;
 
-  const formattedDate = `${formattedMonth}/${formattedDay}/${year}`;
+  const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
   return formattedDate;
 }
