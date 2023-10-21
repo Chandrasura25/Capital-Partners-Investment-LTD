@@ -14,7 +14,7 @@ async function Page() {
   if (!userInfo.onboarded) redirect("/onboarding");
   
   const userData = {
-    userID: userInfo.id,
+    userID: userInfo.id.toString(),
     fullname: userInfo.surname + "" + userInfo.firstname,
     email: userInfo
       ? userInfo?.email
