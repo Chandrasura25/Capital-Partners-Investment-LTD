@@ -15,6 +15,7 @@ import { CardValidation } from "@/lib/validations/bank";
 import * as z from "zod";
 import { useRouter, usePathname } from "next/navigation";
 import { purchaseInvestment } from "@/lib/actions/user.actions";
+import { useState, useEffect } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 interface Props {
@@ -31,8 +32,16 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
   const { toast } = useToast();
   const pathname = usePathname();
   const router = useRouter();
-  const unitDetailsStr = localStorage.getItem("unitDetails");
-  const unitDetails = unitDetailsStr ? JSON.parse(unitDetailsStr) : null;
+  const [unitDetails, setUnitDetails] = useState<{ amount?: string }>({});
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const unitDetailsStr = localStorage.getItem("unitDetails") || "";
+      setUnitDetails(JSON.parse(unitDetailsStr));
+    }
+  }, []);
+  
+  const Amount = unitDetails?.amount || "";
   const form = useForm({
     resolver: zodResolver(CardValidation),
     defaultValues: {
@@ -40,7 +49,7 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
       email: user?.email || "",
       fullname: user?.fullname || "",
       phone_number: user?.phone_number || "",
-      amount: unitDetails?.amount || "",
+      amount: Amount || "",
       card_number: "",
       expiry_year: "",
       expiry_month: "",
