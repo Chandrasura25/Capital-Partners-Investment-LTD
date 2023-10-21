@@ -4,7 +4,7 @@ import Image from "next/image";
 import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Topbar from "@/components/shared/Topbar";
-import { fetchUser } from "@/lib/actions/user.actions";
+import { fetchUser, fetchInvestments } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { dashboardMenu } from "@/constants";
@@ -15,7 +15,8 @@ async function Page() {
   const useDatum = await fetchUser(user.id);
   const userInfo = useDatum?.payload;
   if (!userInfo.onboarded) redirect("/onboarding");
-
+  const investments = await fetchInvestments(userInfo.email);
+  console.log(investments);
   return (
     <>
       <Topbar userInfo={userInfo} />

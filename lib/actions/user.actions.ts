@@ -256,8 +256,29 @@ export async function ValidatePurchase({
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const result = await response.json();
+    console.log(result, response)
     return result;
   } catch (error: any) {
     throw new Error(`Failed to validate payment: ${error.message}`);
+  }
+}
+export async function fetchInvestments(email: string) {
+  try {
+    const url6 = "https://cap-partners-investment.cyclic.app/api/v0/investors/invest/fetch_investment";
+    const response = await fetch(url6, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error: any) {
+    throw new Error(`Failed to fetch Investment: ${error.message}`);
   }
 }
