@@ -18,6 +18,7 @@ import { purchaseInvestment } from "@/lib/actions/user.actions";
 import { useState, useEffect } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
+
 interface Props {
   user: {
     userID: number;
@@ -32,6 +33,7 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
   const { toast } = useToast();
   const pathname = usePathname();
   const router = useRouter();
+
   const [unitDetails, setUnitDetails] = useState<{ amount?: string }>({});
 
   useEffect(() => {
@@ -40,8 +42,8 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
       setUnitDetails(JSON.parse(unitDetailsStr));
     }
   }, []);
-  
-  const Amount = unitDetails?.amount || "";
+  const Amount = unitDetails?.amount || ""; 
+ 
   const form = useForm({
     resolver: zodResolver(CardValidation),
     defaultValues: {
@@ -49,7 +51,7 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
       email: user?.email || "",
       fullname: user?.fullname || "",
       phone_number: user?.phone_number || "",
-      amount: Amount || "",
+      amount: Amount.toString() || "",
       card_number: "",
       expiry_year: "",
       expiry_month: "",
@@ -57,41 +59,36 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
       pin: "",
     },
   });
-  const fieldMappings = {
-    card_number: "Card Number",
-    cvv: "CVV",
-    pin: "PIN",
-  };
   const onSubmit = async (values: z.infer<typeof CardValidation>) => {
-    // const res = await purchaseInvestment({
-    //   userID: values.userID,
-    //   email: values.email,
-    //   fullname: values.fullname,
-    //   phone_number: values.phone_number,
-    //   amount: values.amount,
-    //   card_number: values.card_number,
-    //   expiry_year: values.expiry_year,
-    //   expiry_month: values.expiry_month,
-    //   cvv: values.cvv,
-    //   pin: values.pin,
-    // });
-    // if (res.status) {
-    //   toast({
-    //     description: "Card Details is saved successfully.",
-    //     action: <ToastAction altText="Ok">Ok</ToastAction>,
-    //   });
-    //   localStorage.removeItem("unitDetails");
-    //   localStorage.setItem("investmentDetails", JSON.stringify(res.payload));
-    //   router.push("/validate-payment");
-    // } else {
-    //   toast({
-    //     variant: "destructive",
-    //     title: "Uh oh! Something went wrong.",
-    //     description: "There was a problem with your request.",
-    //     action: <ToastAction altText="Try again">Try again</ToastAction>,
-    //   });
-    // }
     console.log(values);
+  //   // const res = await purchaseInvestment({
+  //   //   userID: values.userID,
+  //   //   email: values.email,
+  //   //   fullname: values.fullname,
+  //   //   phone_number: values.phone_number,
+  //   //   amount: values.amount,
+  //   //   card_number: values.card_number,
+  //   //   expiry_year: values.expiry_year,
+  //   //   expiry_month: values.expiry_month,
+  //   //   cvv: values.cvv,
+  //   //   pin: values.pin,
+  //   // });
+  //   // if (res.status) {
+  //   //   toast({
+  //   //     description: "Card Details is saved successfully.",
+  //   //     action: <ToastAction altText="Ok">Ok</ToastAction>,
+  //   //   });
+  //   //   localStorage.removeItem("unitDetails");
+  //   //   localStorage.setItem("investmentDetails", JSON.stringify(res.payload));
+  //   //   router.push("/validate-payment");
+  //   // } else {
+  //   //   toast({
+  //   //     variant: "destructive",
+  //   //     title: "Uh oh! Something went wrong.",
+  //   //     description: "There was a problem with your request.",
+  //   //     action: <ToastAction altText="Try again">Try again</ToastAction>,
+  //   //   });
+  //   // }
   };
   return (
     <>
@@ -100,19 +97,17 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex flex-col justify-start gap-10"
         >
-          {["card_number", "cvv", "pin"].map((child) => (
             <FormField
               control={form.control}
-              name={child}
-              key={child}
-              render={({ field }) => (
+              name="card_number"
+              render={({ field }) => ( 
                 <FormItem className="flex flex-col gap-3 w-full">
                   <FormLabel
                     className={`text-base-semibold ${
                       textStyle === "" ? "text-dark-2" : textStyle
                     } `}
                   >
-                    {fieldMappings[child]}
+                    Card Number
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -125,7 +120,52 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
                 </FormItem>
               )}
             />
-          ))}
+           <FormField
+              control={form.control}
+              name="pin"
+              render={({ field }) => (
+                <FormItem className="flex flex-col gap-3 w-full">
+                  <FormLabel
+                    className={`text-base-semibold ${
+                      textStyle === "" ? "text-dark-2" : textStyle
+                    } `}
+                  >
+                    Pin
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      type="string"
+                      className="account-form_input no-focus"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+           <FormField
+              control={form.control}
+              name="cvv"
+              render={({ field }) => (
+                <FormItem className="flex flex-col gap-3 w-full">
+                  <FormLabel
+                    className={`text-base-semibold ${
+                      textStyle === "" ? "text-dark-2" : textStyle
+                    } `}
+                  >
+                    CVV
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      type="string"
+                      className="account-form_input no-focus"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           <div className="flex gap-4">
             <FormField
               control={form.control}
@@ -174,9 +214,12 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
               )}
             />
           </div>
-          <Button type="submit" className="bg-[#43a5f6]">
-            {btnTitle}
-          </Button>
+          <Button
+          type="submit"
+          className="bg-[#150B62] uppercase transition hover:bg-white hover:text-[#150B62]"
+        >
+         {btnTitle}
+        </Button>
         </form>
       </Form>
     </>

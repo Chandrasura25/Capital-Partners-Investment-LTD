@@ -108,7 +108,6 @@ const AccountProfile = ({ user, btnTitle, textStyle }: Props) => {
         values.profile_photo = imgRes[0].fileUrl;
       }
     }
-    console.log(values.profile_photo, user.image)
     await updateUser({
       username: values.username,
       firstname: values.firstname,
