@@ -68,23 +68,22 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
       cvv: values.cvv,
       pin: values.pin,
     });
+        if (res.status) {
+          toast({
+              description: "Card Details is saved successfully.",
+              action: <ToastAction altText="Ok">Ok</ToastAction>,
+          });
+          localStorage.removeItem("unitDetails");
+          // router.push("/dashboard");
+        } else {
+          toast({
+              variant: "destructive",
+              title: "Uh oh! Something went wrong.",
+              description: "There was a problem with your request.",
+            action: <ToastAction altText="Try again">Try again</ToastAction>,
+          });
+    }
     console.log(res);
-    //     if (res.status) {
-    //       toast({
-    //         description: "Bank Details is saved successfully.",
-    //         action: <ToastAction altText="Ok">Ok</ToastAction>,
-    //       });
-    // localStorage.removeItem("unitDetails");
-
-    //       router.push("/dashboard");
-    //     } else {
-    //       toast({
-    //         variant: "destructive",
-    //         title: "Uh oh! Something went wrong.",
-    //         description: "There was a problem with your request.",
-    //         action: <ToastAction altText="Try again">Try again</ToastAction>,
-    //       });
-    // }
   };
   return (
     <>
