@@ -159,7 +159,7 @@ export async function updateUser({
   }
 }
 interface cardParams {
-  userID: number;
+  userID: string;
   email: string;
   fullname: string;
   amount: string;

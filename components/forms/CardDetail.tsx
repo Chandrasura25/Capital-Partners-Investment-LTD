@@ -17,7 +17,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { purchaseInvestment } from "@/lib/actions/user.actions";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-import { parseLocalStorageItem} from "@/lib/utils";
+import { parseLocalStorageItem } from "@/lib/utils";
 
 interface Props {
   user: {
@@ -34,9 +34,9 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
   const pathname = usePathname();
   const router = useRouter();
 
-    const unitDetails = parseLocalStorageItem("unitDetails");
-    const Amount = unitDetails?.amount;
-      const stringAmount = Amount.toString();
+  const unitDetails = parseLocalStorageItem("unitDetails");
+  const Amount = unitDetails?.amount;
+  const stringAmount = Amount.toString();
   const form = useForm({
     resolver: zodResolver(CardValidation),
     defaultValues: {
