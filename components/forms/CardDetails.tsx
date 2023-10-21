@@ -74,7 +74,8 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
               action: <ToastAction altText="Ok">Ok</ToastAction>,
           });
           localStorage.removeItem("unitDetails");
-          // router.push("/dashboard");
+          localStorage.setItem("investmentDetails", JSON.stringify(res.payload));
+          router.push("/validate-payment");
         } else {
           toast({
               variant: "destructive",
