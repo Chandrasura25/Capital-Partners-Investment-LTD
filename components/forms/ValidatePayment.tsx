@@ -17,7 +17,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { purchaseInvestment } from "@/lib/actions/user.actions";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-import { parseLocalStorageItem } from "@/lib/utils";
+import { parseLocalStorageItem, getFormattedDate } from "@/lib/utils";
 
 interface Props {
   user: {
@@ -34,6 +34,7 @@ const ValidatePayment = ({ user, textStyle, btnTitle }: Props) => {
   const cardDetails = parseLocalStorageItem("cardDetails");
   const Amount = cardDetails?.amount;
   const stringAmount = Amount.toString();
+  const formattedDate = getFormattedDate();
   const form = useForm({
     resolver: zodResolver(PaymentValidation),
     defaultValues: {
@@ -41,7 +42,7 @@ const ValidatePayment = ({ user, textStyle, btnTitle }: Props) => {
       email: user?.email || "",
       username: user?.username || "",
       amount: stringAmount || "",
-      date: "",
+      date: formattedDate || "",
       flw_ref: cardDetails?.flw_ref || "",
       otp: "",
     },
