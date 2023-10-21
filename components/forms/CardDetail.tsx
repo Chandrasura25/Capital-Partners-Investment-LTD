@@ -30,8 +30,8 @@ interface Props {
   btnTitle?: string;
 }
 const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
-  const { toast } = useToast();
   const pathname = usePathname();
+  const { toast } = useToast();
   const router = useRouter();
 
   const unitDetails = parseLocalStorageItem("unitDetails");
@@ -70,9 +70,10 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
         description: "Card Details is saved successfully.",
         action: <ToastAction altText="Ok">Ok</ToastAction>,
       });
-      router.push("/validate-payment");
       localStorage.removeItem("unitDetails");
       localStorage.cardDetails = JSON.stringify(res.payload);
+      localStorage.pin = values.pin;
+      router.push("/validate-payment");
     } else {
       toast({
         variant: "destructive",
