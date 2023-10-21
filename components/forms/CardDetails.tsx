@@ -50,41 +50,39 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
   });
   const fieldMappings = {
     card_number: "Card Number",
-    expiry_month: "Expiry Month",
-    expiry_year: "Expiry Year",
     cvv: "CVV",
     pin: "PIN",
   };
   const onSubmit = async (values: z.infer<typeof CardValidation>) => {
-    const res = await purchaseInvestment({
-      userID: values.userID,
-      email: values.email,
-      fullname: values.fullname,
-      phone_number: values.phone_number,
-      amount: values.amount,
-      card_number: values.card_number,
-      expiry_year: values.expiry_year,
-      expiry_month: values.expiry_month,
-      cvv: values.cvv,
-      pin: values.pin,
-    });
-        if (res.status) {
-          toast({
-              description: "Card Details is saved successfully.",
-              action: <ToastAction altText="Ok">Ok</ToastAction>,
-          });
-          localStorage.removeItem("unitDetails");
-          localStorage.setItem("investmentDetails", JSON.stringify(res.payload));
-          router.push("/validate-payment");
-        } else {
-          toast({
-              variant: "destructive",
-              title: "Uh oh! Something went wrong.",
-              description: "There was a problem with your request.",
-            action: <ToastAction altText="Try again">Try again</ToastAction>,
-          });
-    }
-    console.log(res);
+    // const res = await purchaseInvestment({
+    //   userID: values.userID,
+    //   email: values.email,
+    //   fullname: values.fullname,
+    //   phone_number: values.phone_number,
+    //   amount: values.amount,
+    //   card_number: values.card_number,
+    //   expiry_year: values.expiry_year,
+    //   expiry_month: values.expiry_month,
+    //   cvv: values.cvv,
+    //   pin: values.pin,
+    // });
+    // if (res.status) {
+    //   toast({
+    //     description: "Card Details is saved successfully.",
+    //     action: <ToastAction altText="Ok">Ok</ToastAction>,
+    //   });
+    //   localStorage.removeItem("unitDetails");
+    //   localStorage.setItem("investmentDetails", JSON.stringify(res.payload));
+    //   router.push("/validate-payment");
+    // } else {
+    //   toast({
+    //     variant: "destructive",
+    //     title: "Uh oh! Something went wrong.",
+    //     description: "There was a problem with your request.",
+    //     action: <ToastAction altText="Try again">Try again</ToastAction>,
+    //   });
+    // }
+    console.log(values);
   };
   return (
     <>
@@ -93,34 +91,80 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex flex-col justify-start gap-10"
         >
-          {["card_number", "expiry_month", "expiry_year", "cvv", "pin"].map(
-            (child) => (
-              <FormField
-                control={form.control}
-                name={child}
-                key={child}
-                render={({ field }) => (
-                  <FormItem className="flex flex-col gap-3 w-full">
-                    <FormLabel
-                      className={`text-base-semibold ${
-                        textStyle === "" ? "text-dark-2" : textStyle
-                      } `}
-                    >
-                      {fieldMappings[child]}
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        type="text"
-                        className="account-form_input no-focus"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            )
-          )}
+          {["card_number", "cvv", "pin"].map((child) => (
+            <FormField
+              control={form.control}
+              name={child}
+              key={child}
+              render={({ field }) => (
+                <FormItem className="flex flex-col gap-3 w-full">
+                  <FormLabel
+                    className={`text-base-semibold ${
+                      textStyle === "" ? "text-dark-2" : textStyle
+                    } `}
+                  >
+                    {fieldMappings[child]}
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      type="text"
+                      className="account-form_input no-focus"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          ))}
+          <div className="flex gap-4">
+            <FormField
+              control={form.control}
+              name="expiry_month"
+              render={({ field }) => (
+                <FormItem className="flex flex-col gap-3 w-full">
+                  <FormLabel
+                    className={`text-base-semibold ${
+                      textStyle === "" ? "text-dark-2" : textStyle
+                    } `}
+                  >
+                    Expiry Month
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      type="string"
+                      className="account-form_input no-focus"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="expiry_year"
+              render={({ field }) => (
+                <FormItem className="flex flex-col gap-3 w-full">
+                  <FormLabel
+                    className={`text-base-semibold ${
+                      textStyle === "" ? "text-dark-2" : textStyle
+                    } `}
+                  >
+                    Expiry Year
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      type="string"
+                      className="account-form_input no-focus"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
           <Button type="submit" className="bg-[#43a5f6]">
             {btnTitle}
           </Button>
