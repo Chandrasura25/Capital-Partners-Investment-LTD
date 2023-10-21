@@ -17,7 +17,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { addBankDetail } from "@/lib/actions/user.actions";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 interface Props {
   user: {
@@ -33,16 +33,16 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
   const { toast } = useToast();
   const pathname = usePathname();
   const router = useRouter();
-  const [unitDetails, setUnitDetails] = useState<{ amount?: string }>({});
+//   const [unitDetails, setUnitDetails] = useState<{ amount?: string }>({});
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const unitDetailsStr = localStorage.getItem("unitDetails") || "";
-      setUnitDetails(JSON.parse(unitDetailsStr));
-    }
-  }, []);
-  const Amount = unitDetails?.amount || ""; 
-  const stringAmount = Amount.toString();
+//   useEffect(() => {
+//     if (typeof window !== "undefined") {
+//       const unitDetailsStr = localStorage.getItem("unitDetails") || "";
+//       setUnitDetails(JSON.parse(unitDetailsStr));
+//     }
+//   }, []);
+//   const Amount = unitDetails?.amount || ""; 
+//   const stringAmount = Amount.toString();
   const form = useForm({
     resolver: zodResolver(CardValidation),
     defaultValues: {
@@ -50,7 +50,7 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
       email: user?.email || "",
       fullname: user?.fullname || "",
       phone_number: user?.phone_number || "",
-      amount: stringAmount || "",
+      amount: "50000"|| "",
       card_number: "",
       cvv: "",
       pin: "",

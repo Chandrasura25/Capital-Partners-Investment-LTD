@@ -4,7 +4,7 @@ import { fetchUser } from "@/lib/actions/user.actions";
 import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Topbar from "@/components/shared/Topbar";
-import CardDetails from "@/components/forms/CardDetails";
+// import CardDetails from "@/components/forms/CardDetails";
 
 async function Page() {
   const user = await currentUser();
