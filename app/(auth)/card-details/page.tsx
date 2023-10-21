@@ -27,15 +27,15 @@ async function Page() {
       <main className="flex flex-row bg-[#000924]">
         <LeftSidebar />
         <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
-          <div className="w-full max-w-3xl">
-            <div className="bg-[#150B62] p-5 rounded-[20px] relative">
+          <div className="w-full max-w-2xl">
+            <div className="glassmorphism p-5 rounded-[20px] relative">
               <h3 className="head-text mb-3 text-center">
                 Review card Details
               </h3>
               <p className="text-light-1 text-center mb-5">
                 Please fill your card details to continue
               </p>
-              <div className="">
+              <div className="p-5">
                 <CardDetails user={userData} btnTitle="Continue" textStyle="text-light-1" />
               </div>
             </div>
