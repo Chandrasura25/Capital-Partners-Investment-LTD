@@ -183,24 +183,27 @@ export async function purchaseInvestment({
   card_number,
 }: cardParams) {
   try {
-    const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/invest/purchase_investment", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userID,
-        email,
-        fullname,
-        amount,
-        phone_number,
-        cvv,
-        pin,
-        expiry_month,
-        expiry_year,
-        card_number,
-      }),
-    });
+    const response = await fetch(
+      "https://cap-partners-investment.cyclic.app/api/v0/investors/invest/purchase_investment",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userID,
+          email,
+          fullname,
+          amount,
+          phone_number,
+          cvv,
+          pin,
+          expiry_month,
+          expiry_year,
+          card_number,
+        }),
+      }
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -208,5 +211,53 @@ export async function purchaseInvestment({
     return result;
   } catch (error: any) {
     throw new Error(`Failed to purchase investment: ${error.message}`);
+  }
+}
+interface validateParams {
+  userID: string;
+  email: string;
+  username: string;
+  amount: string;
+  date: string;
+  otp: string;
+  flw_ref: string;
+}
+export async function ValidatePurchase({
+  userID,
+  email,
+  username,
+  amount,
+  date,
+  otp,
+  flw_ref,
+}: validateParams) {
+  try {
+    const response = await fetch(
+      "https://cap-partners-investment.cyclic.app/api/v0/investors/invest/validate_purchase",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userData: {
+            userID,
+            email,
+            username,
+          },
+          amount,
+          date,
+          otp,
+          flw_ref,
+        }),
+      }
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const result = await response.json();
+    return result;
+  } catch (error: any) {
+    throw new Error(`Failed to validate payment: ${error.message}`);
   }
 }
