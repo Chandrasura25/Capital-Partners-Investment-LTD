@@ -35,8 +35,8 @@ async function Page() {
               <p className="text-light-1 text-center mb-5">
                 Please fill your card details to continue
               </p>
-              <div className="p-4 flex items-center">
-                <CardDetails user={userData} btnTitle="Continue" textStyle="text-light-1" />
+              <div className="">
+                {/* <CardDetails user={userData} btnTitle="Continue" textStyle="text-light-1" /> */}
               </div>
             </div>
           </div>
