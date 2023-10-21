@@ -36,7 +36,7 @@ async function Page() {
                 Please fill your card details to continue
               </p>
               <div className="">
-                {/* <CardDetails user={userData} btnTitle="Continue" textStyle="text-light-1" /> */}
+                <CardDetails user={userData} btnTitle="Continue" textStyle="text-light-1" />
               </div>
             </div>
           </div>
