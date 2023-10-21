@@ -65,14 +65,14 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
       expiry_month: values.expiry_month,
       expiry_year: values.expiry_year,
     });
-    console.log(res);
-
     if (res.status) {
       toast({
         description: "Card Details is saved successfully.",
         action: <ToastAction altText="Ok">Ok</ToastAction>,
       });
-      router.push("/dashboard");
+      router.push("/validate-payment");
+      localStorage.removeItem("unitDetails");
+      localStorage.cardDetails = JSON.stringify(res.payload);
     } else {
       toast({
         variant: "destructive",
