@@ -183,9 +183,7 @@ export async function purchaseInvestment({
   card_number,
 }: cardParams) {
   try {
-    const url5 =
-      "https://cap-partners-investment.cyclic.app/api/v0/investors/invest/purchase_investment";
-    const response = await fetch(url5, {
+    const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/invest/purchase_investment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

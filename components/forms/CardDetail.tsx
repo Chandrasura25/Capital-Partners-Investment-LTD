@@ -53,7 +53,6 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
     },
   });
   const onSubmit = async (values: z.infer<typeof CardValidation>) => {
-    console.log(values);
     const res = await purchaseInvestment({
       userID: values.userID,
       email: values.email,
@@ -66,6 +65,8 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
       expiry_month: values.expiry_month,
       expiry_year: values.expiry_year,
     });
+    console.log(res);
+
     if (res.status) {
       toast({
         description: "Card Details is saved successfully.",
