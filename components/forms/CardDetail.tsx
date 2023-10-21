@@ -14,10 +14,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CardValidation } from "@/lib/validations/bank";
 import * as z from "zod";
 import { useRouter, usePathname } from "next/navigation";
-import { addBankDetail } from "@/lib/actions/user.actions";
+import { purchaseInvestment } from "@/lib/actions/user.actions";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-// import { useState, useEffect } from "react";
+import { parseLocalStorageItem} from "@/lib/utils";
 
 interface Props {
   user: {
@@ -33,16 +33,11 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
   const { toast } = useToast();
   const pathname = usePathname();
   const router = useRouter();
-//   const [unitDetails, setUnitDetails] = useState<{ amount?: string }>({});
 
-//   useEffect(() => {
-//     if (typeof window !== "undefined") {
-//       const unitDetailsStr = localStorage.getItem("unitDetails") || "";
-//       setUnitDetails(JSON.parse(unitDetailsStr));
-//     }
-//   }, []);
-//   const Amount = unitDetails?.amount || ""; 
-//   const stringAmount = Amount.toString();
+    const unitDetails = parseLocalStorageItem("unitDetails");
+    const Amount = unitDetails?.amount;
+    console.log(Amount);
+  //   const stringAmount = Amount.toString();
   const form = useForm({
     resolver: zodResolver(CardValidation),
     defaultValues: {
@@ -50,7 +45,7 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
       email: user?.email || "",
       fullname: user?.fullname || "",
       phone_number: user?.phone_number || "",
-      amount: "50000"|| "",
+      amount: "50000" || "",
       card_number: "",
       cvv: "",
       pin: "",
@@ -60,28 +55,32 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
   });
   const onSubmit = async (values: z.infer<typeof CardValidation>) => {
     console.log(values);
-    //    const res = await addBankDetail({
-    //       userID: values.userID,
-    //       email: values.email,
-    //       username: values.username,
-    //       accountName: values.accountName,
-    //       accountNumber: values.accountNumber,
-    //       bankName: values.bankName,
-    //     })
-    //     if(res.status){
-    //       toast({
-    //         description: "Bank Details is saved successfully.",
-    //         action: <ToastAction altText="Ok">Ok</ToastAction>,
-    //       })
-    //       router.push("/dashboard");
-    //     }else{
-    //       toast({
-    //         variant: "destructive",
-    //         title: "Uh oh! Something went wrong.",
-    //         description: "There was a problem with your request.",
-    //         action: <ToastAction altText="Try again">Try again</ToastAction>,
-    //       })
-    //     }
+    const res = await purchaseInvestment({
+      userID: values.userID,
+      email: values.email,
+      fullname: values.fullname,
+      phone_number: values.phone_number,
+      amount: values.amount,
+      card_number: values.card_number,
+      cvv: values.cvv,
+      pin: values.pin,
+      expiry_month: values.expiry_month,
+      expiry_year: values.expiry_year,
+    });
+    if (res.status) {
+      toast({
+        description: "Card Details is saved successfully.",
+        action: <ToastAction altText="Ok">Ok</ToastAction>,
+      });
+      router.push("/dashboard");
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+    }
   };
   return (
     <Form {...form}>

@@ -29,3 +29,21 @@ export function formatDateString(dateString: string) {
 
   return `${time} - ${formattedDate}`;
 }
+export function parseLocalStorageItem(itemName: string) {
+  // Retrieve the item from localStorage
+  const item = localStorage.getItem(itemName);
+
+  // Check if the item exists
+  if (item === null) {
+    return null; // Item not found
+  }
+
+  try {
+    // Parse the item's content
+    const parsedItem = JSON.parse(item);
+    return parsedItem;
+  } catch (error) {
+    console.error('Error parsing localStorage item:', error);
+    return null; // Parsing error
+  }
+}
