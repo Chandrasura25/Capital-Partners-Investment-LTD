@@ -15,7 +15,7 @@ async function Page() {
   
   const userData = {
     userID: userInfo.id,
-    fullname: userInfo.surname + " " + userInfo.firstname,
+    fullname: userInfo.surname + "" + userInfo.firstname,
     email: userInfo
       ? userInfo?.email
       : user.emailAddresses[0].emailAddress ?? "",

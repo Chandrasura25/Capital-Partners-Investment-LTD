@@ -191,7 +191,7 @@ export async function purchaseInvestment({
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        userID,
+       userID: userID.toString(),
         email,
         fullname,
         amount,
