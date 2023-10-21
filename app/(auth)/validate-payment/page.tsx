@@ -4,23 +4,25 @@ import { fetchUser } from "@/lib/actions/user.actions";
 import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Topbar from "@/components/shared/Topbar";
-// import CardDetails from "@/components/forms/CardDetails";
+import { parseLocalStorageItem } from "@/lib/utils";
+import ValidatePayment from "@/components/forms/ValidatePayment";
 
 async function Page() {
   const user = await currentUser();
   if (!user) return null;
   const userDatum = await fetchUser(user.id);
   const userInfo = userDatum?.payload;
+  const userStatus = userDatum?.status;
   if (!userInfo.onboarded) redirect("/onboarding");
+  const stringUserID = userInfo.id.toString();
   
-//   const userData = {
-//     userID: userInfo.id,
-//     fullname: userInfo.surname + " " + userInfo.firstname,
-//     email: userInfo
-//       ? userInfo?.email
-//       : user.emailAddresses[0].emailAddress ?? "",
-//     phone_number: userInfo.phone,
-//   };
+  const userData = {
+    userID: stringUserID,
+    username: userStatus ? userInfo?.username : user.username,
+    email: userInfo
+      ? userInfo?.email
+      : user.emailAddresses[0].emailAddress ?? "",
+  };
   return (
     <>
       <Topbar userInfo={userInfo} />
@@ -32,11 +34,12 @@ async function Page() {
               <h3 className="head-text mb-3 text-center">
                 Validate Your Payments
               </h3>
-              {/* <p className="text-light-1 text-center mb-5">
-                Please fill your card details to continue
-              </p> */}
               <div className="p-5">
-                {/* <CardDetails user={userData} btnTitle="Continue" textStyle="text-light-1" /> */}
+                <ValidatePayment
+                  user={userData}
+                  btnTitle="Finish"
+                  textStyle="text-light-1"
+                />
               </div>
             </div>
           </div>
