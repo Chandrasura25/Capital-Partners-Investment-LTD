@@ -256,7 +256,6 @@ export async function ValidatePurchase({
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const result = await response.json();
-    console.log(result, response)
     return result;
   } catch (error: any) {
     throw new Error(`Failed to validate payment: ${error.message}`);
