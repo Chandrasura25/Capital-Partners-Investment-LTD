@@ -12,8 +12,7 @@ async function Page() {
   const userDatum = await fetchUser(user.id);
   const userInfo = userDatum?.payload;
   if (!userInfo.onboarded) redirect("/onboarding");
-  const unitDetailsStr = localStorage.getItem("unitDetails");
-  const unitDetails = unitDetailsStr ? JSON.parse(unitDetailsStr) : null;
+  
   const userData = {
     userID: userInfo.id,
     fullname: userInfo.surname + " " + userInfo.firstname,
@@ -21,7 +20,6 @@ async function Page() {
       ? userInfo?.email
       : user.emailAddresses[0].emailAddress ?? "",
     phone_number: userInfo.phone,
-    amount: unitDetails?.amount,
   };
   return (
     <>
@@ -38,7 +36,7 @@ async function Page() {
                 Please fill your card details to continue
               </p>
               <div className="p-4 flex justify-center">
-                {/* <CardDetails user={userData} btnTitle="Continue" textStyle="text-light-1" /> */}
+                <CardDetails user={userData} btnTitle="Continue" textStyle="text-light-1" />
               </div>
             </div>
           </div>
