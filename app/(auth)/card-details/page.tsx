@@ -4,7 +4,7 @@ import { fetchUser } from "@/lib/actions/user.actions";
 import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Topbar from "@/components/shared/Topbar";
-import CardDetails from "@/components/forms/CardDetails";
+import CardDetail from "@/components/forms/CardDetail";
 
 async function Page() {
   const user = await currentUser();
@@ -36,7 +36,7 @@ async function Page() {
                 Please fill your card details to continue
               </p>
               <div className="p-5">
-                <CardDetails user={userData} btnTitle="Continue" textStyle="text-light-1" />
+                <CardDetail user={userData} btnTitle="Continue" textStyle="text-light-1" />
               </div>
             </div>
           </div>
