@@ -207,7 +207,7 @@ export async function purchaseInvestment({
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const result = await response.json();
-    return result.payload;
+    return result;
   } catch (error: any) {
     throw new Error(`Failed to purchase investment: ${error.message}`);
   }
