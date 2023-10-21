@@ -36,8 +36,7 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
 
     const unitDetails = parseLocalStorageItem("unitDetails");
     const Amount = unitDetails?.amount;
-    console.log(Amount);
-  //   const stringAmount = Amount.toString();
+      const stringAmount = Amount.toString();
   const form = useForm({
     resolver: zodResolver(CardValidation),
     defaultValues: {
@@ -45,7 +44,7 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
       email: user?.email || "",
       fullname: user?.fullname || "",
       phone_number: user?.phone_number || "",
-      amount: "50000" || "",
+      amount: stringAmount || "",
       card_number: "",
       cvv: "",
       pin: "",
