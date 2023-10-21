@@ -23,7 +23,6 @@ interface Props {
     fullname: string;
     email: string;
     phone_number: string;
-    amount: string;
   };
   textStyle?: string;
   btnTitle?: string;
@@ -32,6 +31,8 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
   const { toast } = useToast();
   const pathname = usePathname();
   const router = useRouter();
+  const unitDetailsStr = localStorage.getItem("unitDetails");
+  const unitDetails = unitDetailsStr ? JSON.parse(unitDetailsStr) : null;
   const form = useForm({
     resolver: zodResolver(CardValidation),
     defaultValues: {
@@ -39,7 +40,7 @@ const CardDetails = ({ user, textStyle, btnTitle }: Props) => {
       email: user?.email || "",
       fullname: user?.fullname || "",
       phone_number: user?.phone_number || "",
-      amount: user?.amount || "",
+      amount: unitDetails?.amount || "",
       card_number: "",
       expiry_year: "",
       expiry_month: "",
