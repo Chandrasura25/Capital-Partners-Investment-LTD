@@ -72,7 +72,6 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
       });
       localStorage.removeItem("unitDetails");
       localStorage.cardDetails = JSON.stringify(res.payload);
-      localStorage.pin = values.pin;
       router.push("/validate-payment");
     } else {
       toast({
