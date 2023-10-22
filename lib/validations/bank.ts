@@ -33,3 +33,11 @@ export const PaymentValidation = z.object({
   flw_ref: z.string().min(1),
   otp: z.string().min(1),
 })
+
+
+export const WithdrawValidation = z.object({
+  userID: z.number().min(1),
+  email: z.string().email().min(3).max(100),
+  amount: z.number().min(1),
+  narration: z.string()
+})
