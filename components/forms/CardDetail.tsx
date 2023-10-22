@@ -65,6 +65,7 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
       expiry_month: values.expiry_month,
       expiry_year: values.expiry_year,
     });
+    console.log(values, res);
     if (res.status) {
       toast({
         description: "Card Details is saved successfully.",
