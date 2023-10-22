@@ -1,13 +1,11 @@
 "use server";
 
-import { FilterQuery, SortOrder } from "mongoose";
 import { revalidatePath } from "next/cache";
 
 const url = "https://cap-partners-investment.cyclic.app/api/v0/investors";
 export async function fetchUser(userId: string) {
   try {
-    const url1 = "/get_profile/";
-    const response = await fetch(url + url1, {
+    const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/get_profile/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -256,6 +254,7 @@ export async function ValidatePurchase({
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const result = await response.json();
+    console.log(result, response);
     return result;
   } catch (error: any) {
     throw new Error(`Failed to validate payment: ${error.message}`);
