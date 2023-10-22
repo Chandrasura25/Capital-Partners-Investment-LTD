@@ -59,19 +59,19 @@ const Withdraw = ({ user, textStyle }: Props) => {
       narration: values.narration,
     });
     console.log(values, res);
-    if (res.status) {
-      toast({
-        description: "Withdrawal is successful.",
-        action: <ToastAction altText="Ok">Ok</ToastAction>,
-      });
-    } else {
-      toast({
-        variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request.",
-        action: <ToastAction altText="Try again">Try again</ToastAction>,
-      });
-    }
+    // if (res.status) {
+    //   toast({
+    //     description: "Withdrawal is successful.",
+    //     action: <ToastAction altText="Ok">Ok</ToastAction>,
+    //   });
+    // } else {
+    //   toast({
+    //     variant: "destructive",
+    //     title: "Uh oh! Something went wrong.",
+    //     description: "There was a problem with your request.",
+    //     action: <ToastAction altText="Try again">Try again</ToastAction>,
+    //   });
+    // }
   };
   return (
     <Form {...form}>
