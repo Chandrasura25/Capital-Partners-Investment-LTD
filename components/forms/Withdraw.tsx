@@ -47,7 +47,9 @@ const Withdraw = ({ user, textStyle }: Props) => {
     fieldChange: (value: number) => void
   ) => {
     e.preventDefault();
-    fieldChange(e.target.valueAsNumber);
+    const newUnit = e.target.valueAsNumber;
+    fieldChange(newUnit);
+    setValue("amount", newUnit);
   };
   const onSubmit = async (values: z.infer<typeof WithdrawValidation>) => {
     const res = await withdrawAmount({
@@ -56,20 +58,20 @@ const Withdraw = ({ user, textStyle }: Props) => {
       amount: values.amount,
       narration: values.narration,
     });
-    console.log(values, res);
-    // if (res.status) {
-    //   toast({
-    //     description: "Withdrawal is successful.",
-    //     action: <ToastAction altText="Ok">Ok</ToastAction>,
-    //   });
-    // } else {
-    //   toast({
-    //     variant: "destructive",
-    //     title: "Uh oh! Something went wrong.",
-    //     description: "There was a problem with your request.",
-    //     action: <ToastAction altText="Try again">Try again</ToastAction>,
-    //   });
-    // }
+    console.log(values,res);
+    if (res.status) {
+      toast({
+        description: "Withdrawal is successful.",
+        action: <ToastAction altText="Ok">Ok</ToastAction>,
+      });
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+    }
   };
   return (
     <Form {...form}>
@@ -94,7 +96,10 @@ const Withdraw = ({ user, textStyle }: Props) => {
                   {...field}
                   type="number"
                   className="account-form_input no-focus"
-                  onChange={(e) => e.target.valueAsNumber}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    field.onChange(Number(value));
+                  }}
                 />
               </FormControl>
               <FormMessage />
