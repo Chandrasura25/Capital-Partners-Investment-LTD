@@ -96,10 +96,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
                   {...field}
                   type="number"
                   className="account-form_input no-focus"
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    field.onChange(Number(value));
-                  }}
+                  onChange={(e) => {field.onChange(Number(e.target.value))}}
                 />
               </FormControl>
               <FormMessage />
