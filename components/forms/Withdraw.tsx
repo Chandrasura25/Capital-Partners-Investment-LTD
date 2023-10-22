@@ -41,16 +41,16 @@ const Withdraw = ({ user, textStyle }: Props) => {
       narration: "",
     },
   });
-//   const { setValue } = form;
-//   const handleAmount = (
-//     e: ChangeEvent<HTMLInputElement>,
-//     fieldChange: (value: number) => void
-//   ) => {
-//     e.preventDefault();
-//     const newUnit = e.target.valueAsNumber;
-//     fieldChange(newUnit);
-//     setValue("amount", newUnit);
-//   };
+  const { setValue } = form;
+  const handleAmount = (
+    e: ChangeEvent<HTMLInputElement>,
+    fieldChange: (value: number) => void
+  ) => {
+    e.preventDefault();
+    const newUnit = e.target.valueAsNumber;
+    fieldChange(newUnit);
+    setValue("amount", newUnit);
+  };
   const onSubmit = async (values: z.infer<typeof WithdrawValidation>) => {
     const res = await withdrawAmount({
       userID: values.userID,
@@ -96,7 +96,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
                   {...field}
                   type="number"
                   className="account-form_input no-focus"
-                  onChange={(e) => {field.onChange(e.target.valueAsNumber)}}
+                  onChange={(e) => handleAmount(e, field.onChange)}
                 />
               </FormControl>
               <FormMessage />
