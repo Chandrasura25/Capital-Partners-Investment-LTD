@@ -28,6 +28,7 @@ interface Props {
 }
 
 const Withdraw = ({ user, textStyle }: Props) => {
+  const { toast } = useToast();
   const pathname = usePathname();
   const router = useRouter();
 
@@ -52,13 +53,13 @@ const Withdraw = ({ user, textStyle }: Props) => {
   };
   const onSubmit = async (values: z.infer<typeof WithdrawValidation>) => {
     const res = await withdrawAmount({
-        userID: values.userID,
-        email:values.email,
-        amount:values.amount,
-        narration: values.narration
-    })
+      userID: values.userID,
+      email: values.email,
+      amount: values.amount,
+      narration: values.narration,
+    });
     console.log(res);
-     if (res.status) {
+    if (res.status) {
       toast({
         description: "Withdrawal is successful.",
         action: <ToastAction altText="Ok">Ok</ToastAction>,
