@@ -15,8 +15,8 @@ async function Page() {
   const useDatum = await fetchUser(user.id);
   const userInfo = useDatum?.payload;
   if (!userInfo.onboarded) redirect("/onboarding");
-  const investments = await fetchInvestments(userInfo.email);
-  console.log(investments);
+  // const investments = await fetchInvestments(userInfo.email);
+  // console.log(investments);
   return (
     <>
       <Topbar userInfo={userInfo} />

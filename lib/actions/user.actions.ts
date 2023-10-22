@@ -263,8 +263,7 @@ export async function ValidatePurchase({
 }
 export async function fetchInvestments(email: string) {
   try {
-    const url6 = "https://cap-partners-investment.cyclic.app/api/v0/investors/invest/fetch_investment";
-    const response = await fetch(url6, {
+    const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/invest/fetch_investment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
