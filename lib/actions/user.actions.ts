@@ -320,6 +320,7 @@ export async function withdrawAmount({
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const result = await response.json();
+    console.log(result, response);
     return result;
   } catch (error: any) {
     throw new Error(`Failed to withdraw: ${error.message}`);
