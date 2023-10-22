@@ -28,7 +28,7 @@ export const PaymentValidation = z.object({
   username: z.string().min(3).max(30),
   email: z.string().email().min(3).max(100),
   amount: z.string().min(1),
-  unitType: z.string.min(1),
+  unitType: z.string().min(1),
   date: z.string().min(1),
   flw_ref: z.string().min(1),
   otp: z.string().min(1),

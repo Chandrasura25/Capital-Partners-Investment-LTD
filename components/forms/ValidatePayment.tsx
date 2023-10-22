@@ -59,6 +59,7 @@ const ValidatePayment = ({ user, textStyle, btnTitle }: Props) => {
       otp: values.otp,
       flw_ref: values.flw_ref,
     });
+    console.log(values);
     if (res.status) {
       toast({
         description: "Payment Validation is successful.",
