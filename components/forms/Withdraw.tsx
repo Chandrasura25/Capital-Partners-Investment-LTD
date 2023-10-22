@@ -49,7 +49,6 @@ const Withdraw = ({ user, textStyle }: Props) => {
     e.preventDefault();
     const newUnit = e.target.valueAsNumber;
     fieldChange(newUnit);
-    setValue("amount", newUnit);
   };
   const onSubmit = async (values: z.infer<typeof WithdrawValidation>) => {
     const res = await withdrawAmount({
