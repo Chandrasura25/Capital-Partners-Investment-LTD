@@ -15,6 +15,8 @@ import { WithdrawValidation } from "@/lib/validations/bank";
 import * as z from "zod";
 import { useRouter, usePathname } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
+import { ToastAction } from "@/components/ui/toast";
+
 interface Props {
   user: {
     id: number;
@@ -23,6 +25,7 @@ interface Props {
   };
   textStyle?: string;
 }
+
 const Withdraw = ({ user, textStyle }: Props) => {
   const pathname = usePathname();
   const router = useRouter();
@@ -82,7 +85,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
               <FormControl>
                 <Input
                   {...field}
-                  type="number"
+                  type="string"
                   className="account-form_input no-focus"
                   readOnly
                 />
