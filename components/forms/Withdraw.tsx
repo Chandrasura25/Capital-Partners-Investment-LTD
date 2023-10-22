@@ -58,7 +58,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
       amount: values.amount,
       narration: values.narration,
     });
-    console.log(res);
+    console.log(values, res);
     if (res.status) {
       toast({
         description: "Withdrawal is successful.",
