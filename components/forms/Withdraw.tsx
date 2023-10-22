@@ -13,6 +13,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { WithdrawValidation } from "@/lib/validations/bank";
 import * as z from "zod";
+import { ChangeEvent } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
@@ -29,6 +30,7 @@ interface Props {
 const Withdraw = ({ user, textStyle }: Props) => {
   const pathname = usePathname();
   const router = useRouter();
+
   const form = useForm({
     resolver: zodResolver(WithdrawValidation),
     defaultValues: {
@@ -38,6 +40,16 @@ const Withdraw = ({ user, textStyle }: Props) => {
       narration: "",
     },
   });
+     const { setValue } = form;
+  const handleAmount = (
+    e: ChangeEvent<HTMLInputElement>,
+    fieldChange: (value: number) => void
+  ) => {
+    e.preventDefault();
+    const newUnit = e.target.valueAsNumber;
+    fieldChange(newUnit);
+    setValue("amount", newUnit);
+  };
   const onSubmit = async (values: z.infer<typeof WithdrawValidation>) => {
     console.log(values);
   };
@@ -64,7 +76,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
                   {...field}
                   type="number"
                   className="account-form_input no-focus"
-                  value={field.value}
+                  onChange={(e) => handleAmount(e, field.onChange)}
                 />
               </FormControl>
               <FormMessage />
