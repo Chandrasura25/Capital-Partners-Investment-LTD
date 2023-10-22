@@ -290,8 +290,8 @@ export async function fetchInvestments(email: string) {
 }
 interface withdrawParams {
   userID: number;
-  email: string;
   amount: number;
+  email: string;
   narration: string;
 }
 export async function withdrawAmount({
