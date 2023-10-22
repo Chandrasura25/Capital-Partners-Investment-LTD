@@ -64,6 +64,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
                   {...field}
                   type="number"
                   className="account-form_input no-focus"
+                  value={field.value}
                 />
               </FormControl>
               <FormMessage />
@@ -87,7 +88,6 @@ const Withdraw = ({ user, textStyle }: Props) => {
                   {...field}
                   type="string"
                   className="account-form_input no-focus"
-                  readOnly
                 />
               </FormControl>
               <FormMessage />
