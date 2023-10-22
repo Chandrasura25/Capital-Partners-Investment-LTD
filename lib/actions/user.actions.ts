@@ -288,3 +288,40 @@ export async function fetchInvestments(email: string) {
     throw new Error(`Failed to fetch Investment: ${error.message}`);
   }
 }
+interface withdrawParams {
+  userID: number;
+  email: string;
+  amount: number;
+  narration: string;
+}
+export async function withdrawAmount({
+  userID,
+  email,
+  amount,
+  narration,
+}: withdrawParams) {
+  try {
+    const response = await fetch(
+      "https://cap-partners-investment.cyclic.app/api/v0/investors/withdraw",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userID,
+          email,
+          amount,
+          narration,
+        }),
+      }
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const result = await response.json();
+    return result;
+  } catch (error: any) {
+    throw new Error(`Failed to withdraw: ${error.message}`);
+  }
+}

@@ -17,7 +17,7 @@ import { ChangeEvent } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-
+import { withdrawAmount } from "@/lib/actions/user.actions";
 interface Props {
   user: {
     id: number;
@@ -40,7 +40,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
       narration: "",
     },
   });
-     const { setValue } = form;
+  const { setValue } = form;
   const handleAmount = (
     e: ChangeEvent<HTMLInputElement>,
     fieldChange: (value: number) => void
@@ -51,7 +51,26 @@ const Withdraw = ({ user, textStyle }: Props) => {
     setValue("amount", newUnit);
   };
   const onSubmit = async (values: z.infer<typeof WithdrawValidation>) => {
-    console.log(values);
+    const res = await withdrawAmount({
+        userID: values.userID,
+        email:values.email,
+        amount:values.amount,
+        narration: values.narration
+    })
+    console.log(res);
+     if (res.status) {
+      toast({
+        description: "Withdrawal is successful.",
+        action: <ToastAction altText="Ok">Ok</ToastAction>,
+      });
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+    }
   };
   return (
     <Form {...form}>
