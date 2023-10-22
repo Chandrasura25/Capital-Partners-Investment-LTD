@@ -18,17 +18,19 @@ async function Page() {
       <main className="flex flex-row sm:bg-[#000924]">
         <LeftSidebar />
         <section className="main-container relative">
-        <div className="max-w-lg">
+          <div className="max-w-lg">
             <div className="p-5 glassmorphism rounded-[20px] mb-8">
-            <h4 className="head-text uppercase mb-3">Withdrawal</h4>
-            <p className="text-light-1 mb-3">
-              You can withdraw your earnings to your bank account.
-            </p>
-             <div>
-             <Withdraw user={userInfo} textStyle="text-light-1" />
-             </div>
+              <h4 className="head-text uppercase mb-2 text-center">
+                Withdrawal
+              </h4>
+              <p className="text-light-1 mb-3 text-center">
+                You can withdraw your earnings to your bank account.
+              </p>
+              <div>
+                <Withdraw user={userInfo} textStyle="text-light-1" />
+              </div>
             </div>
-        </div>
+          </div>
         </section>
       </main>
       <Bottombar />
