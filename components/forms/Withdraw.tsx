@@ -41,7 +41,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
       narration: "",
     },
   });
-
+  
   const onSubmit = async (values: z.infer<typeof WithdrawValidation>) => {
     const res = await withdrawAmount({
       userID: values.userID,
@@ -87,7 +87,6 @@ const Withdraw = ({ user, textStyle }: Props) => {
                   {...field}
                   type="number"
                   className="account-form_input no-focus"
-                  value={Number(field.value)}
                 />
               </FormControl>
               <FormMessage />
