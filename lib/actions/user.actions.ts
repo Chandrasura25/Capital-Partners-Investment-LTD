@@ -5,13 +5,16 @@ import { revalidatePath } from "next/cache";
 const url = "https://cap-partners-investment.cyclic.app/api/v0/investors";
 export async function fetchUser(userId: string) {
   try {
-    const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/get_profile/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ clerk_id: userId }),
-    });
+    const response = await fetch(
+      "https://cap-partners-investment.cyclic.app/api/v0/investors/get_profile/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ clerk_id: userId }),
+      }
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -212,9 +215,11 @@ export async function purchaseInvestment({
   }
 }
 interface validateParams {
-  userID: string;
-  email: string;
-  username: string;
+  userData: {
+    userID: string;
+    email: string;
+    username: string;
+  };
   amount: string;
   unitType: string;
   date: string;
@@ -222,9 +227,7 @@ interface validateParams {
   flw_ref: string;
 }
 export async function ValidatePurchase({
-  userID,
-  email,
-  username,
+  userData: { userID, email, username },
   amount,
   unitType,
   date,
@@ -265,13 +268,16 @@ export async function ValidatePurchase({
 }
 export async function fetchInvestments(email: string) {
   try {
-    const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/invest/fetch_investments", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    });
+    const response = await fetch(
+      "https://cap-partners-investment.cyclic.app/api/v0/investors/invest/fetch_investments",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      }
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }

@@ -41,20 +41,22 @@ const ValidatePayment = ({ user, textStyle, btnTitle }: Props) => {
       userID: user?.userID || "",
       email: user?.email || "",
       username: user?.username || "",
-      unitType: "type1"|| "",
+      unitType: "type1" || "",
       amount: stringAmount || "",
       date: formattedDate || "",
       flw_ref: cardDetails?.flw_ref || "",
       otp: "",
     },
   });
-   const onSubmit = async (values: z.infer<typeof PaymentValidation>) => {
+  const onSubmit = async (values: z.infer<typeof PaymentValidation>) => {
     const res = await ValidatePurchase({
-      userID: values.userID,
-      email: values.email,
-      username: values.username,
-      amount: values.amount,
+      userData: {
+        userID: values.userID,
+        email: values.email,
+        username: values.username,
+      },
       unitType: values.unitType,
+      amount: values.amount,
       date: values.date,
       otp: values.otp,
       flw_ref: values.flw_ref,
@@ -75,7 +77,7 @@ const ValidatePayment = ({ user, textStyle, btnTitle }: Props) => {
         action: <ToastAction altText="Try again">Try again</ToastAction>,
       });
     }
-   }
+  };
   return (
     <>
       <Form {...form}>
