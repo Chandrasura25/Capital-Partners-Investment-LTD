@@ -16,7 +16,7 @@ async function Page() {
  const stringUserID = userInfo?.id?.toString() ?? '';
 
   const userData = {
-    userID: userInfo.id,
+    userID: userInfo?.id,
     fullname: userInfo.surname + " " + userInfo.firstname,
     email: userInfo
       ? userInfo?.email
