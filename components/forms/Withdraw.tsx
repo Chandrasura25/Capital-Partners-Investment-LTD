@@ -47,8 +47,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
     fieldChange: (value: number) => void
   ) => {
     e.preventDefault();
-    const newUnit = e.target.valueAsNumber;
-    fieldChange(newUnit);
+    fieldChange(e.target.valueAsNumber);
   };
   const onSubmit = async (values: z.infer<typeof WithdrawValidation>) => {
     const res = await withdrawAmount({
@@ -95,7 +94,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
                   {...field}
                   type="number"
                   className="account-form_input no-focus"
-                  onChange={(e) => handleAmount(e, field.onChange)}
+                  onChange={(e) => e.target.valueAsNumber}
                 />
               </FormControl>
               <FormMessage />
