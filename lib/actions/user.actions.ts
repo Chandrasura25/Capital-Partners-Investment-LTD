@@ -216,6 +216,7 @@ interface validateParams {
   email: string;
   username: string;
   amount: string;
+  unitType: string;
   date: string;
   otp: string;
   flw_ref: string;
@@ -225,6 +226,7 @@ export async function ValidatePurchase({
   email,
   username,
   amount,
+  unitType,
   date,
   otp,
   flw_ref,
@@ -243,6 +245,7 @@ export async function ValidatePurchase({
             email,
             username,
           },
+          unitType,
           amount,
           date,
           otp,
@@ -262,7 +265,7 @@ export async function ValidatePurchase({
 }
 export async function fetchInvestments(email: string) {
   try {
-    const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/invest/fetch_investment", {
+    const response = await fetch("https://cap-partners-investment.cyclic.app/api/v0/investors/invest/fetch_investments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
