@@ -21,7 +21,7 @@ import { parseLocalStorageItem } from "@/lib/utils";
 
 interface Props {
   user: {
-    userID: string;
+    userID: number;
     fullname: string;
     email: string;
     phone_number: string;
@@ -40,7 +40,7 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
   const form = useForm({
     resolver: zodResolver(CardValidation),
     defaultValues: {
-      userID: user?.userID || "",
+      userID: user?.userID || 0,
       email: user?.email || "",
       fullname: user?.fullname || "",
       phone_number: user?.phone_number || "",

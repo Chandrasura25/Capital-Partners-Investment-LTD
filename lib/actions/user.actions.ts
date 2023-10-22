@@ -160,7 +160,7 @@ export async function updateUser({
   }
 }
 interface cardParams {
-  userID: string;
+  userID: number;
   email: string;
   fullname: string;
   amount: string;
@@ -216,7 +216,7 @@ export async function purchaseInvestment({
 }
 interface validateParams {
   userData: {
-    userID: string;
+    userID: number;
     email: string;
     username: string;
   };

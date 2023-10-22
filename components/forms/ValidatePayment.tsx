@@ -21,7 +21,7 @@ import { parseLocalStorageItem, getFormattedDate } from "@/lib/utils";
 
 interface Props {
   user: {
-    userID: string;
+    userID: number;
     username: string;
     email: string;
   };
@@ -38,7 +38,7 @@ const ValidatePayment = ({ user, textStyle, btnTitle }: Props) => {
   const form = useForm({
     resolver: zodResolver(PaymentValidation),
     defaultValues: {
-      userID: user?.userID || "",
+      userID: user?.userID || 0,
       email: user?.email || "",
       username: user?.username || "",
       unitType: "type1" || "",

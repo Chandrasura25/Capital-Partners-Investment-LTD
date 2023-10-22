@@ -9,7 +9,7 @@ export const BankValidation = z.object({
 });
 
 export const CardValidation = z.object({
-  userID: z.string().min(1),
+  userID: z.number().min(1),
   fullname: z.string().min(3).max(30),
   email: z.string().email().min(3).max(100),
   amount: z.string().min(1),
@@ -22,7 +22,7 @@ export const CardValidation = z.object({
 });
 
 export const PaymentValidation = z.object({
-  userID: z.string().min(1),
+  userID: z.number().min(1),
   username: z.string().min(3).max(30),
   email: z.string().email().min(3).max(100),
   amount: z.string().min(1),
