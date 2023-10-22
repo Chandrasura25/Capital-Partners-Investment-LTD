@@ -70,7 +70,6 @@ const CardDetail = ({ user, textStyle, btnTitle }: Props) => {
         description: "Card Details is saved successfully.",
         action: <ToastAction altText="Ok">Ok</ToastAction>,
       });
-      localStorage.removeItem("unitDetails");
       localStorage.cardDetails = JSON.stringify(res.payload);
       router.push("/validate-payment");
     } else {

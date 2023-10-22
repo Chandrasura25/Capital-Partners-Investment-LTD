@@ -67,6 +67,7 @@ const ValidatePayment = ({ user, textStyle, btnTitle }: Props) => {
         description: "Payment Validation is successful.",
         action: <ToastAction altText="Ok">Ok</ToastAction>,
       });
+      localStorage.removeItem("unitDetails");
       localStorage.removeItem("cardDetails");
       router.push("/dashboard");
     } else {
