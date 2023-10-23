@@ -1,4 +1,4 @@
-import { fetchUser, fetchBankDetails } from "@/lib/actions/user.actions";
+import { fetchUser, fetchInvestments } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import Bottombar from "@/components/shared/Bottombar";
@@ -11,6 +11,8 @@ async function Page() {
   if (!user) return null;
   const userDatum = await fetchUser(user.id);
   const userInfo = userDatum?.payload;
+  const investments = await fetchInvestments(userInfo.email);
+  console.log(investments);
   if (!userInfo.onboarded) redirect("/onboarding");
   return (
     <>
