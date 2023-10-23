@@ -36,7 +36,7 @@ async function Page({ params }: { params: { id: string } }) {
       <Topbar userInfo={userInfo} />
       <main className="flex flex-row bg-[#000924]">
         <LeftSidebar />
-        <section className="main-container relative sm:bg-[rgba(31, 38, 135, 0.37)]">
+        <section className="main-container relative">
           <div className="w-full max-w-3xl">
             <div className="bg-[#150B62] p-5 rounded-[20px] relative">
               <h3 className="head-text mb-3 text-center">Review Your Profile</h3>
