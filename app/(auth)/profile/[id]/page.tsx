@@ -34,7 +34,7 @@ async function Page({ params }: { params: { id: string } }) {
   return (
     <>
       <Topbar userInfo={userInfo} />
-      <main className="flex flex-row bg-[#000924]">
+      <main className="bg-main">
         <LeftSidebar />
         <section className="main-container relative">
           <div className="w-full max-w-3xl">

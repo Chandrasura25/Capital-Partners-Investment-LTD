@@ -14,7 +14,7 @@ async function Page() {
   return (
     <>
       <Topbar userInfo={userInfo} />
-      <main className="flex flex-row sm:bg-[#000924]">
+      <main className="bg-main">
         <LeftSidebar />
         <section className="main-container relative">
           <div className="max-w-md">
