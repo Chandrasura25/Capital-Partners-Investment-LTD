@@ -13,11 +13,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { WithdrawValidation } from "@/lib/validations/bank";
 import * as z from "zod";
-import { ChangeEvent } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-import { withdrawAmount } from "@/lib/actions/user.actions";
 import axios from 'axios';
 interface Props {
   user: {
@@ -30,7 +28,6 @@ interface Props {
 
 const Withdraw = ({ user, textStyle }: Props) => {
   const { toast } = useToast();
-  const pathname = usePathname();
   const router = useRouter();
 
   const form = useForm({
@@ -44,12 +41,6 @@ const Withdraw = ({ user, textStyle }: Props) => {
   });
   
   const onSubmit = (values: z.infer<typeof WithdrawValidation>) => {
-    // const res = await withdrawAmount({
-    //   userID: values.userID,
-    //   email: values.email,
-    //   amount: values.amount,
-    //   narration: values.narration,
-    // });
     axios.post("https://cap-partners-investment.cyclic.app/api/v0/investors/withdraw", {
       userID: values.userID,
       email: values.email,
@@ -57,27 +48,26 @@ const Withdraw = ({ user, textStyle }: Props) => {
       narration: values.narration,
     })
   .then(response => {
-    // Handle the successful response here
-    console.log('Response data:', response.data);
+    const res = response.data;
+    if (res.status) {
+      toast({
+        description: "Withdrawal is successful.",
+        action: <ToastAction altText="Ok">Ok</ToastAction>,
+      });
+      router.push("/dashboard");
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: res.payload,
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+    }
   })
   .catch(error => {
     // Handle any errors that occur during the request
     console.error('Request error:', error);
   });
-    console.log(values);
-    // if (res.status) {
-    //   toast({
-    //     description: "Withdrawal is successful.",
-    //     action: <ToastAction altText="Ok">Ok</ToastAction>,
-    //   });
-    // } else {
-    //   toast({
-    //     variant: "destructive",
-    //     title: "Uh oh! Something went wrong.",
-    //     description: "There was a problem with your request.",
-    //     action: <ToastAction altText="Try again">Try again</ToastAction>,
-    //   });
-    // }
   };
   return (
     <Form {...form}>
