@@ -18,6 +18,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 import { withdrawAmount } from "@/lib/actions/user.actions";
+import axios from 'axios';
 interface Props {
   user: {
     id: number;
@@ -42,27 +43,41 @@ const Withdraw = ({ user, textStyle }: Props) => {
     },
   });
   
-  const onSubmit = async (values: z.infer<typeof WithdrawValidation>) => {
-    const res = await withdrawAmount({
+  const onSubmit = (values: z.infer<typeof WithdrawValidation>) => {
+    // const res = await withdrawAmount({
+    //   userID: values.userID,
+    //   email: values.email,
+    //   amount: values.amount,
+    //   narration: values.narration,
+    // });
+    axios.post("https://cap-partners-investment.cyclic.app/api/v0/investors/withdraw", {
       userID: values.userID,
       email: values.email,
       amount: values.amount,
       narration: values.narration,
-    });
-    console.log(values, res);
-    if (res.status) {
-      toast({
-        description: "Withdrawal is successful.",
-        action: <ToastAction altText="Ok">Ok</ToastAction>,
-      });
-    } else {
-      toast({
-        variant: "destructive",
-        title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request.",
-        action: <ToastAction altText="Try again">Try again</ToastAction>,
-      });
-    }
+    })
+  .then(response => {
+    // Handle the successful response here
+    console.log('Response data:', response.data);
+  })
+  .catch(error => {
+    // Handle any errors that occur during the request
+    console.error('Request error:', error);
+  });
+    console.log(values);
+    // if (res.status) {
+    //   toast({
+    //     description: "Withdrawal is successful.",
+    //     action: <ToastAction altText="Ok">Ok</ToastAction>,
+    //   });
+    // } else {
+    //   toast({
+    //     variant: "destructive",
+    //     title: "Uh oh! Something went wrong.",
+    //     description: "There was a problem with your request.",
+    //     action: <ToastAction altText="Try again">Try again</ToastAction>,
+    //   });
+    // }
   };
   return (
     <Form {...form}>
