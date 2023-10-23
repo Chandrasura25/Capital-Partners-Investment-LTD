@@ -16,9 +16,16 @@ const Loading = () => {
     //   </section>
     // </main>
     <>
-    <Skeleton className="topbar bg-gray-300" />
-    {/* <Skeleton className="h-[440px] w-full sm:w-[356px] bg-gray-300" />
-    </Skeleton> */}
+      <Skeleton className="topbar bg-gray-300 h-[200px]" />
+      <main className="bg-main bg-none">
+        <Skeleton className="leftsidebar bg-gray-300" />
+        <section className="main-container relative">
+          <div className="w-full max-w-4xl">
+          <Skeleton className="h-[440px] w-full bg-gray-300" />
+          </div>
+        </section>
+        <Skeleton className="bottombar h-[200px] bg-gray-300" />
+      </main>
     </>
   );
 };
