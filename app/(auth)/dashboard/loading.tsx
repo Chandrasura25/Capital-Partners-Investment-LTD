@@ -3,8 +3,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 const Loading = () => {
   return (
     <main className="flex-center paddings mx-auto flex-col h-screen">
-      <Skeleton className="h-[224px] w-full rounded-lg bg-gray-300"  />
-      <section className="w-full">
+      <Skeleton className="h-[100px] w-full rounded-lg bg-gray-300"  />
+      <section className="w-full mt-4">
         <Skeleton className="h-[224px] w-full rounded-lg bg-gray-300"  />
       </section>
       <section className="mt-6 flex w-full flex-col sm:mt-20">
