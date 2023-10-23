@@ -2,9 +2,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const Loading = () => {
   return (
-    <main className="flex-center paddings mx-auto flex-col">
+    <main className="flex-center paddings mx-auto flex-col h-screen">
       <section className="navPadding w-full">
-        <Skeleton className="h-[274px] w-full rounded-lg bg-gray-300"  />
+        <Skeleton className="h-[274px] w-fit rounded-lg bg-gray-300"  />
       </section>
       <section className="mt-6 flex w-full flex-col sm:mt-20">
         <Skeleton className="h-10 w-56 bg-gray-300" />
