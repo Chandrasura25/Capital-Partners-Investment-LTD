@@ -31,8 +31,8 @@
 }
 .box .list .imgBx{
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
     overflow: hidden;
     margin-right: 10px;
@@ -44,6 +44,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: invert(1);
+    transition: .5s;
+}
+.box .list:hover .imgBx img{
+    filter: invert(0);
 }
 .box .list .content{
     display: flex;
@@ -54,9 +59,9 @@
 .box .list .content .rank{
     position: absolute;
     right: -50px;
-    color: #03a9f4;
+    color: #000924;
     transition: .5s;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .box .list .content .rank small{
     font-weight: 500;
