@@ -20,7 +20,7 @@ async function Page() {
         <LeftSidebar />
         <section className="main-container relative">
         <div className="max-w-lg">
-            <div className="p-5 glassmorphism rounded-[20px] mb-8">
+            <div className="p-5 glassmorphism rounded-[20px] mb-5 custom-scrollbar">
             <h4 className="head-text uppercase mb-3">Withdrawal History</h4>
              <div>
               {histories.length > 0 ? (

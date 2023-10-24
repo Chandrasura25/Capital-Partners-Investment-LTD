@@ -103,7 +103,7 @@ export const sidebarLinks = [
     },
     {
         imgURL: "/assets/address-book-1109.svg",
-        route: "/withdrawal-history",
+        route: "/historial",
         label: "Statement of Account",
     },
     {
