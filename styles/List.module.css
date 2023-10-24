@@ -81,11 +81,11 @@
     font-weight: 600;
     transition: .5s;
 }
-.box .list .content p{
+.box .list p{
     font-size: 0.75em;
     transition: .5s;
 }
-.box .list:hover .content h4,
-.box .list:hover .content p{
+.box .list:hover h4,
+.box .list:hover p{
     color: #333;
 }
