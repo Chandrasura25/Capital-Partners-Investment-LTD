@@ -22,7 +22,7 @@ async function Page() {
         <section className="main-container relative">
           <div className="max-w-lg">
             <div className={`${listStyles.box} custom-scrollbar`}>
-              <h4 className="head-text uppercase mb-3">History</h4>
+              <h4 className="head-text uppercase mb-3">Payment History</h4>
               <div className="mt-5 flex flex-col gap-5">
                 {investments.length > 0 ? (
                   investments.map((investment: any) => (
@@ -49,7 +49,7 @@ async function Page() {
                     </div>
                   ))
                 ) : (
-                  <p className="!text-base-regular text-light-3">
+                  <p className="!text-base-regular text-white">
                     No Investment Yet
                   </p>
                 )}
