@@ -6,6 +6,7 @@ import LeftSidebar from "@/components/shared/LeftSidebar";
 import Topbar from "@/components/shared/Topbar";
 import listStyles from "@/styles/List.module.css";
 import historyStyles from "@/styles/Historial.module.css";
+import Historybar from '@/components/shared/Historybar'
 
 async function Page() {
   const user = await currentUser();
@@ -27,7 +28,7 @@ async function Page() {
              <div className={historyStyles.container}>
               {histories.length > 0 ? (
                 histories.map((history: any) => (
-                  <div key={history.id} className={historyStyles.box}>{history.amount}</div>  
+                  <Historybar key={history.id} histories={histories} /> 
                 ))      
               ):(
                 <p className="!text-base-regular text-white">
