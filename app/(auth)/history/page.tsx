@@ -21,7 +21,7 @@ async function Page() {
         <LeftSidebar />
         <section className="main-container relative">
           <div className="max-w-lg">
-            <div className={listStyles.box}>
+            <div className={`${listStyles.box} custom-scrollbar`}>
               <h4 className="head-text uppercase mb-3">History</h4>
               <div className="mt-5 flex flex-col gap-5">
                 {investments.length > 0 ? (
