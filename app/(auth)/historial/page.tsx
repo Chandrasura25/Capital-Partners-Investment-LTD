@@ -5,6 +5,7 @@ import Bottombar from "@/components/shared/Bottombar";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Topbar from "@/components/shared/Topbar";
 import listStyles from "@/styles/List.module.css";
+import historyStyles from "@/styles/Historial.module.css";
 
 async function Page() {
   const user = await currentUser();
@@ -23,10 +24,10 @@ async function Page() {
         <div className="max-w-lg">
         <div className={`${listStyles.box} bg-white custom-scrollbar`}>
             <h4 className="head-text uppercase mb-3">Withdrawal History</h4>
-             <div className="">
+             <div className={historyStyles.container}>
               {histories.length > 0 ? (
                 histories.map((history: any) => (
-                  <div key={history.id}>{history.amount}</div>  
+                  <div key={history.id} className={historyStyles.box}>{history.amount}</div>  
                 ))      
               ):(
                 <p className="!text-base-regular text-white">
