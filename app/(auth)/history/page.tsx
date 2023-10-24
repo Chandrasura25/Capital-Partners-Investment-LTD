@@ -26,12 +26,12 @@ async function Page() {
               <div className="mt-10 flex flex-col gap-5">
                 {investments.length > 0 ? (
                   investments.map((investment: any) => (
-                    <div className="list" key={investment.id}>
-                      <div className="imgBx">
-                        <img src= "/assets/history.svg" alt="" />
+                    <div className={listStyles.list} key={investment.id}>
+                      <div className={listStyles.imgBx}>
+                        <img src="/assets/history.svg" alt="" />
                       </div>
-                      <div className="content">
-                        <h2 className="rank">
+                      <div className={listStyles.content}>
+                        <h2 className={listStyles.rank}>
                           <small>unit</small>{Number(investment.amount) / 50000}
                         </h2>
                         <h4># {investment.amount}</h4>
