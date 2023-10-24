@@ -21,9 +21,9 @@ async function Page() {
         <LeftSidebar />
         <section className="main-container relative">
         <div className="max-w-lg">
-        <div className={listStyles.box}>
+        <div className={`${listStyles.box} bg-white custom-scrollbar`}>
             <h4 className="head-text uppercase mb-3">Withdrawal History</h4>
-             <div className="custom-scrollbar">
+             <div className="">
               {histories.length > 0 ? (
                 histories.map((history: any) => (
                   <div key={history.id}>{history.amount}</div>  
@@ -33,7 +33,7 @@ async function Page() {
                   No Withdrawal Yet
                 </p>
               )}
-             </div>
+             </div>  
             </div>
         </div>
         </section>
