@@ -84,6 +84,7 @@
 .box .list p{
     font-size: 0.75em;
     transition: .5s;
+    color: #fff;
 }
 .box .list:hover h4,
 .box .list:hover p{

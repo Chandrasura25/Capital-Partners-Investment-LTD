@@ -39,7 +39,7 @@ async function Page() {
                           <h4># {investment.amount}</h4>
                         </div>
                       </div>
-                      <div className="mt-3">
+                      <div className="mt-1">
                         <hr className="w-full text-white"></hr>
                         <div className="flex items-center justify-between w-full">
                           <p>{investment.createdAt}</p>
