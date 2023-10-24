@@ -28,7 +28,7 @@ async function Page() {
              <div className={historyStyles.container}>
               {histories.length > 0 ? (
                 histories.map((history: any) => (
-                  <Historybar key={history.id} histories={histories} /> 
+                  <Historybar key={history.id} {...histories} /> 
                 ))      
               ):(
                 <p className="!text-base-regular text-white">
