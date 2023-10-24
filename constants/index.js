@@ -103,7 +103,7 @@ export const sidebarLinks = [
     },
     {
         imgURL: "/assets/address-book-1109.svg",
-        route: "/activity",
+        route: "/withdrawal-history",
         label: "Statement of Account",
     },
     {
@@ -121,35 +121,29 @@ export const sidebarLinks = [
         route: "#",
         label: "More",
     },
-
-    //  {
-    //     imgURL: "/assets/user.svg",
-    //     route: "/profile",
-    //     label: "Share Testimony",
-    // },
 ];
 export const dashboardMenu = [
     {
         imgURL: "/assets/alarm.svg",
-        route: "/days",
+        route: "#",
         label: "Days of Investment",
         clr: "#ff0f5b",
     },
     {
         imgURL: "/assets/hourglass.svg",
-        route: "/weeks",
+        route: "#",
         label: "Weeks of Investment",
         clr: "#be01fe",
     },
     {
         imgURL: "/assets/calendar-check.svg",
-        route: "/months",
+        route: "#",
         label: "Months of Investment",
         clr: "#01b4ff",
     },
     {
         imgURL: "/assets/dollar-circle.svg",
-        route: "/unit",
+        route: "#",
         label: "Number of Unit",
         clr: "#ff5b0f",
     },
