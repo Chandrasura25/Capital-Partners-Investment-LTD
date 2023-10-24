@@ -27,17 +27,19 @@ async function Page() {
                 {investments.length > 0 ? (
                   investments.map((investment: any) => (
                     <div className={listStyles.list} key={investment.id}>
-                      <div className={listStyles.imgBx}>
-                        <img src="/assets/history.svg" alt="" />
+                      <div className={listStyles.main}>
+                        <div className={listStyles.imgBx}>
+                          <img src="/assets/history.svg" alt="" />
+                        </div>
+                        <div className={listStyles.content}>
+                          <h2 className={listStyles.rank}>
+                            <small>unit </small>
+                            {Number(investment.amount) / 50000}
+                          </h2>
+                          <h4># {investment.amount}</h4>
+                        </div>
                       </div>
-                      <div className={listStyles.content}>
-                        <h2 className={listStyles.rank}>
-                          <small>unit </small>
-                          {Number(investment.amount) / 50000}
-                        </h2>
-                        <h4># {investment.amount}</h4>
-                      </div>
-                        <hr className="w-full text-white"></hr>
+                      <hr className="w-full text-white"></hr>
                       <div className="flex items-center justify-between w-full">
                         <p>{investment.createdAt}</p>
                         <p>000</p>

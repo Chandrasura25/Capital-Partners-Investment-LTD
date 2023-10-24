@@ -23,6 +23,11 @@
     transition: .5s;
     overflow: hidden;
 }
+.box .main{
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
 .box .list:hover{
     background: #fff;
     z-index: 15;
