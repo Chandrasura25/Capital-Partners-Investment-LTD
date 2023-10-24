@@ -23,7 +23,7 @@ async function Page() {
           <div className="max-w-lg">
             <div className={listStyles.box}>
               <h4 className="head-text uppercase mb-3">History</h4>
-              <div className="mt-10 flex flex-col gap-5">
+              <div className="mt-5 flex flex-col gap-5">
                 {investments.length > 0 ? (
                   investments.map((investment: any) => (
                     <div className={listStyles.list} key={investment.id}>
@@ -32,14 +32,15 @@ async function Page() {
                       </div>
                       <div className={listStyles.content}>
                         <h2 className={listStyles.rank}>
-                          <small>unit</small>{Number(investment.amount) / 50000}
+                          <small>unit </small>
+                          {Number(investment.amount) / 50000}
                         </h2>
                         <h4># {investment.amount}</h4>
-                        <hr className="w-full"></hr>
-                        <div className="flex items-center justify-between w-full">
+                      </div>
+                        <hr className="w-full text-white"></hr>
+                      <div className="flex items-center justify-between w-full">
                         <p>{investment.createdAt}</p>
                         <p>000</p>
-                        </div>
                       </div>
                     </div>
                   ))
