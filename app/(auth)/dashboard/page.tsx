@@ -34,14 +34,18 @@ async function Page() {
                 className="rounded-[20px] p-2 w-[250px] h-[200px] flex justify-center items-center flex-col gap-3 shadow-md hover:animate-in transition-all hover:scale-105"
                 style={{ background: "#ff0f5b" }}
               >
-                {/* <Image
-                  src="/assets/alarm.svg"
-                  alt="Days of Investment"
-                  width={80}
-                  height={80}
-                  className="invert"
-                /> */}
-                <h3 className="text-white font-bold text-[2em]">{day} days</h3>
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/assets/alarm.svg"
+                    alt="Days of Investment"
+                    width={30}
+                    height={30}
+                    className="invert"
+                  />
+                  <h3 className="text-white font-bold text-[2em]">
+                    {day} days
+                  </h3>
+                </div>
                 <p className="mt-4 text-light-1 text-2xl md:text-5xl">
                   Days of Investment
                 </p>
@@ -51,14 +55,18 @@ async function Page() {
                 className="rounded-[20px] p-2 w-[250px] h-[200px] flex justify-center items-center flex-col gap-3 shadow-md hover:animate-in transition-all hover:scale-105"
                 style={{ background: "#be01fe" }}
               >
-                {/* <Image
-                  src="/assets/hourglass.svg"
-                  alt="Weeks of Investment"
-                  width={80}
-                  height={80}
-                  className="invert"
-                /> */}
-                <h3 className="text-white font-bold text-text-[2em]">{week} Weeks</h3>
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/assets/hourglass.svg"
+                    alt="Weeks of Investment"
+                    width={30}
+                    height={30}
+                    className="invert"
+                  />
+                  <h3 className="text-white font-bold text-[2em]">
+                    {week} Weeks
+                  </h3>
+                </div>
                 <p className="mt-4 text-light-1 text-2xl md:text-5xl">
                   Weeks of Investment
                 </p>
@@ -68,14 +76,18 @@ async function Page() {
                 className="rounded-[20px] p-2 w-[250px] h-[200px] flex justify-center items-center flex-col gap-3 shadow-md hover:animate-in transition-all hover:scale-105"
                 style={{ background: "#01b4ff" }}
               >
-                {/* <Image
-                  src="/assets/calendar-check.svg"
-                  alt="Months of Investment"
-                  width={80}
-                  height={80}
-                  className="invert"
-                /> */}
-                <h3 className="text-white font-bold text-[2em]">{month} Months</h3>
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/assets/calendar-check.svg"
+                    alt="Months of Investment"
+                    width={30}
+                    height={30}
+                    className="invert"
+                  />
+                  <h3 className="text-white font-bold text-[2em]">
+                    {month} Months
+                  </h3>
+                </div>
                 <p className="mt-4 text-light-1 text-2xl md:text-5xl">
                   Months of Investment
                 </p>
@@ -124,7 +136,7 @@ async function Page() {
                   height={80}
                 />
                 <p className="mt-4 text-light-1 text-2xl md:text-5xl">
-                Investment Growth
+                  Investment Growth
                 </p>
               </Link>
             </div>
