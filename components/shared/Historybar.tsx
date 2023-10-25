@@ -55,15 +55,17 @@ const Historybar = ({
             <i className="fa-solid fa-money-bill-wave fa-flip"></i>
           </div>
           <div className={historyStyles.text}>
-            <h3>{amount}</h3>
-            <p>5 projects</p>
+            <h3>-{amount}</h3>
+            <p>Withdrawal ID - {withdrawal_id}</p>
+            <p>Bank code - {bank_code}</p>
+            <p>Reference - {reference}</p>
           </div>
         </div>
         <div className={`${historyStyles.down} mt-1`}>
           <hr className="w-full"></hr>
           <div className="flex items-center justify-between w-full">
             <p>{createdAt}</p>
-            <p>{reference}</p>
+            <p>{bank_name}</p>
           </div>
         </div>
       </div>
