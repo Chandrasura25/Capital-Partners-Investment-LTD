@@ -1,6 +1,5 @@
 "use client";
 import historyStyles from "@/styles/Historial.module.css";
-import { useState, useEffect } from "react";
 interface Props {
   id: number;
   amount: number;
@@ -19,9 +18,8 @@ const Historybar = ({
   reference,
   createdAt,
 }: Props) => {
-  const [shuffledColors, setShuffledColors] = useState<string[]>([]);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const colors: string[] = [
+
+  const colors = [
     "#FF5733",
     "#33FF57",
     "#5733FF",
@@ -30,32 +28,28 @@ const Historybar = ({
     "#fc5f9b",
     "#0ed095",
   ]; // colors for the history bar
-  useEffect(() => {
-    setShuffledColors(shuffleArray(colors));
-  }, []);
-
-  const shuffleArray = (array: any) => {
-    const shuffled = [...array];
-    for (let i = shuffled.length - 1; i > 0; i--) {
+  const shuffleArray = (array:any) => {
+    // Fisher-Yates shuffle algorithm
+    for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      [array[i], array[j]] = [array[j], array[i]];
     }
-    return shuffled;
   };
-
-  const getRandomColor = (id: number): string => {
-    if (currentIndex >= colors.length) {
-      // If we've exhausted the shuffledColors array, shuffle again
-      setShuffledColors(shuffleArray(colors));
-      setCurrentIndex(0);
+  
+  shuffleArray(colors); // Shuffle the colors initially
+  
+  const getNextUniqueColors = () => {
+    if (colors.length < 3) {
+      // Reset the colors array if there are fewer than 3 colors left
+      shuffleArray(colors);
     }
-
-    const uniqueColor = shuffledColors[currentIndex];
-    setCurrentIndex(currentIndex + 1);
-
-    return uniqueColor;
+  
+    const uniqueColors = colors.slice(0, 3);
+    colors.push(...colors.splice(0, 3)); // Rotate the first 3 colors to the end
+    return uniqueColors;
   };
-  const clr = getRandomColor(id);
+  
+  const clr = getNextUniqueColors()[id % 3];
   console.log(id, clr);
   return (
     <>
