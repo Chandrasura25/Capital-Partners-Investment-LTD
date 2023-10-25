@@ -26,26 +26,34 @@ const Historybar = ({
     "#33FFFF",
     "#fc5f9b",
     "#0ed095",
-  ]; // colors for the history bar
-
+  ];
+  
   // Shuffle the colors initially
   let shuffledColors = [...colors].sort(() => 0.5 - Math.random());
   let currentIndex = 0;
-
+  
   const getRandomColors = () => {
     if (currentIndex >= colors.length) {
       // If we've exhausted the shuffledColors array, shuffle again
       shuffledColors = [...colors].sort(() => 0.5 - Math.random());
       currentIndex = 0;
     }
-
-    const uniqueColors = shuffledColors.slice(currentIndex, currentIndex + 3);
-    currentIndex += 3;
-
-    return uniqueColors;
+  
+    // Create a set to store the unique colors
+    const uniqueColors = new Set();
+  
+    // Iterate over the shuffledColors array and add each color to the set
+    shuffledColors.forEach((color) => {
+      uniqueColors.add(color);
+    });
+  
+    // Convert the set back to an array
+    return [...uniqueColors];
   };
-
+  
+  // Get the random colors
   const clr = getRandomColors()[id % 3];
+  
   console.log(id, amount);
   return (
     <>
@@ -55,7 +63,7 @@ const Historybar = ({
             <i className="fa-solid fa-money-bill-wave fa-flip"></i>
           </div>
           <div className={historyStyles.text}>
-            <h3>-# {amount}</h3>
+            <h3>- #{amount}</h3>
             <p>Withdrawal ID - {withdrawal_id}</p>
             <p>Bank code - {bank_code}</p>
             <p>Reference - {reference}</p>
