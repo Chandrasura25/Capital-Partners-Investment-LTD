@@ -52,11 +52,18 @@ const Historybar = ({
       <div className={historyStyles.box} style={{ "--clr": clr }}>
         <div className={historyStyles.content}>
           <div className={historyStyles.icon}>
-          <i className="fa-solid fa-money-bill-wave fa-flip"></i>
+            <i className="fa-solid fa-money-bill-wave fa-flip"></i>
           </div>
-          <div className="text">
+          <div className={historyStyles.text}>
             <h3>{amount}</h3>
             <p>5 projects</p>
+          </div>
+        </div>
+        <div className={`${historyStyles.down} mt-1`}>
+          <hr className="w-full"></hr>
+          <div className="flex items-center justify-between w-full">
+            <p>{createdAt}</p>
+            <p>{reference}</p>
           </div>
         </div>
       </div>
