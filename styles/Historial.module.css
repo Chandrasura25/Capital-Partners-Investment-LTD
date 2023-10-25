@@ -55,8 +55,10 @@
 .container .box .down{
     color: var(--clr);
     padding-left:10px;
+    padding-right:5px;
     font-size: 0.75em;
     transition: .5s ease-in-out;
+    z-index: 2;
 }
 .container .box:hover .content .icon i,.container .box:hover .content .text h3,.container .box:hover .content .text p,.container .box:hover .down{
     color: #fff;
