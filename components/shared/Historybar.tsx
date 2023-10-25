@@ -34,12 +34,13 @@ const Historybar = ({
     while (selectedColors.length < 3) {
       const shuffledColors = [...colors].sort(() => 0.5 - Math.random());
       selectedColors.push(...shuffledColors);
+      console.log(selectedColors, shuffledColors)
     }
 
     return selectedColors.slice(0, 3);
   };
   const clr = getRandomColors()[id % 3];
-  console.log(clr);
+  console.log(id, amount);
   return (
     <>
       <div className={historyStyles.box} style={{ "--clr": clr }}>
