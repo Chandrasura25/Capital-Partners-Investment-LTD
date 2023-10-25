@@ -83,6 +83,9 @@ export function add500DaysToDate(inputDateStr: any) {
   const remainingDays = daysDifference % 7;
 
   // Format the output
-  const output = `${months} months, ${weeks} weeks, ${remainingDays} days later`;
-  return output;
+  return {
+    day: remainingDays,
+    month: months,
+    week: weeks
+  };
 }

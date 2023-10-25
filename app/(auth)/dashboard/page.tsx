@@ -6,6 +6,7 @@ import Topbar from "@/components/shared/Topbar";
 import { currentUser } from "@clerk/nextjs";
 import { fetchUser, fetchInvestments } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
+import { add500DaysToDate } from "@/lib/utils";
 
 async function Page() {
   const user = await currentUser();
@@ -13,7 +14,12 @@ async function Page() {
   const useDatum = await fetchUser(user.id);
   const userInfo = useDatum?.payload;
   const investments = await fetchInvestments(userInfo.email);
-  console.log(investments);
+  const investment = investments?.payload[0];
+  const get_date = add500DaysToDate(investment?.date);
+  const day = get_date.day;
+  const week = get_date.week;
+  const month = get_date.month;
+
   if (!userInfo.onboarded) redirect("/onboarding");
   return (
     <>
@@ -28,13 +34,14 @@ async function Page() {
                 className="rounded-[20px] p-2 w-[250px] h-[200px] flex justify-center items-center flex-col gap-3 shadow-md hover:animate-in transition-all hover:scale-105"
                 style={{ background: "#ff0f5b" }}
               >
-                <Image
+                {/* <Image
                   src="/assets/alarm.svg"
                   alt="Days of Investment"
                   width={80}
                   height={80}
                   className="invert"
-                />
+                /> */}
+                <h3 className="text-white font-bold text-2xl">{day}</h3>
                 <p className="mt-4 text-light-1 text-2xl md:text-5xl">
                   Days of Investment
                 </p>
