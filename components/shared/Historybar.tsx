@@ -28,16 +28,23 @@ const Historybar = ({
     "#0ed095",
   ]; // colors for the history bar
 
-  const getRandomColors = () => {
-    const selectedColors = [];
+  // Shuffle the colors initially
+  let shuffledColors = [...colors].sort(() => 0.5 - Math.random());
+  let currentIndex = 0;
 
-    while (selectedColors.length < 3) {
-      const shuffledColors = [...colors].sort(() => 0.5 - Math.random());
-      selectedColors.push(...shuffledColors);
+  const getRandomColors = () => {
+    if (currentIndex >= colors.length) {
+      // If we've exhausted the shuffledColors array, shuffle again
+      shuffledColors = [...colors].sort(() => 0.5 - Math.random());
+      currentIndex = 0;
     }
 
-    return selectedColors.slice(0, 3);
+    const uniqueColors = shuffledColors.slice(currentIndex, currentIndex + 3);
+    currentIndex += 3;
+
+    return uniqueColors;
   };
+
   const clr = getRandomColors()[id % 3];
   console.log(id, amount);
   return (
