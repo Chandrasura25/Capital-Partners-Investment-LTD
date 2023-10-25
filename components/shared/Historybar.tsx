@@ -34,7 +34,6 @@ const Historybar = ({
     while (selectedColors.length < 3) {
       const shuffledColors = [...colors].sort(() => 0.5 - Math.random());
       selectedColors.push(...shuffledColors);
-      console.log(selectedColors, shuffledColors)
     }
 
     return selectedColors.slice(0, 3);
