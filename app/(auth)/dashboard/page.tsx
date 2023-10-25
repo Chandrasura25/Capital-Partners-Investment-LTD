@@ -41,7 +41,7 @@ async function Page() {
                   height={80}
                   className="invert"
                 /> */}
-                <h3 className="text-white font-bold text-[48px]">{day} days</h3>
+                <h3 className="text-white font-bold text-[2em]">{day} days</h3>
                 <p className="mt-4 text-light-1 text-2xl md:text-5xl">
                   Days of Investment
                 </p>
@@ -58,7 +58,7 @@ async function Page() {
                   height={80}
                   className="invert"
                 /> */}
-                <h3 className="text-white font-bold text-[48px]">{week} Weeks</h3>
+                <h3 className="text-white font-bold text-text-[2em]">{week} Weeks</h3>
                 <p className="mt-4 text-light-1 text-2xl md:text-5xl">
                   Weeks of Investment
                 </p>
@@ -75,7 +75,7 @@ async function Page() {
                   height={80}
                   className="invert"
                 /> */}
-                <h3 className="text-white font-bold text-[48px]">{month} Months</h3>
+                <h3 className="text-white font-bold text-[2em]">{month} Months</h3>
                 <p className="mt-4 text-light-1 text-2xl md:text-5xl">
                   Months of Investment
                 </p>
