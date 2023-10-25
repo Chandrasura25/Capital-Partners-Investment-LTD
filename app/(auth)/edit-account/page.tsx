@@ -21,7 +21,7 @@ async function Page() {
         <section className="main-container relative">
         <div className="max-w-md">
             <div className="p-5 glassmorphism rounded-[20px] mb-8">
-            <h4 className="head-text uppercase mb-3">Add Your Bank Details</h4>
+            <h4 className="head-text uppercase mb-3">Edit Your Bank Details</h4>
              <div>
              <BankDetails user={userInfo} textStyle="uppercase" />
              </div>
