@@ -23,7 +23,7 @@ const Historybar = ({
     "#FF5733",
     "#33FF57",
     "#5733FF",
-    "#FFFF33",
+    "#ff0f5b",
     "#33FFFF",
     "#fc5f9b",
     "#0ed095",
