@@ -15,11 +15,13 @@ const Historybar = ({ id,bank_name, amount, withdrawal_id,bank_code,reference, c
     const shuffledColors = [...colors].sort(() => 0.5 - Math.random());
     return shuffledColors.slice(0, 3);
   };
+  const clr = getRandomColors()[id % 3] ;
+  console.log(clr)
   return (
     <>
       <div
         className={historyStyles.box}
-        style={{ "--clr": getRandomColors()[id % 3] }}
+        style={{ "--clr": clr}}
       >
         <div className={historyStyles.content}>
                 <div className="icon">
