@@ -1,5 +1,6 @@
 "use client";
 import historyStyles from "@/styles/Historial.module.css";
+import { useState, useEffect } from "react";
 interface Props {
   id: number;
   amount: number;
@@ -18,7 +19,9 @@ const Historybar = ({
   reference,
   createdAt,
 }: Props) => {
-  const colors = [
+  const [shuffledColors, setShuffledColors] = useState<string[]>([]);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const colors: string[] = [
     "#FF5733",
     "#33FF57",
     "#5733FF",
@@ -26,35 +29,34 @@ const Historybar = ({
     "#33FFFF",
     "#fc5f9b",
     "#0ed095",
-  ];
-  
-  // Shuffle the colors initially
-  let shuffledColors = [...colors].sort(() => 0.5 - Math.random());
-  let currentIndex = 0;
-  
-  const getRandomColors = () => {
+  ]; // colors for the history bar
+  useEffect(() => {
+    setShuffledColors(shuffleArray(colors));
+  }, []);
+
+  const shuffleArray = (array: any) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
+  const getRandomColor = (id: number): string => {
     if (currentIndex >= colors.length) {
       // If we've exhausted the shuffledColors array, shuffle again
-      shuffledColors = [...colors].sort(() => 0.5 - Math.random());
-      currentIndex = 0;
+      setShuffledColors(shuffleArray(colors));
+      setCurrentIndex(0);
     }
-  
-    // Create a set to store the unique colors
-    const uniqueColors = new Set();
-  
-    // Iterate over the shuffledColors array and add each color to the set
-    shuffledColors.forEach((color) => {
-      uniqueColors.add(color);
-    });
-  
-    // Convert the set back to an array
-    return [...uniqueColors];
+
+    const uniqueColor = shuffledColors[currentIndex];
+    setCurrentIndex(currentIndex + 1);
+
+    return uniqueColor;
   };
-  
-  // Get the random colors
-  const clr = getRandomColors()[id % 3];
-  
-  console.log(id, amount);
+  const clr = getRandomColor(id);
+  console.log(id, clr);
   return (
     <>
       <div className={historyStyles.box} style={{ "--clr": clr }}>
