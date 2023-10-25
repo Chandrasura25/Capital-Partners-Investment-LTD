@@ -14,7 +14,8 @@ async function Page() {
   const useDatum = await fetchUser(user.id);
   const userInfo = useDatum?.payload;
   const investments = await fetchInvestments(userInfo.email);
-  const units = investments.payload.length === 0 ? 0 : calculateUnits(investments.payload);
+  const units =
+    investments.payload.length === 0 ? 0 : calculateUnits(investments.payload);
   console.log("Units:", units);
   const investment = investments?.payload[0];
 
@@ -112,13 +113,18 @@ async function Page() {
                 className="rounded-[20px] p-2 w-[250px] h-[200px] flex justify-center items-center flex-col gap-3 shadow-md hover:animate-in transition-all hover:scale-105"
                 style={{ background: "#ff5b0f" }}
               >
-                <Image
-                  src="/assets/dollar-circle.svg"
-                  alt="Number of Unit"
-                  width={80}
-                  height={80}
-                  className="invert"
-                />
+                <div className="flex flex-col items-center gap-3">
+                  <Image
+                    src="/assets/dollar-circle.svg"
+                    alt="Number of Unit"
+                    width={50}
+                    height={50}
+                    className="invert"
+                  />
+                  <h3 className="text-white font-bold text-[2em]">
+                    {units} Units
+                  </h3>
+                </div>
                 <p className="mt-4 text-light-1 text-2xl md:text-5xl">
                   Number of Unit
                 </p>
