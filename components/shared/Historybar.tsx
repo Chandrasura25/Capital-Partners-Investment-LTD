@@ -51,8 +51,8 @@ const Historybar = ({
     <>
       <div className={historyStyles.box} style={{ "--clr": clr }}>
         <div className={historyStyles.content}>
-          <div className="icon">
-            <img src="" alt="withdrawal-logo" className="" />
+          <div className={historyStyles.icon}>
+          <i className="fa-solid fa-money-bill-wave fa-flip"></i>
           </div>
           <div className="text">
             <h3>{amount}</h3>
