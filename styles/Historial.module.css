@@ -53,12 +53,11 @@
 }
 .container .box .down{
     color: var(--clr);
-    padding-left:20px;
-    padding-right:20px;
+    padding-left:10px;
     font-size: 0.75em;
     transition: .5s ease-in-out;
 }
-.container .box:hover .content .icon i,.container .box:hover .content .text h3,.container .box:hover .content .text p,.container .box .down{
+.container .box:hover .content .icon i,.container .box:hover .content .text h3,.container .box:hover .content .text p,.container .box:hover .down{
     color: #fff;
 }
 .container .box .content .text h3{
