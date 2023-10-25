@@ -89,5 +89,20 @@ export function add500DaysToDate(inputDateStr:any) {
     week: weeks
   };
 }
+export function calculateUnits(payload:any) {
+  if (!Array.isArray(payload)) {
+    throw new Error("Payload is not an array");
+  }
 
+  const totalAmount = payload.reduce((total, investment) => {
+    if (investment.amount && typeof investment.amount === "number") {
+      return total + investment.amount;
+    }
+    return total;
+  }, 0);
+
+  const units = totalAmount / 50000;
+
+  return units;
+}
 

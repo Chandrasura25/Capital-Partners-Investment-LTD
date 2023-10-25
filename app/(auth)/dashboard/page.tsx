@@ -6,7 +6,7 @@ import Topbar from "@/components/shared/Topbar";
 import { currentUser } from "@clerk/nextjs";
 import { fetchUser, fetchInvestments } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
-import { add500DaysToDate } from "@/lib/utils";
+import { add500DaysToDate, calculateUnits } from "@/lib/utils";
 
 async function Page() {
   const user = await currentUser();
@@ -14,18 +14,21 @@ async function Page() {
   const useDatum = await fetchUser(user.id);
   const userInfo = useDatum?.payload;
   const investments = await fetchInvestments(userInfo.email);
+  const units = investments.payload.length === 0 ? 0 : calculateUnits(investments.payload);
+  console.log("Units:", units);
   const investment = investments?.payload[0];
+
   let get_date = null; // Initialize get_date variable
 
   if (investment) {
     get_date = add500DaysToDate(investment.date);
   }
-  
+
   // Initialize day, week, and month with default values
   let day = 0;
   let week = 0;
   let month = 0;
-  
+
   if (get_date) {
     day = get_date.day;
     week = get_date.week;
