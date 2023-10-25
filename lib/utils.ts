@@ -60,3 +60,29 @@ export function getFormattedDate() {
   const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
   return formattedDate;
 }
+export function add500DaysToDate(inputDateStr: any) {
+  // Parse the input date string into a Date object
+  const dateParts = inputDateStr.split('/');
+  const day = parseInt(dateParts[0], 10);
+  const month = parseInt(dateParts[1], 10) - 1; // Subtract 1 as months are zero-based
+  const year = parseInt(dateParts[2], 10);
+  const inputDate = new Date(year, month, day);
+
+  // Add 500 days to the input date
+  const resultDate = new Date(inputDate);
+  resultDate.setDate(resultDate.getDate() + 500);
+
+  // Calculate the difference in terms of months, weeks, and days
+  const currentDate = new Date();
+  const timeDifference = resultDate - currentDate;
+  const millisecondsInDay = 24 * 60 * 60 * 1000;
+  const daysDifference = Math.floor(timeDifference / millisecondsInDay);
+
+  const months = Math.floor(daysDifference / 30);
+  const weeks = Math.floor((daysDifference % 30) / 7);
+  const remainingDays = daysDifference % 7;
+
+  // Format the output
+  const output = `${months} months, ${weeks} weeks, ${remainingDays} days later`;
+  return output;
+}
