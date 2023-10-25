@@ -41,7 +41,7 @@ async function Page() {
                   height={80}
                   className="invert"
                 /> */}
-                <h3 className="text-white font-bold text-2xl">{day}</h3>
+                <h3 className="text-white font-bold text-2xl">{day} day</h3>
                 <p className="mt-4 text-light-1 text-2xl md:text-5xl">
                   Days of Investment
                 </p>
