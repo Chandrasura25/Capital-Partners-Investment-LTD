@@ -122,44 +122,6 @@ export const sidebarLinks = [
         label: "More",
     },
 ];
-export const dashboardMenu = [
-    {
-        imgURL: "/assets/alarm.svg",
-        route: "#",
-        label: "Days of Investment",
-        clr: "#ff0f5b",
-    },
-    {
-        imgURL: "/assets/hourglass.svg",
-        route: "#",
-        label: "Weeks of Investment",
-        clr: "#be01fe",
-    },
-    {
-        imgURL: "/assets/calendar-check.svg",
-        route: "#",
-        label: "Months of Investment",
-        clr: "#01b4ff",
-    },
-    {
-        imgURL: "/assets/dollar-circle.svg",
-        route: "#",
-        label: "Number of Unit",
-        clr: "#ff5b0f",
-    },
-    {
-        imgURL: "/assets/comments-dollar-solid.svg",
-        route: "/add-unit",
-        label: "Additional Unit",
-        clr: "#cd31fe",
-    },
-    {
-        imgURL: "/assets/chart-646.svg",
-        route: "/growth",
-        label: "Investment Growth",
-        clr: "#4500ff",
-    },
-]
 export const AddUnit = [
     {
         id:1,
