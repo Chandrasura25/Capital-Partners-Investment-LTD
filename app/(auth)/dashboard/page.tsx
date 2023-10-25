@@ -15,10 +15,22 @@ async function Page() {
   const userInfo = useDatum?.payload;
   const investments = await fetchInvestments(userInfo.email);
   const investment = investments?.payload[0];
-  const get_date = add500DaysToDate(investment?.date);
-  const day = get_date.day;
-  const week = get_date.week;
-  const month = get_date.month;
+  let get_date = null; // Initialize get_date variable
+
+  if (investment) {
+    get_date = add500DaysToDate(investment.date);
+  }
+  
+  // Initialize day, week, and month with default values
+  let day = 0;
+  let week = 0;
+  let month = 0;
+  
+  if (get_date) {
+    day = get_date.day;
+    week = get_date.week;
+    month = get_date.month;
+  }
 
   if (!userInfo.onboarded) redirect("/onboarding");
   return (
@@ -34,12 +46,12 @@ async function Page() {
                 className="rounded-[20px] p-2 w-[250px] h-[200px] flex justify-center items-center flex-col gap-3 shadow-md hover:animate-in transition-all hover:scale-105"
                 style={{ background: "#ff0f5b" }}
               >
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col items-center gap-3">
                   <Image
                     src="/assets/alarm.svg"
                     alt="Days of Investment"
-                    width={30}
-                    height={30}
+                    width={50}
+                    height={50}
                     className="invert"
                   />
                   <h3 className="text-white font-bold text-[2em]">
@@ -55,12 +67,12 @@ async function Page() {
                 className="rounded-[20px] p-2 w-[250px] h-[200px] flex justify-center items-center flex-col gap-3 shadow-md hover:animate-in transition-all hover:scale-105"
                 style={{ background: "#be01fe" }}
               >
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col items-center gap-3">
                   <Image
                     src="/assets/hourglass.svg"
                     alt="Weeks of Investment"
-                    width={30}
-                    height={30}
+                    width={50}
+                    height={50}
                     className="invert"
                   />
                   <h3 className="text-white font-bold text-[2em]">
@@ -76,12 +88,12 @@ async function Page() {
                 className="rounded-[20px] p-2 w-[250px] h-[200px] flex justify-center items-center flex-col gap-3 shadow-md hover:animate-in transition-all hover:scale-105"
                 style={{ background: "#01b4ff" }}
               >
-                <div className="flex items-center gap-3">
+                <div className="flex flex-col items-center gap-3">
                   <Image
                     src="/assets/calendar-check.svg"
                     alt="Months of Investment"
-                    width={30}
-                    height={30}
+                    width={50}
+                    height={50}
                     className="invert"
                   />
                   <h3 className="text-white font-bold text-[2em]">
