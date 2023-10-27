@@ -36,7 +36,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
     defaultValues: {
       userID: user?.id || 0,
       email: user?.email || "",
-      amount: 0,
+      amount: 100,
       narration: "",
     },
   });
@@ -95,6 +95,7 @@ const Withdraw = ({ user, textStyle }: Props) => {
                   {...field}
                   type="number"
                   className="account-form_input no-focus"
+                  placeholder="Minimum of 100"
                 />
               </FormControl>
               <FormMessage />
