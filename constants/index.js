@@ -287,3 +287,113 @@ export const optionText = [
         clr: "#0f8a1c",
     },
 ]
+export default FaqText =[
+    {
+        id: 1,
+        quest: 'What types of investments does Capital Partners Investment Limited specialize in?',
+        ans: "We invest in diverse portfolio covering various sectors of the economy",
+        clr: "#ffaf00"
+    },
+    {
+        id: 2,
+        quest: '2.What is the minimum investment amount required to work with Capital Partners Investment Limited?',
+        ans: "#50,000 (Fifty Thousand Naira).",
+        clr: "#da2268",
+    },
+    {
+        id: 3,
+        quest: 'How long has Capital Partners Investment Limited been in operation?',
+        ans: "We have been in operation for the past 5years, operating locally and offline but just recently updated our status to become a full fledged registered investment company to provide opportunities to both domestic and international investors.",
+        clr: "#bb02ff",
+    },
+    {
+        id: 4,
+        quest: 'Can individuals invest with Capital Partners Investment Limited, or is it limited to institutional investors?',
+        ans: "Both individuals and institutional investors can invest.",
+        clr: "#01b4ff",
+    },
+    {
+        id: 5,
+        quest: 'What is the track record of Capital Partners Investment Limited in terms of investment performance?',
+        ans: "We combine our extensive industry knowledge, market insights, and investment expertise to identify and execute value-driven opportunities.",
+        clr: "#0f8a1c",
+    },
+    {
+        id: 6,
+        quest: 'What is the investment strategy employed by Capital Partners Investment Limited?',
+        ans: " Diversification, we spread money out over lots of different investments such as real estate, food, transportation, and healthcare.",
+        clr: "#4500ff",
+    },
+    {
+        id: 7,
+        quest: 'How does Capital Partners Investment Limited assess and manage investment risk.',
+        ans: "Our investment strategy is designed to maximize and sustain long term returns without incurring undue risk. Our portfolio is structured to be resilient in the face of wide-ranging market and economic conditions.",
+        clr: "#ff5b0f",
+    },
+    {
+        id: 8,
+        quest: 'Are there any specific industries or sectors that Capital Partners Investment Limited focuses on?',
+        ans: "Yes, our core investment sectors are Transportation, Real Estate, Health, Technology, Oil and Gas, Education, and Food.",
+        clr: "#be01fe",
+    },
+    {
+        id: 9,
+        quest: 'What is the fee structure for investing with Capital Partners Investment Limited?',
+        ans: "Each unit of investment cost #50,000. You can investment on many units as you desire.",
+        clr: "#01b4ff",
+    },
+    {
+        id: 10,
+        quest: 'How frequently does Capital Partners Investment Limited provide updates or reports on investment performance to investors?',
+        ans: "We are committed to transparency and accountability. Investors can access detailed reports including performance summaries, earning statements, and transaction histories.",
+        clr: "#0f8a1c",
+    },
+    {
+        id: 11,
+        quest: 'Does Capital Partners Investment Limited offer any additional services or support to its investors?',
+        ans: "Yes, we have a dedicated customer/investor support.",
+        clr: "#0f8a1c",
+    },
+    {
+        id: 12,
+        quest: 'What is the process for opening an investment account with Capital Partners Investment Limited?',
+        ans: "Very simple process, just register with an active email address, then proceed to investment portal after the basic registration.",
+        clr: "#0f8a1c",
+    },
+    {
+        id: 13,
+        quest: 'How does Capital Partners Investment Limited handle client confidentiality and data security?',
+        ans: "Check the privacy policy.",
+        clr: "#0f8a1c",
+    },
+    {
+        id: 14,
+        quest: 'Is there a minimum investment holding period required when investing with Capital Partners Investment Limited?',
+        ans: "No, however, a penalty fee of [40percentage] will be charged on the total ROI accrued until the date of termination if the Investor decides to terminate the investment before the full cycle of the investment days.",
+        clr: "#0f8a1c",
+    },
+    {
+        id: 15,
+        quest: 'What is the level of transparency provided by Capital Partners Investment Limited regarding investment decisions and portfolio holdings?',
+        ans: "100% transparent, we operate an open book system.",
+        clr: "#0f8a1c",
+    },
+    {
+        id: 16,
+        quest: 'Does Capital Partners Investment Limited provide any educational resources or guidance to help investors make informed decisions?',
+        ans: "Yes",
+        clr: "#0f8a1c",
+    },
+    {
+        id: 17,
+        quest: 'What is the typical timeline for accessing funds or receiving returns on investments with Capital Partners Investment Limited?',
+        ans: "Daily, you access your funds and investment on a daily basis, you can also withdraw everyday.",
+        clr: "#0f8a1c",
+    },
+    {
+        id: 18,
+        quest: 'Can investors customize their investment preferences or portfolios with Capital Partners Investment Limited?',
+        ans: "No.",
+        clr: "#0f8a1c",
+    },
+]
