@@ -19,7 +19,7 @@ const Page = () => {
         viewport={{ once: false, amount: 0.25 }}
         className="innerWidth mx-auto flex-col gap-5 flexCenter min-h-[50vh]"
       >
-        <h1 className="font-bold text-center text-light-1 uppercase mb-2">
+        <h1 className="font-bold text-2xl text-center text-light-1 uppercase mb-2">
           Frequently Asked Questions
         </h1>
         <motion.div
@@ -31,7 +31,7 @@ const Page = () => {
               <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
                 <AccordionItem value={`item-${faq.id}`} key={faq.id}>
                   <AccordionTrigger className="text-white">{faq.quest}</AccordionTrigger>
-                  <AccordionContent className={`text-[${faq.clr}] px-4 font-semibold`}>
+                  <AccordionContent className="text-white px-4 text-semibold">
                     {faq.ans}
                   </AccordionContent>
                 </AccordionItem>
