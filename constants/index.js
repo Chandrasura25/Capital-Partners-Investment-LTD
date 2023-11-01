@@ -287,7 +287,7 @@ export const optionText = [
         clr: "#0f8a1c",
     },
 ]
-export default FaqText =[
+export const FaqText =[
     {
         id: 1,
         quest: 'What types of investments does Capital Partners Investment Limited specialize in?',
