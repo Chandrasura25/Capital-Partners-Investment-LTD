@@ -17,15 +17,15 @@ const Page = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="innerWidth mx-auto flexCenter flex-col gap-5 min-h-[50vh]"
+        className="innerWidth mx-auto flexCenter min-h-[50vh]"
       >
-        <div>
+        <div className="max-w-md glassmorphism">
           <Accordion type="single" collapsible className="w-full">
             {FaqText.map((faq, index) => (
               <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
                 <AccordionItem value={`item-${faq.id}`} key={faq.id}>
-                  <AccordionTrigger>{faq.quest}</AccordionTrigger>
-                  <AccordionContent>{faq.ans}</AccordionContent>
+                  <AccordionTrigger className="text-white">{faq.quest}</AccordionTrigger>
+                  <AccordionContent className="text-white">{faq.ans}</AccordionContent>
                 </AccordionItem>
               </motion.div>
             ))}
