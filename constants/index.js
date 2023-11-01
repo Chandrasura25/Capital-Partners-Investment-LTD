@@ -296,7 +296,7 @@ export const FaqText =[
     },
     {
         id: 2,
-        quest: '2.What is the minimum investment amount required to work with Capital Partners Investment Limited?',
+        quest: 'What is the minimum investment amount required to work with Capital Partners Investment Limited?',
         ans: "#50,000 (Fifty Thousand Naira).",
         clr: "#da2268",
     },
