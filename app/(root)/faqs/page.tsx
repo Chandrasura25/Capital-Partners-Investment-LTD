@@ -19,18 +19,18 @@ const Page = () => {
         viewport={{ once: false, amount: 0.25 }}
         className="innerWidth mx-auto flexCenter flex-col gap-5 min-h-[50vh]"
       >
-       <motion.div variants={fadeIn("up", "spring", 0.5, 0.75)}>
+        <div>
           <Accordion type="single" collapsible className="w-full">
-            {FaqText.map((faq)=>(
-            <AccordionItem value={`item-${faq.id}`} key={faq.id}>
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
+            {FaqText.map((faq, index) => (
+              <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+                <AccordionItem value={`item-${faq.id}`} key={faq.id}>
+                  <AccordionTrigger>{faq.quest}</AccordionTrigger>
+                  <AccordionContent>{faq.ans}</AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );
