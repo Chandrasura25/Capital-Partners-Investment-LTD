@@ -22,8 +22,8 @@ async function Page() {
       <main className="bg-main">
         <LeftSidebar />
         <section className="main-container relative">
-          <div className="max-w-lg">
-            <div className={`${listStyles.box} bg-white custom-scrollbar`}>
+          <div className="max-w-lg overflow-scroll h-[70vh] custom-scrollbar">
+            <div className={`${listStyles.box} bg-white`}>
               <h4 className="head-text uppercase mb-3">Withdrawal History</h4>
               <div className={historyStyles.container}>
                 {histories.length > 0 ? (
