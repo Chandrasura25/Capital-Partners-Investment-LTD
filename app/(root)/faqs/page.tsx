@@ -31,7 +31,7 @@ const Page = () => {
               <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
                 <AccordionItem value={`item-${faq.id}`} key={faq.id}>
                   <AccordionTrigger className="flex gap-1 items-center">
-                    <span className={`text-${faq.clr} font-semibold`}>
+                    <span className={`text-[${faq.clr}] font-semibold`}>
                       {faq.id}
                     </span>
                     <p className="text-white">{faq.quest}</p>
