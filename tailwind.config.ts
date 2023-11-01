@@ -6,7 +6,7 @@ module.exports = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
     "./public/**/*.html",
-    "./node_modules/flowbite-react/**/*.js",
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
     container: {
