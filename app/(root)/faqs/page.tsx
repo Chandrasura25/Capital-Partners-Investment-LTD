@@ -17,7 +17,7 @@ const Page = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="innerWidth mx-auto glex-col gap-5 flexCenter min-h-[50vh]"
+        className="innerWidth mx-auto flex-col gap-5 flexCenter min-h-[50vh]"
       >
         <h4 className="mb-3 text-white text-xl">Frequently Asked Questions</h4>
         <div className="max-w-xl glassmorphism rounded p-4 h-[100vh] overflow-scroll custom-scrollbar">
