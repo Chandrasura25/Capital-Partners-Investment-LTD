@@ -30,11 +30,11 @@ const Page = () => {
             {FaqText.map((faq, index) => (
               <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
                 <AccordionItem value={`item-${faq.id}`} key={faq.id}>
-                  <AccordionTrigger className="text-white">
+                  <AccordionTrigger className="flex gap-1">
                     <span className={`text-${faq.clr} font-semibold`}>
                       {faq.id}
                     </span>
-                    {faq.quest}
+                    <p className="text-white">{faq.quest}</p>
                   </AccordionTrigger>
                   <AccordionContent className="text-white">
                     {faq.ans}
