@@ -19,22 +19,31 @@ const Page = () => {
         viewport={{ once: false, amount: 0.25 }}
         className="innerWidth mx-auto flex-col gap-5 flexCenter min-h-[50vh]"
       >
-        <h1 className="font-bold text-center text-light-1 uppercase mb-2">Frequently Asked Questions</h1>
-        <div className="max-w-xl glassmorphism rounded p-4 h-[100vh] overflow-scroll custom-scrollbar">
+        <h1 className="font-bold text-center text-light-1 uppercase mb-2">
+          Frequently Asked Questions
+        </h1>
+        <motion.div
+          variants={fadeIn("up", "spring", 0.5, 0.75)}
+          className="max-w-xl glassmorphism rounded p-4 h-[100vh] overflow-scroll custom-scrollbar"
+        >
           <Accordion type="single" collapsible className="w-full">
             {FaqText.map((faq, index) => (
               <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
                 <AccordionItem value={`item-${faq.id}`} key={faq.id}>
                   <AccordionTrigger className="text-white">
-                    <span className={`text-${faq.clr} font-semibold`}>{faq.id}</span>
+                    <span className={`text-${faq.clr} font-semibold`}>
+                      {faq.id}
+                    </span>
                     {faq.quest}
-                    </AccordionTrigger>
-                  <AccordionContent className="text-white">{faq.ans}</AccordionContent>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-white">
+                    {faq.ans}
+                  </AccordionContent>
                 </AccordionItem>
               </motion.div>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
