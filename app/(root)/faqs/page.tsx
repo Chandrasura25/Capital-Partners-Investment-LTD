@@ -19,7 +19,7 @@ const Page = () => {
         viewport={{ once: false, amount: 0.25 }}
         className="innerWidth mx-auto flexCenter min-h-[50vh]"
       >
-        <div className="max-w-md glassmorphism rounded p-4">
+        <div className="max-w-xl glassmorphism rounded p-4 h-[100vh] overflow-scroll custom-scrollbar">
           <Accordion type="single" collapsible className="w-full">
             {FaqText.map((faq, index) => (
               <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
