@@ -19,7 +19,7 @@ const Page = () => {
         viewport={{ once: false, amount: 0.25 }}
         className="innerWidth mx-auto flex-col gap-5 flexCenter min-h-[50vh]"
       >
-        <h4 className="mb-3 text-white text-xl">Frequently Asked Questions</h4>
+        <h1 className="font-bold text-center text-light-1 uppercase mb-2">Frequently Asked Questions</h1>
         <div className="max-w-xl glassmorphism rounded p-4 h-[100vh] overflow-scroll custom-scrollbar">
           <Accordion type="single" collapsible className="w-full">
             {FaqText.map((faq, index) => (
