@@ -71,7 +71,7 @@ async function Page() {
                     <p className="font-bold">{term.title}</p>
                     <div className="p-2">
                       {term.subtext.map((text) => (
-                        <li key={text.index} className="listStyle">
+                        <li key={text.index} className="list-latin">
                           . {text.text}
                         </li>
                       ))}
