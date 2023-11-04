@@ -5,7 +5,7 @@ import Topbar from "@/components/shared/Topbar";
 import { currentUser } from "@clerk/nextjs";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
-import { Terms,TermsText } from "@/constants";
+import { Terms, TermsText, Term } from "@/constants";
 
 async function Page() {
   const user = await currentUser();
