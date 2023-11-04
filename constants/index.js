@@ -115,7 +115,7 @@ export const sidebarLinks = [
     route: "/privacy",
     label: "Privacy Policy",
   },
-   {
+  {
     imgURL: "/assets/conditions.svg",
     route: "/conditions",
     label: "Terms and Conditions",
@@ -576,6 +576,63 @@ export const ThirdPrivacyText = [
       {
         id: 3,
         text: "Business Transfers: In the event of a merger, acquisition, or sale of all or a portion of our assets, your personal information may be transferred as part of the transaction, subject to appropriate confidentiality and security measures.",
+      },
+    ],
+  },
+];
+
+export const Terms = [
+  {
+    id: 1,
+    title: "Investment Portfolio Details:",
+    subtext: [
+      {
+        index: 1,
+        text: "The Company offers an investment portfolio with a guaranteed Return on Investment (ROI) of 30% over a period of 500 days.",
+      },
+      {
+        index: 2,
+        text: "The ROI is calculated based on the initial investment amount made by the Investor.",
+      },
+      {
+        index: 3,
+        text: "The ROI can be withdrawn by the Investor on a daily basis.",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Investment Amount:",
+    subtext: [
+      {
+        index: 1,
+        text: "The minimum investment amount required to participate in the portfolio is [Fifty Thousand Naira].",
+      },
+      {
+        index: 2,
+        text: "The maximum investment amount permitted is not specified.",
+      },
+      {
+        index: 3,
+        text: "The Investor can choose the investment amount within the specified minimum and maximum limits.",
+      },
+    ],
+  },
+   {
+    id: 3,
+    title: "ROI Calculation:",
+    subtext: [
+      {
+        index: 1,
+        text: "The ROI of 30% will be calculated on a combined period of 500days.",
+      },
+      {
+        index: 2,
+        text: "The ROI of 30% will be calculated on a combined period of 500days.",
+      },
+      {
+        index: 3,
+        text: "The ROI of 30% will be calculated on a combined period of 500days.",
       },
     ],
   },
