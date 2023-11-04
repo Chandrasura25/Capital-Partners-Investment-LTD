@@ -755,6 +755,45 @@ export const TermsText =[
     id: 2,
     title: 'Accuracy of Information:',
     subtitle: 'Occasionally there may be information on the website that contains typographical errors, inaccuracies or omissions that may relate to availability, promotions and offers. We reserve the right to correct any errors, inaccuracies or omissions, and to change or update information if any information on the website or any related service is inaccurate at any time without prior notice. We undertake no obligation to update, amend or clarify information on the Website including, without limitation, pricing information, except as required by law.\n\nUptime guarantee\n\n We offer a Service uptime guarantee of 99% of available time per month. The service uptime guarantee does not apply to service interruptions caused by: (1) periodic scheduled maintenance or repairs we may undertake from time to time; (2) interruptions caused by you or your activities; (3) outages that do not affect core Service functionality; (4) causes beyond our control or that are not reasonably foreseeable; and (5) outages related to the reliability of certain programming environments.'
-}
-
+},
+{
+  id:3,
+  title:'Backups',
+  subtitle:'We are not responsible for content residing on the Website. In no event shall we be held liable for any loss of any Content. It is your sole responsibility to maintain appropriate backup of your Content. Notwithstanding the foregoing, on some occasions and in certain circumstances, with absolutely no obligation, we may be able to restore some or all of your data that has been deleted as of a certain date and time when we may have backed up data for our own purposes. We make no guarantee that the data you need will be available.'
+},
+{
+  id:4,
+  title:'Advertisements',
+  subtitle:'On this Website, you may enter into correspondence with or participate in promotions of advertisers or sponsors showing their goods or services through the Website. Any such activity, and any terms, conditions, warranties or representations associated with such activity, is solely between you and the applicable third-party. We shall have no liability, obligation or responsibility for any such correspondence, purchase or promotion between you and any such third-party. When you access the site(or our mobile application), Your personal information is not collected through the use of tracking technology. Most browsers are set to accept cookies by default. You can remove or reject cookies and they can be rendered ineffective by declining all cookies or by modifying your web browser settings to notify you each time a cookie is tendered, permitting you to accept or decline cookies on an individual basis.'
+},
+{
+  id:5,
+  title:'Links to other websites',
+  subtitle:'Although this Website may link to other websites, we are not, directly or indirectly, implying any approval, association, sponsorship, endorsement, or affiliation with any linked website, unless specifically stated herein. Some of the links on the Website may be "affiliate links". This means if you click on the link and purchase an item, Capital Partners Investment Limited will receive an affiliate commission. We are not responsible for examining or evaluating, and we do not warrant the offerings of, any businesses or individuals or the content of their websites. We do not assume any responsibility or liability for the actions, products, services, and content of any other third-parties. You should carefully review the legal statements and other conditions of use of any website which you access through a link from this Website. Your linking to any other off-site websites is at your own risk.'
+},
+{
+  id:6,
+  title:'Prohibited Uses',
+  subtitle:'In addition to other terms as set forth in the Agreement, you are prohibited from using the Website or its Content: (a) for any unlawful purpose; (b) to solicit others to perform or participate in any unlawful acts; (c) to violate any international, federal, provincial or state regulations, rules, laws, or local ordinances; (d) to infringe upon or violate our intellectual property rights or the intellectual property rights of others; (e) to harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability; (f) to submit false or misleading information; (g) to upload or transmit viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of the Service or of any related website, other websites, or the Internet; (h) to collect or track the personal information of others; (i) to spam, phish, pharm, pretext, spider, crawl, or scrape; (j) for any obscene or immoral purpose; or (k) to interfere with or circumvent the security features of the Service or any related website, other websites, or the Internet. We reserve the right to terminate your use of the Service or any related website for violating any of the prohibited uses.'
+},
+{
+  id:7,
+  title:'Accounts and membership',
+  subtitle:'You must be at least 18 years of age to use this Website or patronizing any of the products or services listed herein. By using this Website and by agreeing to this Agreement you warrant and represent that you are at least 18 years of age. All users who are minors in the jurisdiction in which they reside (generally under 18 years) must have the permission of and directly supervised by, their Parent or Guardian to use the site. If you are a minor, you must have your parent or guardian read and agree to these Terms and Conditions prior to you using the site. If you create an account on the Website, you are responsible for maintaining the security of your account login details and you are fully responsible for all activities that occur under the account and any other actions taken in connection with it. We may monitor and review new accounts before you may sign in and use our Services. Providing false contact information of any kind may result in the termination of your account. You must immediately notify us of any unauthorized uses of your account or any other breaches of security. We will not be liable for any acts or omissions by you, including any damages of any kind incurred as a result of such acts or omissions. We may suspend, disable, or delete your account (or any part thereof) if we determine that you have violated any provision of this Agreement or that your conduct or content would tend to damage our reputation and goodwill. If we delete your account for the foregoing reasons, you may not re-register for our Services.'
+},
+{
+  id:8,
+  title:'USER REGISTRATION',
+  subtitle:'You may be required to register with the site. You agree to keep your password confidential and will be responsible for all use of your account and password. We reserve the right to remove, reclaim or change a username you select if we determine, in our sole discretion, that such username is inappropriate, obscene or otherwise objectionable.'
+},
+{
+  id:9,
+  title:'Disclaimer of warranty',
+  subtitle:'You agree that your use of our Website or Services is solely at your own risk. You agree that such Service is provided on an "as is" and "as available" basis. We expressly disclaim all warranties of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose and non-infringement. We make no warranty that the Services will meet your requirements, or that the Service will be uninterrupted, timely, secure, or error-free; nor do we make any warranty as to the results that may be obtained from the use of the Service or as to the accuracy or reliability of any information obtained through the Service or that defects in the Service will be corrected. You understand and agree that any material and/or data downloaded or otherwise obtained through the use of Service is done at your own discretion and risk and that you will be solely responsible for any damage to your computer system or loss of data that results from the download of such material and/or data. We make no warranty regarding any goods or services purchased or obtained through the Service or any transactions entered into through the Service. No advice or information, whether oral or written, obtained by you from us or through the Service shall create any warranty not expressly made herein.'
+},
+{
+  id:10,
+  title:'SUBMISSIONS',
+  subtitle:'You acknowledge and agree that any questions, comments, ideas, suggestions, feedback or other information regarding the site(“submissions”) provided by you to us are non-confidential and shall become our sole property. We shall own exclusive rights, including all intellectual property rights, and shall be entitled to the unrestricted use and dissemination of these submissions for any lawful purpose, commercial or otherwise, without acknowledgement or compensation to you. You hereby waive all moral rights to any such submissions, and you hereby warrant that any such submissions are original with you or that you have such right to submit such submissions. \n\n You agree there shall be no recourse against us for any alleged or actual infringement or misappropriation of any proprietary right in your submission.'
+},
 ]
