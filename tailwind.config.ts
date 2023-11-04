@@ -6,7 +6,7 @@ module.exports = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
     "./public/**/*.html",
-    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     container: {
@@ -16,10 +16,11 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-     listStyleType:{
-      roman: 'upper-roman',
-      latin:'lower-latin',
-     },
+    listStyleType: {
+      roman: "upper-roman",
+      latin: "lower-latin",
+      decimal: "decimal",
+    },
     fontSize: {
       "heading1-bold": [
         "36px",
@@ -188,8 +189,8 @@ module.exports = {
         "dark-3": "#101012",
         "dark-4": "#1F1F22",
         "light-1": "#FFFFFF",
-        "dash": "rgba(31, 38, 135, 0.37)",
-        "blue1": "#000924",
+        dash: "rgba(31, 38, 135, 0.37)",
+        blue1: "#000924",
         "light-2": "#EFEFEF",
         "light-3": "#7878A3",
         "light-4": "#5C5C7B",
@@ -219,8 +220,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("flowbite/plugin")
-  ],
+  plugins: [require("tailwindcss-animate"), require("flowbite/plugin")],
 };
