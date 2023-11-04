@@ -20,7 +20,7 @@ async function Page() {
         <LeftSidebar />
         <section className="main-container relative">
           <div className="w-full max-w-4xl">
-            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-center items-center flex-col gap-4">
+            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-center items-center flex-col gap-4 h-screen overflow-y-scroll custom-scrollbar">
               <h4 className="head-text uppercase">Privacy Policy</h4>
               <div className="p-4 text-light-1">
                 <h4 className="">
