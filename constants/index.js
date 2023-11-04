@@ -552,5 +552,28 @@ export const ThirdPrivacyText =[
             text:"Consent: Where you have provided your explicit consent to the processing of your personal information for specific purposes.",
         },
     ]
-}
+},
+{
+    id: 3,
+    text: 'Legal Basis for Processing',
+    subdetails:'We process your personal information based on one or more of the following legal grounds:',
+    subtext :[
+        {
+            id:1,
+            text:"Performance of a contract: Where the processing is necessary for the performance of a contract with you or to take steps at your request prior to entering into a contract.",
+        },
+        {
+            id:2,
+            text:"Legitimate interests: Where the processing is necessary for our legitimate interests or the legitimate interests of a third party, provided that such interests are not overridden by your fundamental rights and freedoms.",
+        },
+        {
+            id:3,
+            text:"Compliance with legal obligations: Where the processing is necessary for compliance with our legal obligations, such as anti-money laundering and know-your-customer requirements.",
+        },
+        {
+            id:4,
+            text:"Consent: Where you have provided your explicit consent to the processing of your personal information for specific purposes.",
+        },
+    ]
+},
 ]
