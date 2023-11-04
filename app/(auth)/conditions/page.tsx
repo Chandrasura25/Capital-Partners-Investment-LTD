@@ -18,9 +18,10 @@ async function Page() {
       <main className="bg-main">
         <LeftSidebar />
         <section className="main-container relative">
-          <div className="w-full max-w-4xl">
-            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-between flex-wrap gap-4 md:gap-6">
-              
+        <div className="w-full max-w-4xl h-[80vh] overflow-scroll custom-scrollbar">
+            <div className="glassmorphism p-5 relative flex justify-center items-center flex-col gap-2">
+              <h4 className="head-text uppercase">Investment Terms and Conditions</h4>
+              <div className="text-light-1 p-4"></div>
             </div>
           </div>
         </section>
