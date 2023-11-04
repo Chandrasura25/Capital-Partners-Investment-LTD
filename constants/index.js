@@ -806,4 +806,84 @@ export const TermsText = [
     subtitle:
       "You acknowledge and agree that any questions, comments, ideas, suggestions, feedback or other information regarding the site(“submissions”) provided by you to us are non-confidential and shall become our sole property. We shall own exclusive rights, including all intellectual property rights, and shall be entitled to the unrestricted use and dissemination of these submissions for any lawful purpose, commercial or otherwise, without acknowledgement or compensation to you. You hereby waive all moral rights to any such submissions, and you hereby warrant that any such submissions are original with you or that you have such right to submit such submissions.  \n You agree there shall be no recourse against us for any alleged or actual infringement or misappropriation of any proprietary right in your submission.",
   },
+  {
+    id: 11,
+    title: "Indemnification",
+    subtitle:
+      "You agree to indemnify and hold Capital Partners Investment Limited and its affiliates, directors, officers, employees, and agents harmless from and against any liabilities, losses, damages or costs, including reasonable attorneys' fees, incurred in connection with or arising from any third-party allegations, claims, actions, disputes, or demands asserted against any of them as a result of or relating to your Content, your use of the Website or Services or any willful misconduct on your part.",
+  },
+  {
+    id: 12,
+    title: "Severability",
+    subtitle:
+      "All rights and restrictions contained in this Agreement may be exercised and shall be applicable and binding only to the extent that they do not violate any applicable laws and are intended to be limited to the extent necessary so that they will not render this Agreement illegal, invalid or unenforceable. If any provision or portion of any provision of this Agreement shall be held to be illegal, invalid or unenforceable by a court of competent jurisdiction, it is the intention of the parties that the remaining provisions or portions thereof shall constitute their agreement with respect to the subject matter hereof, and all such remaining provisions or portions thereof shall remain in full force and effect.",
+  },
+  {
+    id: 13,
+    title: "INFORMAL NEGOTIATIONS",
+    subtitle:
+      "To expedite resolution and control the cost of any dispute, controversy, or claim related to these terms and conditions ( Each a “Dispute” and collectively, the “DISPUTES”) brought by either you or us( individually, a “party” and collectively, the “parties”), the parties agree to first attempt to negotiate any Dispute informally for at least 7 days before initiating arbitration. Such informal negotiations commence upon written notice from one party to the other party.",
+  },
+  {
+    id: 14,
+    title: "Changes and Amendments",
+    subtitle:
+      "We reserve the right to modify this Agreement or its policies relating to the Website or Services at any time, effective upon posting of an updated version of this Agreement on the Website. When we do, we will post a notification on the main page of our Website. Continued use of the Website after any such changes shall constitute your consent to such changes.",
+  },
+  {
+    id: 15,
+    title: "Withholding Tax Charge",
+    subtitle:
+      "The interest payable in the Investment Sum at the maturity date of your investment or upon early termination of the same shall be chargeable to withholding tax in line with the provisions of the Withholding Tax Act Cap. C21 Laws of the Federation of Nigeria 2004.",
+  },
+  {
+    id: 14,
+    title: "Acceptance of these terms",
+    subtitle:
+      "You acknowledge that you have read this Agreement and agree to all its terms and conditions. By using the Website or its Services you agree to be bound by this Agreement. If you do not agree to abide by the terms of this Agreement, you are not authorized to use or access the Website and its Services.",
+  },
 ];
+export const Term = [
+  {
+    id: 1,
+    title: "GUIDELINES FOR REVIEWS",
+    subtitle:'We may provide you areas on the site to leave reviews or ratings. When posting a review, you must comply with the following criteria',
+    subtext: [
+      {
+        index: 1,
+        text: "Your review should not contain offensive profanity, or abusive racist, offensive or hate language;",
+      },
+      {
+        index: 2,
+        text: "Your reviews should not contain discriminatory references based on religion, race, gender, national origin, age, marital status, sexual orientation, or disability.",
+      },
+      {
+        index: 3,
+        text: "Your reviews should not contain references to illegal activity.",
+      },
+      {
+        index: 4,
+        text: "You should not be affiliated with competitors if posting negative reviews.",
+      },
+      {
+        index: 5,
+        text: "You shall not post any false or misleading statements.",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Governing Law and Jurisdiction:",
+    subtitle:'',
+    subtext: [
+      {
+        index: 1,
+        text: "This Agreement shall be governed by and construed in accordance with the laws of Osun State of Nigeria applicable to agreements made and to be entirely performed within Osun State of Nigeria without regard to its conflict of law principles.",
+      },
+      {
+        index: 2,
+        text: " Any legal action of whatever nature brought by either you or us( collectively, the “Parties” and individually, a “party” shall be commenced or prosecuted in the state and Federal Courts located in Osun State of Nigeria and the parties hereby consent to, and waive all defenses of lack of personal jurisdiction and forum non conveniens with respect to venue and jurisdiction in such state and federal courts.",
+      },
+    ],
+  },
+  ]
