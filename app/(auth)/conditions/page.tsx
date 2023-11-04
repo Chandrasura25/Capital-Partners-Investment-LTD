@@ -78,11 +78,29 @@ async function Page() {
                     </div>
                   </div>
                 ))}
-                {TermsText.map((text)=>(
+                {TermsText.map((text) => (
                   <div key={text.id}>
                     <p className="font-bold">{text.title}</p>
                     <div className="py-2">
                       <p>{text.subtitle}</p>
+                    </div>
+                  </div>
+                ))}
+                {Term.map((term) => (
+                  <div key={term.id}>
+                    <p className="font-bold">{term.title}</p>
+                    {term.subtitle != "" ? <p>{term.subtitle}</p> : null}
+                    <div className="p-2">
+                      {term.subtext.map((text) => (
+                        <li
+                          key={text.index}
+                          className={
+                            text.index == 2 ? "list-latin" : "list-decimal"
+                          }
+                        >
+                          {text.text}
+                        </li>
+                      ))}
                     </div>
                   </div>
                 ))}
