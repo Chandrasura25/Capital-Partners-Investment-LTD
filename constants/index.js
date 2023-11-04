@@ -91,6 +91,21 @@ export const sidebarLinks = [
     label: "Profile",
   },
   {
+    imgURL: "/assets/bank_account.svg",
+    route: "/add-account",
+    label: "Account Details",
+  },
+  {
+    imgURL: "/assets/conditions.svg",
+    route: "/conditions",
+    label: "Terms and Conditions",
+  },
+    {
+    imgURL: "/assets/money-withdraw.svg",
+    route: "/withdrawal",
+    label: "Withdrawal",
+  },
+  {
     imgURL: "/assets/coin-dollar.svg",
     route: "/history",
     label: "Investment History",
@@ -101,24 +116,9 @@ export const sidebarLinks = [
     label: "Statement of Account",
   },
   {
-    imgURL: "/assets/money-withdraw.svg",
-    route: "/withdrawal",
-    label: "Withdrawal",
-  },
-  {
-    imgURL: "/assets/bank_account.svg",
-    route: "/add-account",
-    label: "Account Details",
-  },
-  {
     imgURL: "/assets/privacy.svg",
     route: "/privacy",
     label: "Privacy Policy",
-  },
-  {
-    imgURL: "/assets/conditions.svg",
-    route: "/conditions",
-    label: "Terms and Conditions",
   },
 ];
 export const AddUnit = [
@@ -628,11 +628,101 @@ export const Terms = [
       },
       {
         index: 2,
-        text: "The ROI of 30% will be calculated on a combined period of 500days.",
+        text: "The calculation will be based on the initial investment amount.",
       },
       {
         index: 3,
-        text: "The ROI of 30% will be calculated on a combined period of 500days.",
+        text: "The ROI will be credited to the Investor's account on our website or mobile app on a daily basis.",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Withdrawal of ROI:",
+    subtext: [
+      {
+        index: 1,
+        text: "The Investor has the option to withdraw the ROI on a daily basis.",
+      },
+      {
+        index: 2,
+        text: "Each withdrawal will incur a withdrawal charge of 100 Naira.",
+      },
+      {
+        index: 3,
+        text: "The withdrawal charge will be deducted from the ROI amount being withdrawn.",
+      },
+      {
+        index: 4,
+        text: "The remaining balance after deducting the withdrawal charge will be credited to the Investor's designated withdrawal account.",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Withdrawal Process:",
+    subtext: [
+      {
+        index: 1,
+        text: "The Investor can request a withdrawal of the ROI by submitting a withdrawal request through the Company's designated platform or communication channel.",
+      },
+      {
+        index: 2,
+        text: "The withdrawal request will be processed within [48 hours on weekdays and 96 hours on weekend] from the date of request.",
+      },
+      {
+        index: 3,
+        text: "The Company reserves the right to verify the Investor's identity and ownership of the withdrawal account before processing the withdrawal request.",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Investment Term:",
+    subtext: [
+      {
+        index: 1,
+        text: "The investment term is fixed at 500 days from the date of the investment.",
+      },
+      {
+        index: 2,
+        text: "The investment term is fixed at 500 days from the date of the investment.",
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "Early Redemption:",
+    subtext: [
+      {
+        index: 1,
+        text: "The Investor has the option to redeem the investment before the completion of the 500-day term",
+      },
+      {
+        index: 2,
+        text: "In the case of early termination by the Investor, the Investor will be entitled to the accrued ROI until the date of termination.",
+      },
+      {
+        index: 3,
+        text: "A penalty fee of [40percentage] will be charged on the total ROI accrued until the date of termination.",
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "Termination:",
+    subtext: [
+      {
+        index: 1,
+        text: "The Company reserves the right to terminate the investment portfolio at any time.",
+      },
+      {
+        index: 2,
+        text: "In the event of termination, the Investor will be entitled to the accrued ROI until the date of termination.",
+      },
+      {
+        index: 3,
+        text: "In the event of termination, the Investor will be entitled to the accrued ROI until the date of termination.",
       },
     ],
   },
