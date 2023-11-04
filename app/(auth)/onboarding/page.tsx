@@ -28,7 +28,6 @@ async function Page() {
     education: userStatus ? userInfo?.education : "",
     mother_middle_name: userStatus ? userInfo?.mother_middle_name : "",
   };
-  console.log(userInfo)
   return (
     <main className="formBg flex w-full justify-center items-center min-h-screen">
       <div className="mx-auto flex max-w-3xl flex-col justify-start px-10 py-20">
