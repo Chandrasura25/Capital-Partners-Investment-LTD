@@ -72,7 +72,7 @@ async function Page() {
                     <div className="p-2">
                       {term.subtext.map((text) => (
                         <li key={text.index} className="list-latin">
-                          . {text.text}
+                          {text.text}
                         </li>
                       ))}
                     </div>
