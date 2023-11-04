@@ -111,9 +111,14 @@ export const sidebarLinks = [
     label: "Account Details",
   },
   {
-    imgURL: "/assets/menu.svg",
+    imgURL: "/assets/privacy.svg",
     route: "/privacy",
     label: "Privacy Policy",
+  },
+   {
+    imgURL: "/assets/menu.svg",
+    route: "/conditions",
+    label: "Terms and Conditions",
   },
 ];
 export const AddUnit = [
