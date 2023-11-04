@@ -5,7 +5,7 @@ import Topbar from "@/components/shared/Topbar";
 import { currentUser } from "@clerk/nextjs";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
-import { Terms } from "@/constants";
+import { Terms,TermsText } from "@/constants";
 
 async function Page() {
   const user = await currentUser();
@@ -75,6 +75,14 @@ async function Page() {
                           {text.text}
                         </li>
                       ))}
+                    </div>
+                  </div>
+                ))}
+                {TermsText.map((text)=>(
+                  <div key={text.id}>
+                    <p className="font-bold">{text.title}</p>
+                    <div className="py-2">
+                      <p>{text.subtitle}</p>
                     </div>
                   </div>
                 ))}
