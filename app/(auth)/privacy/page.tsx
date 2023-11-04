@@ -23,7 +23,7 @@ async function Page() {
             <div className="glassmorphism p-5 rounded-[20px] relative flex justify-center items-center flex-col gap-4 h-screen overflow-y-scroll custom-scrollbar">
               <h4 className="head-text uppercase">Privacy Policy</h4>
               <div className="p-4 text-light-1">
-                <h4 className="">
+                <h4 className="mb-3">
                   This Privacy Policy describes how Capital Partners Investment
                   Limited ("Capital Partners","we","us" or "our") collects,
                   uses, stores, and protects the personal information of
@@ -36,7 +36,7 @@ async function Page() {
                 </h4>
                 {PrivacyText.map((text) => (
                   <div key={text.index}>
-                    <p className="font-bold">
+                    <p className="font-bold mb-1">
                       {text.index}. <span>{text.title}</span>
                     </p>
                     {text.subdetails.map((details) => (
@@ -47,9 +47,11 @@ async function Page() {
                         {details.subtext != "" ? (
                           <p>{details.subtext}</p>
                         ) : null}
-                        {details.sub?.map((list)=>(
+                        {details.sub?.map((list) => (
                           <div key={list.i}>
-                            <p>-<span>{list.title}</span></p>
+                            <p className="mb-1">
+                              -<span>{list.title}</span>
+                            </p>
                           </div>
                         ))}
                       </div>
