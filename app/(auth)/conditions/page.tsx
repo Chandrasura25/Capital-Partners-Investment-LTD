@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Bottombar from "@/components/shared/Bottombar";
+import Bottombar from "@/components/shared/Bottombar"; 
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import Topbar from "@/components/shared/Topbar";
 import { currentUser } from "@clerk/nextjs";
