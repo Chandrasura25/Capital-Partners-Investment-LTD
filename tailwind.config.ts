@@ -16,6 +16,10 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+     listStyleType:{
+      roman: 'upper-roman',
+      latin:'lower-latin',
+     },
     fontSize: {
       "heading1-bold": [
         "36px",
