@@ -29,7 +29,7 @@ const Page = () => {
           <Accordion type="single" collapsible className="w-full">
             {FaqText.map((faq, index) => (
               <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-                <AccordionItem value={`item-${faq.id}`} key={faq.id}>
+                <AccordionItem value={`item-${faq.id}`} key={faq.id} className="text-white">
                   <AccordionTrigger className="text-white">{faq.quest}</AccordionTrigger>
                   <AccordionContent className="text-white px-4 text-semibold">
                     {faq.ans}
