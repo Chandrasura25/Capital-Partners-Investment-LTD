@@ -492,7 +492,7 @@ export const PrivacyText = [
       {
         id: 2.1,
         text: "We use the collected information for the following purposes:",
-        subtext:'',
+        subtext: "",
         sub: [
           {
             i: 1,
@@ -529,47 +529,49 @@ export const PrivacyText = [
     ],
   },
 ];
-export const ThirdPrivacyText =[
-{
+export const ThirdPrivacyText = [
+  {
     id: 3,
-    text: 'Legal Basis for Processing',
-    subdetails:'We process your personal information based on one or more of the following legal grounds:',
-    subtext :[
-        {
-            id:1,
-            text:"Performance of a contract: Where the processing is necessary for the performance of a contract with you or to take steps at your request prior to entering into a contract.",
-        },
-        {
-            id:2,
-            text:"Legitimate interests: Where the processing is necessary for our legitimate interests or the legitimate interests of a third party, provided that such interests are not overridden by your fundamental rights and freedoms.",
-        },
-        {
-            id:3,
-            text:"Compliance with legal obligations: Where the processing is necessary for compliance with our legal obligations, such as anti-money laundering and know-your-customer requirements.",
-        },
-        {
-            id:4,
-            text:"Consent: Where you have provided your explicit consent to the processing of your personal information for specific purposes.",
-        },
-    ]
-},
-{
+    text: "Legal Basis for Processing",
+    subdetails:
+      "We process your personal information based on one or more of the following legal grounds:",
+    subtext: [
+      {
+        id: 1,
+        text: "Performance of a contract: Where the processing is necessary for the performance of a contract with you or to take steps at your request prior to entering into a contract.",
+      },
+      {
+        id: 2,
+        text: "Legitimate interests: Where the processing is necessary for our legitimate interests or the legitimate interests of a third party, provided that such interests are not overridden by your fundamental rights and freedoms.",
+      },
+      {
+        id: 3,
+        text: "Compliance with legal obligations: Where the processing is necessary for compliance with our legal obligations, such as anti-money laundering and know-your-customer requirements.",
+      },
+      {
+        id: 4,
+        text: "Consent: Where you have provided your explicit consent to the processing of your personal information for specific purposes.",
+      },
+    ],
+  },
+  {
     id: 4,
-    text: 'Data Sharing',
-    subdetails:'We may share your personal information with third parties in the following circumstances:',
-    subtext :[
-        {
-            id:1,
-            text:"Service Providers: We may engage trusted third-party service providers to assist us in delivering our services, such as financial institutions, custodians, auditors, and legal advisors. These service providers are bound by confidentiality obligations and are only authorized to process personal information as necessary to provide the agreed services.",
-        },
-        {
-            id:2,
-            text:"Legal Compliance: We may disclose personal information to comply with applicable laws, regulations, legal processes, or enforceable governmental requests.",
-        },
-        {
-            id:3,
-            text:"Business Transfers: In the event of a merger, acquisition, or sale of all or a portion of our assets, your personal information may be transferred as part of the transaction, subject to appropriate confidentiality and security measures.",
-        },
-    ]
-},
-]
+    text: "Data Sharing",
+    subdetails:
+      "We may share your personal information with third parties in the following circumstances:",
+    subtext: [
+      {
+        id: 1,
+        text: "Service Providers: We may engage trusted third-party service providers to assist us in delivering our services, such as financial institutions, custodians, auditors, and legal advisors. These service providers are bound by confidentiality obligations and are only authorized to process personal information as necessary to provide the agreed services.",
+      },
+      {
+        id: 2,
+        text: "Legal Compliance: We may disclose personal information to comply with applicable laws, regulations, legal processes, or enforceable governmental requests.",
+      },
+      {
+        id: 3,
+        text: "Business Transfers: In the event of a merger, acquisition, or sale of all or a portion of our assets, your personal information may be transferred as part of the transaction, subject to appropriate confidentiality and security measures.",
+      },
+    ],
+  },
+];
