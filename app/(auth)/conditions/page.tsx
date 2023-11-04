@@ -95,7 +95,7 @@ async function Page() {
                         <li
                           key={text.index}
                           className={
-                            text.index == 2 ? "list-latin" : "list-decimal"
+                            term.id == 2 ? "list-latin" : "list-decimal"
                           }
                         >
                           {text.text}
