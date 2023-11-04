@@ -19,8 +19,8 @@ async function Page() {
       <main className="bg-main">
         <LeftSidebar />
         <section className="main-container relative">
-          <div className="w-full max-w-4xl">
-            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-center items-center flex-col gap-4 h-screen overflow-y-scroll custom-scrollbar">
+          <div className="w-full max-w-4xl h-[80vh] overflow-scroll custom-scrollbar">
+            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-center items-center flex-col gap-4 ">
               <h4 className="head-text uppercase">Privacy Policy</h4>
               <div className="p-4 text-light-1">
                 <h4 className="mb-3">
@@ -50,7 +50,7 @@ async function Page() {
                         {details.sub?.map((list) => (
                           <div key={list.i}>
                             <p className="mb-1">
-                              -<span>{list.title}</span>
+                              - <span>{list.title}</span>
                             </p>
                           </div>
                         ))}
