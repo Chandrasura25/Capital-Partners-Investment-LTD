@@ -492,6 +492,7 @@ export const PrivacyText = [
       {
         id: 2.1,
         text: "We use the collected information for the following purposes:",
+        subtext:'',
         sub: [
           {
             i: 1,
