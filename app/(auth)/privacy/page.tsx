@@ -29,6 +29,11 @@ async function Page() {
                 {PrivacyText.map((text)=>(
                   <div key={text.index}>
                     <p className="font-bold">{text.index}. <span>{text.title}</span></p>
+                    {text.subdetails.map((details)=>(
+                      <div key={details.id}>
+                        <p className="font-bold">{details.id}. <span>{details.text}</span></p>
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
