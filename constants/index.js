@@ -745,3 +745,16 @@ export const Terms = [
     ],
   },
 ];
+export const TermsText =[
+  {
+    id:1,
+    title:'Termination by Death:',
+    subtitle:'In the event of death of an investor, the next of kin shall notify the Company with the death certificate issued by a credible and certified hospital, as well as the grant of Probate or Letters of administration in favour of the next of kin or other beneficiaries.'
+  },
+  {
+    id: 2,
+    title: 'Accuracy of Information:',
+    subtitle: 'Occasionally there may be information on the website that contains typographical errors, inaccuracies or omissions that may relate to availability, promotions and offers. We reserve the right to correct any errors, inaccuracies or omissions, and to change or update information if any information on the website or any related service is inaccurate at any time without prior notice. We undertake no obligation to update, amend or clarify information on the Website including, without limitation, pricing information, except as required by law.\n\nUptime guarantee\n\n We offer a Service uptime guarantee of 99% of available time per month. The service uptime guarantee does not apply to service interruptions caused by: (1) periodic scheduled maintenance or repairs we may undertake from time to time; (2) interruptions caused by you or your activities; (3) outages that do not affect core Service functionality; (4) causes beyond our control or that are not reasonably foreseeable; and (5) outages related to the reliability of certain programming environments.'
+}
+
+]
