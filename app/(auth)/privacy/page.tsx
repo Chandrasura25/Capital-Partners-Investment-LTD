@@ -19,8 +19,8 @@ async function Page() {
       <main className="bg-main">
         <LeftSidebar />
         <section className="main-container relative">
-          <div className="w-full max-w-4xl h-[80vh] overflow-y-scroll overflow-hidden custom-scrollbar">
-            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-center items-center flex-col gap-2">
+          <div className="w-full max-w-4xl h-[80vh] overflow-scroll custom-scrollbar">
+            <div className="glassmorphism p-5 relative flex justify-center items-center flex-col gap-2">
               <h4 className="head-text uppercase">Privacy Policy</h4>
               <div className="p-4 text-light-1">
                 <h4 className="mb-3">
@@ -58,22 +58,21 @@ async function Page() {
                     ))}
                   </div>
                 ))}
-                <div className="mt-1">
-                  <p className="font-bold mb-1">
-                    3. <span>Legal Basis for Processing</span>
-                  </p>
-                  <p>
-                    We process your personal information based on one or more of
-                    the following legal grounds:
-                  </p>
-                  {ThirdPrivacyText.map((third) => (
-                    <div key={third.id}>
-                      <p className="mb-1">
-                        - <span>{third.text}</span>
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                {ThirdPrivacyText.map((third) => (
+                  <div key={third.id} className="mt-1">
+                    <p className="font-bold mb-1">
+                      {third.id}. <span>{third.text}</span>
+                    </p>
+                    <p className="mb-2">{third.subdetails}</p>
+                    {third.subtext.map((text) => (
+                      <div key={text.id}>
+                        <p className="mb-1">
+                          - <span>{text.text}</span>
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
