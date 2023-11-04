@@ -32,7 +32,7 @@ async function Page() {
                   to as "the Investor”, “User”), who have equally agreed to
                   subscribe to this platform, for the purpose of outlining the
                   terms and conditions governing the investment portfolio
-                  offered by the Company. This agreement sets forth the general
+                  offered by the Company. <br/><br/> This agreement sets forth the general
                   terms and conditions of your use of the https://www.cap.africa
                   website and any of its products or services (collectively,
                   “website”, “mobile application or app”, “services”). These
@@ -42,11 +42,11 @@ async function Page() {
                   and bound by all of these terms and conditions. If you do not
                   agree with all these terms and conditions, then you are
                   specifically prohibited from using this site or this mobile
-                  application. Supplemental terms and conditions or documents
+                  application. <br/><br/> Supplemental terms and conditions or documents
                   that may be posted on the site from time to time are hereby
                   expressly incorporated herein by reference We reserve the
                   right, in our sole discretion, to make changes and
-                  modifications to these terms and conditions at any time. We
+                  modifications to these terms and conditions at any time.<br/><br/> We
                   will place a general notice on the website or mobile
                   application regarding any changes by updating the “last
                   updated” date of these Terms and Conditions, and you waive any
@@ -57,6 +57,8 @@ async function Page() {
                   accepted the changes in any revised terms and conditions by
                   your continued use of the site or mobile app after such
                   revised terms and conditions are posted.
+                  <br/><br/>
+                  The information provided on this site or mobile application is not intended for distribution to use
                 </p>
               </div>
             </div>
