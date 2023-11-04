@@ -116,7 +116,7 @@ export const sidebarLinks = [
     label: "Privacy Policy",
   },
    {
-    imgURL: "/assets/menu.svg",
+    imgURL: "/assets/conditions.svg",
     route: "/conditions",
     label: "Terms and Conditions",
   },
