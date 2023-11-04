@@ -25,7 +25,7 @@ async function Page() {
               <div className="p-4 text-light-1">
                 <h4 className="mb-3">
                   This Privacy Policy describes how Capital Partners Investment
-                  Limited ("Capital Partners","we","us" or "our") collects,
+                  Limited ("Capital Partners", "we", "us" or "our") collects,
                   uses, stores, and protects the personal information of
                   individuals ("you" or "users") who visit our website, engage
                   with our services, or interact with us in any other manner. We
@@ -73,6 +73,17 @@ async function Page() {
                     ))}
                   </div>
                 ))}
+                <div className="mt-1">
+                  <p className="font-bold mb-1">
+                    5. <span>Data Security</span>
+                  </p>
+                  <p className="mb-2">
+                    We take reasonable measures to protect your personal
+                    information from unauthorized access, use, or disclosure. We
+                    implement technical and organizational safeguards to
+                    maintain the security and integrity of your data.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
