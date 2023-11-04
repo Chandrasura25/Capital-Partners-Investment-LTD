@@ -18,10 +18,47 @@ async function Page() {
       <main className="bg-main">
         <LeftSidebar />
         <section className="main-container relative">
-        <div className="w-full max-w-4xl h-[80vh] overflow-scroll custom-scrollbar">
+          <div className="w-full max-w-4xl h-[80vh] overflow-scroll custom-scrollbar">
             <div className="glassmorphism p-5 relative flex justify-center items-center flex-col gap-2">
-              <h4 className="head-text uppercase">Investment Terms and Conditions</h4>
-              <div className="text-light-1 p-4"></div>
+              <h4 className="head-text uppercase">
+                Investment Terms and Conditions
+              </h4>
+              <div className="text-light-1 p-4">
+                <p>
+                  This Investment Terms and Conditions ("Agreement") is entered
+                  into between Capital Partners Investment Ltd (referred to as
+                  "the Company") which is duly incorporated under the Companies
+                  and Allied Matters Act, 2020 with RC NO……… and You (referred
+                  to as "the Investor”, “User”), who have equally agreed to
+                  subscribe to this platform, for the purpose of outlining the
+                  terms and conditions governing the investment portfolio
+                  offered by the Company. This agreement sets forth the general
+                  terms and conditions of your use of the https://www.cap.africa
+                  website and any of its products or services (collectively,
+                  “website”, “mobile application or app”, “services”). These
+                  terms and conditions constitute a legal binding agreement for
+                  both parties. You agree that by accessing the site or the
+                  mobile application, you have agreed to have read, understand
+                  and bound by all of these terms and conditions. If you do not
+                  agree with all these terms and conditions, then you are
+                  specifically prohibited from using this site or this mobile
+                  application. Supplemental terms and conditions or documents
+                  that may be posted on the site from time to time are hereby
+                  expressly incorporated herein by reference We reserve the
+                  right, in our sole discretion, to make changes and
+                  modifications to these terms and conditions at any time. We
+                  will place a general notice on the website or mobile
+                  application regarding any changes by updating the “last
+                  updated” date of these Terms and Conditions, and you waive any
+                  right to receive specific notice of each such change. It is
+                  your responsibility to periodically review these terms and
+                  conditions to stay informed of updates. You will be subject
+                  to, and will be deemed to have been made aware of and to have
+                  accepted the changes in any revised terms and conditions by
+                  your continued use of the site or mobile app after such
+                  revised terms and conditions are posted.
+                </p>
+              </div>
             </div>
           </div>
         </section>
