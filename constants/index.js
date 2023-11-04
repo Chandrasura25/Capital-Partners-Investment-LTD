@@ -112,8 +112,8 @@ export const sidebarLinks = [
   },
   {
     imgURL: "/assets/menu.svg",
-    route: "#",
-    label: "More",
+    route: "/privacy",
+    label: "Privacy Policy",
   },
 ];
 export const AddUnit = [
@@ -128,7 +128,7 @@ export const AddUnit = [
   {
     id: 3,
     title:
-      "We give 300% profit (Return on Investment on each unit) in 500 days.",
+      "We give 30% profit (Return on Investment on each unit) in 500 days.",
   },
   {
     id: 4,
