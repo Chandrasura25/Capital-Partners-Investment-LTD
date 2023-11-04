@@ -726,4 +726,22 @@ export const Terms = [
       },
     ],
   },
+  {
+    id: 9,
+    title: "Risks:",
+    subtext: [
+      {
+        index: 1,
+        text: "The Investor acknowledges that investing in the portfolio involves certain risks.",
+      },
+      {
+        index: 2,
+        text: "The Company does not guarantee the ROI or the safety of the investment capital.",
+      },
+      {
+        index: 3,
+        text: "The Investor should carefully consider their risk tolerance and financial situation before making any investment decisions.",
+      },
+    ],
+  },
 ];
