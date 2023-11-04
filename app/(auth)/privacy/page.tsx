@@ -5,7 +5,7 @@ import Topbar from "@/components/shared/Topbar";
 import { currentUser } from "@clerk/nextjs";
 import { fetchUser } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
-import { PrivacyText } from "@/constants";
+import { PrivacyText, ThirdPrivacyText } from "@/constants";
 
 async function Page() {
   const user = await currentUser();
@@ -19,8 +19,8 @@ async function Page() {
       <main className="bg-main">
         <LeftSidebar />
         <section className="main-container relative">
-          <div className="w-full max-w-4xl h-[80vh] overflow-scroll custom-scrollbar">
-            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-center items-center flex-col gap-4 ">
+          <div className="w-full max-w-4xl h-[80vh] overflow-y-scroll overflow-hidden custom-scrollbar">
+            <div className="glassmorphism p-5 rounded-[20px] relative flex justify-center items-center flex-col gap-2">
               <h4 className="head-text uppercase">Privacy Policy</h4>
               <div className="p-4 text-light-1">
                 <h4 className="mb-3">
@@ -41,7 +41,7 @@ async function Page() {
                     </p>
                     {text.subdetails.map((details) => (
                       <div key={details.id}>
-                        <p className="font-bold">
+                        <p className="font-bold mb-1">
                           {details.id}. <span>{details.text}</span>
                         </p>
                         {details.subtext != "" ? (
@@ -58,6 +58,22 @@ async function Page() {
                     ))}
                   </div>
                 ))}
+                <div className="mt-1">
+                  <p className="font-bold mb-1">
+                    3. <span>Legal Basis for Processing</span>
+                  </p>
+                  <p>
+                    We process your personal information based on one or more of
+                    the following legal grounds:
+                  </p>
+                  {ThirdPrivacyText.map((third) => (
+                    <div key={third.id}>
+                      <p className="mb-1">
+                        - <span>{third.text}</span>
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
