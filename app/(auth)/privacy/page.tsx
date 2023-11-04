@@ -43,9 +43,7 @@ async function Page() {
                         <p className="font-bold mb-1">
                           {details.id}. <span>{details.text}</span>
                         </p>
-                        {details.subtext != "" ? (
-                          <p>{details.subtext}</p>
-                        ) : null}
+                       
                         {details.sub?.map((list) => (
                           <div key={list.i}>
                             <p className="mb-1">
