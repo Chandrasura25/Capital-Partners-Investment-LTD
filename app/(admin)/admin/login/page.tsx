@@ -4,13 +4,11 @@ async function Page() {
   return (
     <>
       <main className="bg-main">
-        <section className="main-container relative">
-          <div className="max-w-md">
-            <div className="p-5 glassmorphism rounded-[20px] mb-8">
-              <h4 className="head-text uppercase mb-3">
-                Admin Signup
-              </h4>
-              <div>
+      <section className="main-container relative">
+          <div className="w-full max-w-3xl">
+            <div className="bg-[#150B62] p-5 rounded-[20px] relative">
+              <h3 className="head-text mb-3 text-center">Admin Login</h3>
+              <div className="p-4 flex justify-center">
                 <AdminLogin textStyle="text-light-1" />
               </div>
             </div>
