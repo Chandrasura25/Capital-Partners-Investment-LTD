@@ -1,15 +1,8 @@
-.body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #23242a;
-}
 .box{
     position: relative;
     width: 380px;
     height: 420px;
-    background: #1c1c1c;
+    background: #150B62;
     border-radius: 8px;
     overflow: hidden;
 }
