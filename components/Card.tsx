@@ -11,8 +11,20 @@ const Card = ({ index, id, title, clr, content }: cardProp) => {
     setIsDropped((prevState) => !prevState);
   };
   return (
-    <motion.div
-      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+    // <motion.div
+    //   variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+    //   className={`${cardStyles.drop} ${isDropped ? cardStyles.active : ""}`}
+    //   style={{ "--clr": clr }}
+    // >
+    //   <div className={cardStyles.content}>
+    //     <h2>0{id}</h2>
+    //     <h4>{title}</h4>
+
+    //     <p>{content}</p>
+    //     <button className={cardStyles.more} onClick={toggleDrop}></button>
+    //   </div>
+    // </motion.div>
+    <div
       className={`${cardStyles.drop} ${isDropped ? cardStyles.active : ""}`}
       style={{ "--clr": clr }}
     >
@@ -23,7 +35,7 @@ const Card = ({ index, id, title, clr, content }: cardProp) => {
         <p>{content}</p>
         <button className={cardStyles.more} onClick={toggleDrop}></button>
       </div>
-    </motion.div>
+    </div>
   );
 };
 // Add prop validation
