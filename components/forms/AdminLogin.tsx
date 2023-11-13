@@ -18,6 +18,7 @@ import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 import axios from "axios";
+import styles from '@/styles/AdminLogin.module.css'
 interface Props {
   textStyle?: string;
 }
@@ -79,7 +80,7 @@ const AdminLogin = ({ textStyle }: Props) => {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem className="flex flex-col gap-3 w-full">
+            <FormItem className={styles.inputBox}>
               <FormLabel
                 className={`text-base-semibold ${
                   textStyle === "" ? "text-dark-2" : textStyle
@@ -123,7 +124,7 @@ const AdminLogin = ({ textStyle }: Props) => {
         />
         <Button
           type="submit"
-          className="bg-[#150B62] uppercase transition hover:bg-white hover:text-[#150B62] flex gap-4"
+          className={`${styles.submit}flex gap-4`}
         >
           Login
           {loading && (
