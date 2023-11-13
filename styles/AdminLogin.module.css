@@ -70,7 +70,7 @@
     letter-spacing: 0.05em;
     z-index: 10;
 }
-.inputBox span{
+.inputBox label{
     position: absolute;
     letter-spacing: 0.05em;
     left: 0;
@@ -80,8 +80,8 @@
     font-size: 1em;
     transition: .5s;
 }
-.inputBox input:valid ~ span,
-.inputBox input:focus ~ span{
+.inputBox input:valid ~ label,
+.inputBox input:focus ~ label{
     color: #45f3ff;
     transform:translateX(0px) translateY(-34px);
     font-size: 0.75em;
