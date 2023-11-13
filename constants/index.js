@@ -27,6 +27,7 @@ export const footerLinks = [
   },
   {
     title:"Newsletter"
+    links:[]
   }
 ];
 export const NavLinks = [
