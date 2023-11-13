@@ -124,7 +124,7 @@ const AdminLogin = ({ textStyle }: Props) => {
         />
         <Button
           type="submit"
-          className={`${styles.submit}flex gap-4`}
+          className={`${styles.submit} flex gap-4`}
         >
           Login
           {loading && (
