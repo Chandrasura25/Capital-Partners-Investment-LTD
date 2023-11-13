@@ -102,20 +102,7 @@
 .inputBox input:focus ~ i{
     height: 44px;
 }
-.links{
-    display: flex;
-    justify-content: space-between;
-}
-.links a{
-    margin: 10px 0;
-    font-size: 0.75em;
-    color: #8f8f8f;
-    text-decoration: none;
-}
-.links a:hover, .links a:nth-child(2){
-    color: #45f3ff;
-}
-input[type='submit']{
+.submit{
     border: none;
     outline: none;
     background: #45f3ff;
@@ -126,6 +113,6 @@ input[type='submit']{
     font-weight: 600;
     cursor: pointer;
 }
-input[type='submit']:active{
+.submit:active{
     opacity: 0.8;
 }

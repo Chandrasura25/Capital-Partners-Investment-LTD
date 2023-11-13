@@ -7,7 +7,7 @@ export const footerLinks = [
   },
   {
     title: " Quick Links",
-    links: ["TradeFi", "CP Asset Management", "ComPass", "Privacy Policy"],
+    links: ["CP Asset Management", "ComPass", "Privacy Policy"],
   },
   {
     title: "Brands",
@@ -26,15 +26,8 @@ export const footerLinks = [
     ],
   },
   {
-    title: "Directories",
-    links: [
-      "Development jobs",
-      "Developers for hire",
-      "Freelance developers for hire",
-      "Tags",
-      "Places",
-    ],
-  },
+    title:"Newsletter"
+  }
 ];
 export const NavLinks = [
   { route: "#about", key: "About Us", text: "About Us" },

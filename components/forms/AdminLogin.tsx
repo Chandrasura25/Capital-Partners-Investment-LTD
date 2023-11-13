@@ -125,7 +125,7 @@ const AdminLogin = ({ textStyle }: Props) => {
           type="submit"
           className="bg-[#150B62] uppercase transition hover:bg-white hover:text-[#150B62] flex gap-4"
         >
-          Continue
+          Login
           {loading && (
             <div className="text-right">
               <svg
