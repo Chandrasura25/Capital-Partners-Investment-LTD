@@ -26,9 +26,9 @@ export const footerLinks = [
     ],
   },
   {
-    title:"Newsletter"
-    links:[]
-  }
+    title: "Newsletter",
+    links: [],
+  },
 ];
 export const NavLinks = [
   { route: "#about", key: "About Us", text: "About Us" },
@@ -841,7 +841,8 @@ export const Term = [
   {
     id: 1,
     title: "GUIDELINES FOR REVIEWS",
-    subtitle:'We may provide you areas on the site to leave reviews or ratings. When posting a review, you must comply with the following criteria',
+    subtitle:
+      "We may provide you areas on the site to leave reviews or ratings. When posting a review, you must comply with the following criteria",
     subtext: [
       {
         index: 1,
@@ -868,7 +869,7 @@ export const Term = [
   {
     id: 2,
     title: "Governing Law and Jurisdiction:",
-    subtitle:'',
+    subtitle: "",
     subtext: [
       {
         index: 1,
@@ -880,4 +881,4 @@ export const Term = [
       },
     ],
   },
-  ]
+];
