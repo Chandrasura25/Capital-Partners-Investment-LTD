@@ -27,8 +27,7 @@ const Pillar = () => {
             }
             textStyles="text-center"
           />
-          <motion.p
-            variants={fadeIn("up", "tween", 0.2, 1)}
+          <p
             className="relative font-normal text-center md:px-[100px] px-[20px] text-white"
           >
             Our investment portfolio encompasses a wide range of sectors,
@@ -37,20 +36,19 @@ const Pillar = () => {
             economic development and improve the lives of individuals. As such,
             we have carefully selected sectors that are essential to Nigeria`s
             growth and have significant potential for long-term profitability.
-          </motion.p>
+          </p>
           <div>
-            <motion.p className={pillarStyles.subText} variants={fadeIn("up", "tween", 0.3, 1)}>
+            <p className={pillarStyles.subText}>
               THE <span>7 PILLARS</span> OF OUR INVESTMENT
-            </motion.p>
+            </p>
             <div className={pillarStyles.container}>
               {pillarText.map((pillar, index) => (
                 <Card key={index} {...pillar} index={index} />
               ))}
             </div>
           </div>
-          <motion.p
+          <p
             className="relative font-normal text-center md:px-[100px] px-[20px] text-white"
-            variants={fadeIn("up", "tween", 0.4, 1)}
           >
             At Capital Partners Investment LTD, we combine our extensive
             industry knowledge, market insights, and investment expertise to
@@ -61,7 +59,7 @@ const Pillar = () => {
             partnering with Capital Partners Investment LTD, where your
             financial goals meet our strategic vision, creating a path to mutual
             success.
-          </motion.p>
+          </p>
         </motion.div>
       </section>
     </>

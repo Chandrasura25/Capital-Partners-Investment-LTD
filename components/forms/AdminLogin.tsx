@@ -35,6 +35,7 @@ const AdminLogin = ({ textStyle }: Props) => {
     },
   });
   const onSubmit = (values: z.infer<typeof AdminValidation>) => {
+    setLoading(true);
     console.log(values)
   }
 //   const onSubmit = (values: z.infer<typeof AdminValidation>) => {
@@ -95,7 +96,6 @@ const AdminLogin = ({ textStyle }: Props) => {
                   className="account-form_input no-focus"
                 />
               </FormControl>
-              <i></i>
               <FormMessage />
             </FormItem>
           )}
@@ -156,37 +156,3 @@ const AdminLogin = ({ textStyle }: Props) => {
 };
 
 export default AdminLogin;
-
-// import styles from "../styles/AdminLogin.module.css";
-
-// async function Page() {
-
-//   return (
-//     <>
-//       <main className={styles.body}>
-//       <div className="box">
-//         <div className="form">
-//             <h2>Sign In</h2>
-//             <div className="inputBox">
-//                 <input type="email" required />
-//                 <span>Email Address</span>
-//                 <i></i>
-//             </div>
-//             <div className="inputBox">
-//                 <input type="password" required />
-//                 <span>Password</span>
-//                 <i></i>
-//             </div>
-//             <div className="links">
-//                 <a href="#">Forgot Password?</a>
-//                 <a href="#">Signup</a>
-//             </div>
-//             <input type="submit" value="Login" />
-//         </div>
-//     </div>
-//       </main>
-//     </>
-//   );
-// }
-
-// export default Page;
