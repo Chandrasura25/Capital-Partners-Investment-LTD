@@ -2,6 +2,10 @@ import { fadeIn } from "@/utils/motion";
 
 export const footerLinks = [
   {
+    title: "Newsletter",
+    links: [],
+  },
+  {
     title: "Explore",
     links: ["Trading", "Investments", "Advisory", "Code of conduct"],
   },
@@ -25,10 +29,7 @@ export const footerLinks = [
       "Cookie policy",
     ],
   },
-  {
-    title: "Newsletter",
-    links: [],
-  },
+ 
 ];
 export const NavLinks = [
   { route: "#about", key: "About Us", text: "About Us" },
