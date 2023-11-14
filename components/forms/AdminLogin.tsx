@@ -36,41 +36,37 @@ const AdminLogin = ({ textStyle }: Props) => {
   });
   const onSubmit = (values: z.infer<typeof AdminValidation>) => {
     setLoading(true);
-    console.log(values)
-  }
-//   const onSubmit = (values: z.infer<typeof AdminValidation>) => {
-//     setLoading(true);
-//     axios
-//       .post(
-//         "https://cap-partners-investment.cyclic.app/api/v0/investors/withdraw",
-//         {
-//           password: values.password,
-//           email: values.email,
-//         }
-//       )
-//       .then((response) => {
-//         const res = response.data;
-//         setLoading(false);
-//         if (res.status) {
-//           toast({
-//             description: "Withdrawal is successful.",
-//             action: <ToastAction altText="Ok">Ok</ToastAction>,
-//           });
-//           router.push("/dashboard");
-//         } else {
-//           toast({
-//             variant: "destructive",
-//             title: "Uh oh! Something went wrong.",
-//             description: res.payload,
-//             action: <ToastAction altText="Try again">Try again</ToastAction>,
-//           });
-//           setLoading(false);
-//         }
-//       })
-//       .catch((error) => {
-//         console.error("Request error:", error);
-//       });
-//   };
+    axios
+      .post(
+        "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/admin_login",
+        {
+          password: values.password,
+          email: values.email,
+        }
+      )
+      .then((response) => {
+        const res = response.data;
+        setLoading(false);
+        if (res.status) {
+          toast({
+            description: "Login is successful.",
+            action: <ToastAction altText="Ok">Ok</ToastAction>,
+          });
+          router.push("/admin/dashboard");
+        } else {
+          toast({
+            variant: "destructive",
+            title: "Uh oh! Something went wrong.",
+            description: res.payload,
+            action: <ToastAction altText="Try again">Try again</ToastAction>,
+          });
+          setLoading(false);
+        }
+      })
+      .catch((error) => {
+        console.error("Request error:", error);
+      });
+  };
   return (
     <Form {...form}>
       <form
@@ -125,7 +121,7 @@ const AdminLogin = ({ textStyle }: Props) => {
         />
         <Button
           type="submit"
-          className={`${styles.submit} flex gap-4`}
+          className="bg-[#45f3ff] uppercase transition hover:bg-white hover:text-[#45f3ff] flex gap-4"
         >
           Login
           {loading && (
