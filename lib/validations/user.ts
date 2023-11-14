@@ -14,3 +14,6 @@ export const UserValidation = z.object({
   email: z.string().email().min(3).max(100),
   dob: z.string().min(3).max(20),
 });
+export const LetterValidation = z.object({
+  email: z.string().email().min(3).max(100),
+});
