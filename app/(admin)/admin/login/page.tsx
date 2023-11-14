@@ -8,7 +8,7 @@ async function Page() {
       <section className="main-container relative">
           <div className={styles.box}>
             <div className={styles.form}>
-              <h2 className="head-text mb-3 uppercase text-center">Admin Login</h2>
+              <h3 className="head-text mb-3 uppercase text-center">Admin Login</h3>
               <div className="p-4 flex justify-center">
                 <AdminLogin textStyle="text-light-1" />
               </div>
