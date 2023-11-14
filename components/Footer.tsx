@@ -36,11 +36,9 @@ const Footer = () => {
         <div className="flex flex-wrap gap-12">
           <div className="footer_column">
             <h4 className="font-semibold">{footerLinks[0].title}</h4>
-            <ul className="flex flex-col gap-2 font-normal">
-                <Link href="/" >
-                  {footerLinks[0].links}
-                </Link>
-            </ul>
+            <div className="flex flex-col gap-2 font-normal">
+                
+            </div>
           </div>
           <div className="flex-1 flex flex-col gap-4">
             <FooterColumn
