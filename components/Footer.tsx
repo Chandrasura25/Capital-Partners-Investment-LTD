@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { footerVariants } from "@/utils/motion";
-
+import NewsLetter from "@/components/forms/NewsLetter";
 type ColumnProps = {
   title: string;
   links: Array<string>;
@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="footer_column">
             <h4 className="font-semibold">{footerLinks[0].title}</h4>
             <div className="flex flex-col gap-2 font-normal">
-                
+                <NewsLetter/>
             </div>
           </div>
           <div className="flex-1 flex flex-col gap-4">
