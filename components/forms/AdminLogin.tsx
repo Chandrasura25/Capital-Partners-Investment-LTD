@@ -52,7 +52,7 @@ const AdminLogin = ({ textStyle }: Props) => {
             description: "Login is successful.",
             action: <ToastAction altText="Ok">Ok</ToastAction>,
           });
-          router.push("/admin/dashboard");
+          router.push("/admindashboard");
         } else {
           toast({
             variant: "destructive",
