@@ -348,3 +348,25 @@ export async function WithdrawalHistory(userID: number) {
     throw new Error(`Failed to fetch Investment: ${error.message}`);
   }
 }
+export async function AddToNewsLetter(email: string) {
+  try {
+    const response = await fetch(
+      "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/subsribe_to_newsletter",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      }
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error: any) {
+    throw new Error(`Failed to fetch Investment: ${error.message}`);
+  }
+}

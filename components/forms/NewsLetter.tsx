@@ -17,6 +17,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
+import { AddToNewsLetter } from "@/lib/actions/user.actions";
+
 interface Props {
     textStyle?: string;
   }
@@ -31,31 +33,26 @@ const NewsLetter =({ textStyle }: Props) => {
     },
   });
   const onSubmit = async (values: z.infer<typeof LetterValidation>) => {
-//     setLoading(true);
-//     const res = await addBankDetail({
-//       userID: values.userID,
-//       email: values.email,
-//       username: values.username,
-//       accountName: values.accountName,
-//       accountNumber: values.accountNumber,
-//       bankName: values.bankName,
-//     });
-//     if (res.status) {
-//       toast({
-//         description: "Bank Details is saved successfully.",
-//         action: <ToastAction altText="Ok">Ok</ToastAction>,
-//       });
-//       setLoading(false);
-//       router.push("/dashboard");
-//     } else {
-//       setLoading(false);
-//       toast({
-//         variant: "destructive",
-//         title: "Uh oh! Something went wrong.",
-//         description: "There was a problem with your request.",
-//         action: <ToastAction altText="Try again">Try again</ToastAction>,
-//       });
-//     }
+    setLoading(true);
+    const res = await AddToNewsLetter({
+      email: values.email,
+    });
+    if (res.status) {
+      toast({
+        description: "Added to newsletter successfully.",
+        action: <ToastAction altText="Ok">Ok</ToastAction>,
+      });
+      setLoading(false);
+      // router.push("/dashboard");
+    } else {
+      setLoading(false);
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+    }
   };
   return (
     <Form {...form}>

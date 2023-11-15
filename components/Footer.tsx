@@ -36,7 +36,7 @@ const Footer = () => {
         <div className="flex flex-wrap gap-12">
           <div className="footer_column">
             <h4 className="font-semibold">{footerLinks[0].title}</h4>
-            <div className="flex flex-col gap-2 font-normal">
+            <div className="border border-white font-normal">
                 <NewsLetter/>
             </div>
           </div>
