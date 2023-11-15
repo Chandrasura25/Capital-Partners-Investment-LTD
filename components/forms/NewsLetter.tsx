@@ -30,7 +30,7 @@ const NewsLetter = ({ textStyle }: Props) => {
       email: "",
     },
   });
-  const onSubmit = async (values: z.infer<typeof LetterValidation>) => {
+  const onSubmit = (values: z.infer<typeof LetterValidation>) => {
     setLoading(true);
     axios.post("https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/subsribe_to_newsletter", {
       email: values.email,
