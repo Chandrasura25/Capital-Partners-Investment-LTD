@@ -13,7 +13,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LetterValidation } from "@/lib/validations/user";
 import * as z from "zod";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
@@ -25,7 +24,6 @@ interface Props {
 const NewsLetter = ({ textStyle }: Props) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
   const form = useForm({
     resolver: zodResolver(LetterValidation),
     defaultValues: {
@@ -43,8 +41,8 @@ const NewsLetter = ({ textStyle }: Props) => {
         description: "Added to newsletter successfully.",
         action: <ToastAction altText="Ok">Ok</ToastAction>,
       });
+      values.email = "";
       setLoading(false);
-      // router.push("/dashboard");
     } else {
       setLoading(false);
       toast({
