@@ -46,6 +46,7 @@ const AdminLogin = ({ textStyle }: Props) => {
       )
       .then((response) => {
         const res = response.data;
+        localStorage.admin = JSON.stringify(res.payload);
         setLoading(false);
         if (res.status) {
           toast({
