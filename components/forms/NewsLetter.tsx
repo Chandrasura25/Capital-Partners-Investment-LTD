@@ -41,8 +41,8 @@ const NewsLetter = ({ textStyle }: Props) => {
         description: "Added to newsletter successfully.",
         action: <ToastAction altText="Ok">Ok</ToastAction>,
       });
-      values.email = "";
       setLoading(false);
+      values.email = "";
     } else {
       setLoading(false);
       toast({
