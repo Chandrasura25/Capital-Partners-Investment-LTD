@@ -90,7 +90,7 @@ const NewsLetter = ({ textStyle }: Props) => {
           type="submit"
           className="bg-[#150B62] uppercase transition hover:bg-white hover:text-[#150B62] flex gap-4"
         >
-          Save
+          Subscribe
           {loading && (
             <div className="text-right">
               <svg
