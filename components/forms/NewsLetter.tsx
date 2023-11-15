@@ -17,26 +17,27 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
-import { AddToNewsLetter } from "@/lib/actions/user.actions";
+import axios from 'axios';
 
 interface Props {
-    textStyle?: string;
-  }
-const NewsLetter =({ textStyle }: Props) => {
+  textStyle?: string;
+}
+const NewsLetter = ({ textStyle }: Props) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const form = useForm({
     resolver: zodResolver(LetterValidation),
     defaultValues: {
-      email:"",
+      email: "",
     },
   });
   const onSubmit = async (values: z.infer<typeof LetterValidation>) => {
     setLoading(true);
-    const res = await AddToNewsLetter({
+    axios.post("https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/subsribe_to_newsletter", {
       email: values.email,
-    });
+    })
+  .then(res => {
     if (res.status) {
       toast({
         description: "Added to newsletter successfully.",
@@ -53,7 +54,9 @@ const NewsLetter =({ textStyle }: Props) => {
         action: <ToastAction altText="Try again">Try again</ToastAction>,
       });
     }
-  };
+  })
+  }
+  ;
   return (
     <Form {...form}>
       <form
