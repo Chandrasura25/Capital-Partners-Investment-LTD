@@ -61,7 +61,7 @@ const NewsLetter = ({ textStyle }: Props) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col justify-start gap-10 p-3"
+        className="flex flex-col justify-start gap-6"
       >
         <FormField
           control={form.control}
@@ -90,7 +90,7 @@ const NewsLetter = ({ textStyle }: Props) => {
           type="submit"
           className="bg-[#150B62] uppercase transition hover:bg-white hover:text-[#150B62] flex gap-4"
         >
-          Add Details
+          Save
           {loading && (
             <div className="text-right">
               <svg
