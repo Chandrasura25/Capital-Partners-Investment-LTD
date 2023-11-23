@@ -2,11 +2,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { AdminSidebarLinks } from "@/constants";
-import { usePathname, useRouter } from "next/navigation";
+import { xx , useRouter } from "next/navigation";
 function LeftSidebar() {
   const router = useRouter();
   const pathname = usePathname();
-  const SignOutAdmin = () => {};
+  const SignOutAdmin = () => {
+    localStorage.removeItem("admin");
+    router.push("/admin/login");
+  };
   return (
     <section className="custom-scrollbar leftsidebar">
       <div className="flex w-full flex-1 flex-col gap-6 px-6">
