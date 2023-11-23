@@ -43,7 +43,7 @@ export function parseLocalStorageItem(itemName: string) {
     const parsedItem = JSON.parse(item);
     return parsedItem;
   } catch (error) {
-    console.error('Error parsing localStorage item:', error);
+    console.error('Error parsing local Storage item:', error);
     return null; // Parsing error
   }
 }
