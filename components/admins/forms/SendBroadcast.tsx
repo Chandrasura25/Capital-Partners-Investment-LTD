@@ -71,38 +71,49 @@ const SendBroadcast = ({ textStyle }: Props) => {
       }
     }
     setLoading(true);
-    console.log(values)
-    // axios
-    //   .post(
-    //     "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/broadcast_newsletter",
-    //     {
-    //       password: values.password,
-    //       email: values.email,
-    //     }
-    //   )
-    //   .then((response) => {
-    //     const res = response.data;
-    //     localStorage.admin = JSON.stringify(res.payload);
-    //     setLoading(false);
-    //     if (res.status) {
-    //       toast({
-    //         description: "Login is successful.",
-    //         action: <ToastAction altText="Ok">Ok</ToastAction>,
-    //       });
-    //       router.push("/admindashboard");
-    //     } else {
-    //       toast({
-    //         variant: "destructive",
-    //         title: "Uh oh! Something went wrong.",
-    //         description: res.payload,
-    //         action: <ToastAction altText="Try again">Try again</ToastAction>,
-    //       });
-    //       setLoading(false);
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error("Request error:", error);
-    //   });
+    axios
+      .post(
+        "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/broadcast_newsletter",
+        {
+          headings: values.headings,
+          greetings: values.greetings,
+          message: values.message,
+          image: values.image,
+          imageDescription: values.imageDescription,
+          sender: values.sender,
+          position: values.position,
+          subject: values.subject,
+        }
+      )
+      .then((response) => {
+        const res = response.data;
+        setLoading(false);
+        if (res.status) {
+          toast({
+            description: "Broadcast is successful.",
+            action: <ToastAction altText="Ok">Ok</ToastAction>,
+          });
+          values.headings = "";
+          values.greetings = "";
+          values.message = "";
+          values.image = "";
+          values.imageDescription = "";
+          values.sender = "";
+          values.position = "";
+          values.subject = "";
+        } else {
+          toast({
+            variant: "destructive",
+            title: "Uh oh! Something went wrong.",
+            description: res.payload,
+            action: <ToastAction altText="Try again">Try again</ToastAction>,
+          });
+          setLoading(false);
+        }
+      })
+      .catch((error) => {
+        console.error("Request error:", error);
+      });
   };
   return (
     <Form {...form}>
