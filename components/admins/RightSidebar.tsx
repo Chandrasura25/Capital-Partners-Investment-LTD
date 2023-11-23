@@ -6,7 +6,7 @@ async function RightSidebar() {
         <h3 className='text-heading4-medium text-light-1 uppercase'>
           Send A Broadcast Message
         </h3>
-        <div className='mt-4 flex max-w-md'>
+        <div className='mt-7 flex max-w-md'>
             <SendBroadcast textStyle="uppercase text-light-1"/>
         </div>
       </div>
