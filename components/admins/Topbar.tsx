@@ -2,11 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { parseLocalStorageItem } from "@/lib/utils";
-import { redirect } from "next/navigation";
 function Topbar() {
-  const adminDetails = parseLocalStorageItem("admin");
-  console.log(adminDetails);
   const router = useRouter();
   const SignOutAdmin = () => {
     localStorage.removeItem("admin");
