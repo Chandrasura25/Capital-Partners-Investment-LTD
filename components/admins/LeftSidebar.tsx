@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { AdminSidebarLinks } from "@/constants";
-import { xx , useRouter } from "next/navigation";
+import { usePathname , useRouter } from "next/navigation";
 function LeftSidebar() {
   const router = useRouter();
   const pathname = usePathname();
