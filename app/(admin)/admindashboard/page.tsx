@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 async function Page() {
   const adminDetails = parseLocalStorageItem("admin");
   console.log(adminDetails)
-  // if (!adminDetails) redirect("/");
+  if (!adminDetails) redirect("/");
   return (
     <>
       <Topbar />
