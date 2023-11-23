@@ -6,7 +6,7 @@ import { parseLocalStorageItem } from "@/lib/utils";
 import { redirect } from "next/navigation";
 async function Page() {
   const adminDetails = parseLocalStorageItem("admin")
-  if (!adminDetails || !adminDetails?.email) {
+  if (adminDetails === undefined) {
     redirect("/");
   }
   return (
