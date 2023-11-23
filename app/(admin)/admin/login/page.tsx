@@ -1,5 +1,5 @@
 
-import AdminLogin from "@/components/forms/AdminLogin";
+import AdminLogin from "@/components/admins/forms/AdminLogin";
 import styles from '@/styles/AdminLogin.module.css'
 async function Page() {
   return (
