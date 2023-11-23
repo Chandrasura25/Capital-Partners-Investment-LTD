@@ -107,7 +107,7 @@ const SendBroadcast = ({ textStyle }: Props) => {
           type="submit"
           className="bg-[#45f3ff] uppercase transition hover:bg-white hover:text-[#45f3ff] flex gap-4"
         >
-          Login
+          Broadcast
           {loading && (
             <div className="text-right">
               <svg
