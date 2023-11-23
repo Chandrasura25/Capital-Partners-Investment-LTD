@@ -1,8 +1,8 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
- 
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 // created by chatgpt
@@ -31,11 +31,11 @@ export function formatDateString(dateString: string) {
 }
 export function parseLocalStorageItem(itemName: string) {
   let item;
-  if (typeof window !== 'undefined') {
-  // Perform localStorage action
-  const what = localStorage.getItem('key')
-  item = what;
-}
+  if (typeof window !== "undefined") {
+    // Perform localStorage action
+    const what = localStorage.getItem(itemName);
+    item = what;
+  }
   // const item = localStorage.getItem(itemName);
 
   // Check if the item exists
@@ -48,7 +48,7 @@ export function parseLocalStorageItem(itemName: string) {
     const parsedItem = JSON.parse(item!);
     return parsedItem;
   } catch (error) {
-    console.error('Error parsing local Storage item:', error);
+    console.error("Error parsing local Storage item:", error);
     return null; // Parsing error
   }
 }
@@ -59,15 +59,15 @@ export function getFormattedDate() {
   const year = currentDate.getFullYear();
 
   // Ensure single-digit day and month have a leading zero
-  const formattedDay = (day < 10) ? `0${day}` : day;
-  const formattedMonth = (month < 10) ? `0${month}` : month;
+  const formattedDay = day < 10 ? `0${day}` : day;
+  const formattedMonth = month < 10 ? `0${month}` : month;
 
   const formattedDate = `${formattedDay}/${formattedMonth}/${year}`;
   return formattedDate;
 }
-export function add500DaysToDate(inputDateStr:any) {
+export function add500DaysToDate(inputDateStr: any) {
   // Parse the input date string into a Date object
-  const dateParts = inputDateStr.split('/');
+  const dateParts = inputDateStr.split("/");
   const day = parseInt(dateParts[0], 10);
   const month = parseInt(dateParts[1], 10) - 1; // Subtract 1 as months are zero-based
   const year = parseInt(dateParts[2], 10);
@@ -91,10 +91,10 @@ export function add500DaysToDate(inputDateStr:any) {
   return {
     day: remainingDays,
     month: months,
-    week: weeks
+    week: weeks,
   };
 }
-export function calculateUnits(payload:any) {
+export function calculateUnits(payload: any) {
   if (!Array.isArray(payload)) {
     throw new Error("Payload is not an array");
   }
@@ -110,4 +110,3 @@ export function calculateUnits(payload:any) {
 
   return units;
 }
-
