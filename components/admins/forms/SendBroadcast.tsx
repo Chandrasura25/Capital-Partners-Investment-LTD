@@ -164,6 +164,8 @@ const SendBroadcast = ({ textStyle }: Props) => {
                   src={field.value ? field.value : "/assets/message.svg"}
                   alt="image"
                   loading="eager"
+                  width={24}
+                  height={24}
                   className="object-contain"
                 />
               </FormLabel>
