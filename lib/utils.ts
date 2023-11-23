@@ -30,8 +30,13 @@ export function formatDateString(dateString: string) {
   return `${time} - ${formattedDate}`;
 }
 export function parseLocalStorageItem(itemName: string) {
-  
-  const item = localStorage.getItem(itemName);
+  let item;
+  if (typeof window !== 'undefined') {
+  // Perform localStorage action
+  const what = localStorage.getItem('key')
+  item = what;
+}
+  // const item = localStorage.getItem(itemName);
 
   // Check if the item exists
   if (item === null) {
@@ -40,7 +45,7 @@ export function parseLocalStorageItem(itemName: string) {
 
   try {
     // Parse the item's content
-    const parsedItem = JSON.parse(item);
+    const parsedItem = JSON.parse(item!);
     return parsedItem;
   } catch (error) {
     console.error('Error parsing local Storage item:', error);
