@@ -40,7 +40,7 @@ export function parseLocalStorageItem(itemName: string) {
 
   try {
     // Parse the item's content
-    const parsedItem = JSON.parse(item!);
+    const parsedItem = JSON.parse(item);
     return parsedItem;
   } catch (error) {
     console.error('Error parsing localStorage item:', error);
