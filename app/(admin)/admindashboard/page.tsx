@@ -3,10 +3,14 @@ import Bottombar from "@/components/admins/Bottombar";
 import LeftSidebar from "@/components/admins/LeftSidebar";
 import RightSidebar from "@/components/admins/RightSidebar";
 import Storage from "@/components/admins/Storage";
+import { parseLocalStorageItem } from "@/lib/utils";
+import { redirect } from "next/navigation";
 async function Page() {
+  const adminDetails = parseLocalStorageItem("admin");
+  if (!adminDetails || !adminDetails?.email) redirect("/");
   return (
     <>
-      <Storage />
+      {/* <Storage /> */}
       <Topbar />
       <main className="bg-main">
         <LeftSidebar />
