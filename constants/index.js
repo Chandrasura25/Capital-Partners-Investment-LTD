@@ -124,22 +124,22 @@ export const AdminSidebarLinks = [
   },
   {
     imgURL: "/assets/user.svg",
-    route: "/profile",
+    route: "#",
     label: "Profile",
   },
   {
     imgURL: "/assets/bank_account.svg",
-    route: "/add-account",
+    route: "#",
     label: "Account Details",
   },
   {
     imgURL: "/assets/conditions.svg",
-    route: "/conditions",
+    route: "#",
     label: "Terms and Conditions",
   },
   {
     imgURL: "/assets/coin-dollar.svg",
-    route: "/history",
+    route: "#",
     label: "Investment History",
   },
 ];
