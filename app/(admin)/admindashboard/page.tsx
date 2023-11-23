@@ -4,7 +4,6 @@ import Bottombar from "@/components/admins/Bottombar";
 import LeftSidebar from "@/components/admins/LeftSidebar";
 import RightSidebar from "@/components/admins/RightSidebar";
 import Storage from "@/components/admins/Storage"; 
-import { redirect } from "next/navigation";
 async function Page() {
   return (
     <>
