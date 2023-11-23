@@ -71,6 +71,7 @@ const SendBroadcast = ({ textStyle }: Props) => {
       }
     }
     setLoading(true);
+    console.log(values)
     // axios
     //   .post(
     //     "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/broadcast_newsletter",
@@ -168,9 +169,32 @@ const SendBroadcast = ({ textStyle }: Props) => {
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name="imageDescription"
+          render={({ field }) => (
+            <FormItem className="flex flex-col gap-3 w-full">
+              <FormLabel
+                className={`text-base-semibold ${
+                  textStyle === "" ? "text-dark-2" : textStyle
+                } `}
+              >
+                Image Description
+              </FormLabel>
+              <FormControl>
+                <Input
+                  {...field}
+                  type="text"
+                  className="account-form_input no-focus"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <Button
           type="submit"
-          className="bg-[#45f3ff] uppercase transition hover:bg-white hover:text-[#45f3ff] flex gap-4"
+          className="bg-primary-500 uppercase transition hover:bg-white hover:text-primary-500 flex gap-4"
         >
           Broadcast
           {loading && (
