@@ -181,7 +181,7 @@ export const columns: ColumnDef<Payment>[] = [
   },
 ]
 
-export function UsersTable() {
+export default function UsersTable() {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
