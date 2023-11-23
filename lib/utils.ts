@@ -30,15 +30,8 @@ export function formatDateString(dateString: string) {
   return `${time} - ${formattedDate}`;
 }
 export function parseLocalStorageItem(itemName: string) {
-  let item;
-  // Retrieve the item from localStorage
-  if (typeof window !== 'undefined') {
-    // Perform localStorage action
-    const intem = localStorage.getItem(itemName)
-    item = intem;
-  }
-  console.log(item)
-  // const item = localStorage.getItem(itemName);
+  
+  const item = localStorage.getItem(itemName);
 
   // Check if the item exists
   if (item === null) {
