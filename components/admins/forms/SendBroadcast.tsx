@@ -18,7 +18,7 @@ import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 import axios from "axios";
-import styles from '@/styles/AdminLogin.module.css'
+import styles from "@/styles/AdminLogin.module.css";
 interface Props {
   textStyle?: string;
 }
@@ -30,14 +30,14 @@ const SendBroadcast = ({ textStyle }: Props) => {
   const form = useForm({
     resolver: zodResolver(BroadcastValidation),
     defaultValues: {
-        headings:"",
-        greetings: "",
-        message: "",
-        image: "",
-        imageDescription: "",
-        sender: "",
-        position:"",
-        subject:"",
+      headings: "",
+      greetings: "",
+      message: "",
+      image: "",
+      imageDescription: "",
+      sender: "",
+      position: "",
+      subject: "",
     },
   });
   const onSubmit = (values: z.infer<typeof BroadcastValidation>) => {
@@ -80,29 +80,40 @@ const SendBroadcast = ({ textStyle }: Props) => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="flex flex-col justify-start gap-8"
       >
-        <FormField
-          control={form.control}
-          name="headings"
-          render={({ field }) => (
-            <FormItem className={styles.inputBox}>
-              <FormLabel
-                className={`text-base-semibold ${
-                  textStyle === "" ? "text-dark-2" : textStyle
-                } `}
-              >
-                headings
-              </FormLabel>
-              <FormControl>
-                <Input
-                  {...field}
-                  type="email"
-                  className="account-form_input no-focus"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />         
+        {[
+          "headings",
+          "greetings",
+          "message",
+          "sender",
+          "position",
+          "subject",
+        ].map((child) => (
+          <FormField
+            control={form.control}
+            key={child}
+            name={child}
+            render={({ field }) => (
+                <FormItem className="flex flex-col gap-3 w-full">
+                <FormLabel
+                  className={`text-base-semibold ${
+                    textStyle === "" ? "text-dark-2" : textStyle
+                  } `}
+                >
+                  {child}
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    {...field}
+                    type="text"
+                    className="account-form_input no-focus"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        ))}
+
         <Button
           type="submit"
           className="bg-[#45f3ff] uppercase transition hover:bg-white hover:text-[#45f3ff] flex gap-4"
