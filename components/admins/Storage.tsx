@@ -2,7 +2,7 @@
 import { parseLocalStorageItem } from "@/lib/utils";
 function Storage(){
   const adminDetails = parseLocalStorageItem("admin");
-  console.log(adminDetails);
+  if (!adminDetails?.status) redirect("/");
    return <></>
 }
 export default Storage;
