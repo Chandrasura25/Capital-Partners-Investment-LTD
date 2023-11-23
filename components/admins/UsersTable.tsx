@@ -35,7 +35,21 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-
+import axios from "axios";
+import { useEffect, useState } from "react";
+  //   const [users, setUsers] = useState([]);
+//   useEffect(() => {
+//     axios
+//       .get(
+//         "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/get_all_users"
+//       )
+//       .then((res) => {
+//         setUsers(res.data.payload);
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       });
+//   }, []);
 const data: Payment[] = [
   {
     id: "m5gr84i9",
@@ -310,22 +324,3 @@ export function UsersTable() {
     </div>
   )
 }
-
-
-
-
-
-  //   const [users, setUsers] = useState([]);
-//   useEffect(() => {
-//     axios
-//       .get(
-//         "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/get_all_users"
-//       )
-//       .then((res) => {
-//         setUsers(res.data.payload);
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   }, []);
-//   return <></>;
