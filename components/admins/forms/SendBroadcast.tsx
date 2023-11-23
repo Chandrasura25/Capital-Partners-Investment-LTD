@@ -14,7 +14,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { BroadcastValidation } from "@/lib/validations/admin";
 import * as z from "zod";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+import { isBase64Image } from "@/lib/utils";
+import { useUploadThing } from "@/lib/uploadthing";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@/components/ui/toast";
 import axios from "axios";
@@ -27,6 +29,8 @@ const SendBroadcast = ({ textStyle }: Props) => {
   const { toast } = useToast();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [files, setFiles] = useState<File[]>([]);
+  const { startUpload } = useUploadThing("media");
   const form = useForm({
     resolver: zodResolver(BroadcastValidation),
     defaultValues: {
@@ -40,7 +44,32 @@ const SendBroadcast = ({ textStyle }: Props) => {
       subject: "",
     },
   });
-  const onSubmit = (values: z.infer<typeof BroadcastValidation>) => {
+  const handleImage = (
+    e: ChangeEvent<HTMLInputElement>,
+    fieldChange: (value: string) => void
+  ) => {
+    e.preventDefault();
+    const fileReader = new FileReader();
+    if (e.target.files && e.target.files.length > 0) {
+      const file = e.target.files[0];
+      setFiles(Array.from(e.target.files));
+      if (!file.type.includes("image")) return;
+      fileReader.onload = async (event) => {
+        const imageDataUrl = event.target?.result?.toString() || "";
+        fieldChange(imageDataUrl);
+      };
+      fileReader.readAsDataURL(file);
+    }
+  };
+  const onSubmit = async (values: z.infer<typeof BroadcastValidation>) => {
+    const blob = values.image;
+    const hasImageChanged = isBase64Image(blob);
+    if (hasImageChanged) {
+      const imgRes = await startUpload(files);
+      if (imgRes && imgRes[0].fileUrl) {
+        values.image = imgRes[0].fileUrl;
+      }
+    }
     setLoading(true);
     // axios
     //   .post(
@@ -93,7 +122,7 @@ const SendBroadcast = ({ textStyle }: Props) => {
             key={child}
             name={child}
             render={({ field }) => (
-                <FormItem className="flex flex-col gap-3 w-full">
+              <FormItem className="flex flex-col gap-3 w-full">
                 <FormLabel
                   className={`text-base-semibold ${
                     textStyle === "" ? "text-dark-2" : textStyle
@@ -113,7 +142,34 @@ const SendBroadcast = ({ textStyle }: Props) => {
             )}
           />
         ))}
-
+        <FormField
+          control={form.control}
+          name="image"
+          render={({ field }) => (
+            <FormItem className="flex items-center gap-4">
+              <FormLabel className="account-form_image-label">
+                <img
+                  src={field.value ? field.value : "/assets/profile.svg"}
+                  alt="image"
+                  width={24}
+                  height={24}
+                  loading="eager"
+                  className="rounded-full object-contain"
+                />
+              </FormLabel>
+              <FormControl className="flex-1 text-base-semibold text-gray-200">
+                <Input
+                  accept="image/*"
+                  type="file"
+                  placeholder="Upload a photo"
+                  className="account-form_image-input"
+                  onChange={(e) => handleImage(e, field.onChange)}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <Button
           type="submit"
           className="bg-[#45f3ff] uppercase transition hover:bg-white hover:text-[#45f3ff] flex gap-4"
