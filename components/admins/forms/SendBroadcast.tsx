@@ -147,14 +147,12 @@ const SendBroadcast = ({ textStyle }: Props) => {
           name="image"
           render={({ field }) => (
             <FormItem className="flex items-center gap-4">
-              <FormLabel className="account-form_image-label">
+              <FormLabel className="account-form_image-label1">
                 <img
-                  src={field.value ? field.value : "/assets/profile.svg"}
+                  src={field.value ? field.value : "/assets/message.svg"}
                   alt="image"
-                  width={24}
-                  height={24}
                   loading="eager"
-                  className="rounded-full object-contain"
+                  className="object-contain"
                 />
               </FormLabel>
               <FormControl className="flex-1 text-base-semibold text-gray-200">
