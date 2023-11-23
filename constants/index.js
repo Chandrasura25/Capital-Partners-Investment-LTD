@@ -116,6 +116,33 @@ export const sidebarLinks = [
     label: "Privacy Policy",
   },
 ];
+export const AdminSidebarLinks = [
+  {
+    imgURL: "/assets/home.svg",
+    route: "/admindashboard",
+    label: "Dashboard",
+  },
+  {
+    imgURL: "/assets/user.svg",
+    route: "/profile",
+    label: "Profile",
+  },
+  {
+    imgURL: "/assets/bank_account.svg",
+    route: "/add-account",
+    label: "Account Details",
+  },
+  {
+    imgURL: "/assets/conditions.svg",
+    route: "/conditions",
+    label: "Terms and Conditions",
+  },
+  {
+    imgURL: "/assets/coin-dollar.svg",
+    route: "/history",
+    label: "Investment History",
+  },
+];
 export const AddUnit = [
   {
     id: 1,
