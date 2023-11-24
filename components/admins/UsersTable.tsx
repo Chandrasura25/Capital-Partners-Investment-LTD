@@ -1,6 +1,4 @@
 "use client";
-
-import * as React from "react";
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -50,9 +48,10 @@ useEffect(() => {
     .catch((err) => {
       console.log(err);
     });
-     axios
+  axios
     .post(
-      "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/fetch_all_units",{email:""}
+      "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/fetch_all_units",
+      { email: "" }
     )
     .then((res) => {
       setUnits(res.data.payload);
@@ -95,14 +94,14 @@ const data: Payment[] = [
   },
 ];
 
-export type Payment = {
+type Payment = {
   id: string;
   amount: number;
   status: "pending" | "processing" | "success" | "failed";
   email: string;
 };
 
-export const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Payment>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -194,13 +193,10 @@ export const columns: ColumnDef<Payment>[] = [
 ];
 
 export default function UsersTable() {
-  const [sorting, setSorting] = React.useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  );
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
-  const [rowSelection, setRowSelection] = React.useState({});
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
     data,
