@@ -35,32 +35,6 @@ import {
 } from "@/components/ui/table";
 import axios from "axios";
 import { useEffect, useState } from "react";
-const [users, setUsers] = useState([]);
-const [units, setUnits] = useState([]);
-useEffect(() => {
-  axios
-    .get(
-      "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/get_all_users"
-    )
-    .then((res) => {
-      setUsers(res.data.payload);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  axios
-    .post(
-      "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/fetch_all_units",
-      { email: "" }
-    )
-    .then((res) => {
-      setUnits(res.data.payload);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}, []);
-console.log(users, units);
 const data: Payment[] = [
   {
     id: "m5gr84i9",
@@ -197,7 +171,32 @@ export default function UsersTable() {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
-
+  const [users, setUsers] = useState([]);
+  const [units, setUnits] = useState([]);
+  useEffect(() => {
+    axios
+      .get(
+        "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/get_all_users"
+      )
+      .then((res) => {
+        setUsers(res.data.payload);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    axios
+      .post(
+        "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/fetch_all_units",
+        { email: "" }
+      )
+      .then((res) => {
+        setUnits(res.data.payload);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  console.log(users, units);
   const table = useReactTable({
     data,
     columns,
