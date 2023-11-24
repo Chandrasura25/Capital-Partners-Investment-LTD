@@ -38,6 +38,7 @@ import {
 import axios from "axios";
 import { useEffect, useState } from "react";
 const [users, setUsers] = useState([]);
+const [units, setUnits] = useState([]);
 useEffect(() => {
   axios
     .get(
@@ -49,8 +50,18 @@ useEffect(() => {
     .catch((err) => {
       console.log(err);
     });
+     axios
+    .post(
+      "https://cap-partners-investment.cyclic.app/api/v0/admin/adminapis/fetch_all_units",{email:""}
+    )
+    .then((res) => {
+      setUnits(res.data.payload);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }, []);
-console.log(users);
+console.log(users, units);
 const data: Payment[] = [
   {
     id: "m5gr84i9",
